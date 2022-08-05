@@ -1,0 +1,258 @@
+/**
+ * ==============================+
+ * subpage type 01
+ * ==============================+
+ */
+
+.wrap {
+  .page-view {
+    &.program,
+    &.mypage {
+      margin-top: 50px;
+    }
+
+    &.program {
+      article {
+        padding-right: 500px;
+        margin-top: 20px;
+        width: 100%;
+        min-height: 1100px;
+        position: relative;
+
+        aside {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 450px;
+          height: 100%;
+          overflow: hidden;
+          padding: 30px 10px 0 0;
+
+          &::before {
+            position: absolute;
+            width: 440px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: #121735;
+            content: '';
+          }
+
+          h4 {
+            font-size: 1.8rem;
+            color: $white;
+            padding-left: 27px;
+            margin-left: 30px;
+            position: relative;
+            line-height: 1;
+
+            &::before {
+              width: 18px;
+              height: 16px;
+              position: absolute;
+              top: 2px;
+              left: 0;
+              background-image: url('../images/icon-list.png');
+              background-repeat: no-repeat;
+              background-position: 0 0;
+              content: '';
+            }
+          }
+
+          > div {
+            margin-top: 20px;
+            max-height: 1000px;
+            padding: 10px 0 0 30px;
+            position: relative;
+            z-index: 1;
+
+            ul {
+              li {
+                display: table;
+                width: 100%;
+                padding: 20px 0;
+
+                &:first-of-type {
+                  padding-top: 0;
+                }
+
+                & + li {
+                  border-top: 1px solid rgba(255, 255, 255, 0.3);
+                }
+
+                a:hover,
+                a:focus {
+                  div {
+                    &:nth-of-type(2) {
+                      width: auto;
+                      padding-left: 15px;
+
+                      * {
+                        color: $white;
+                      }
+                    }
+
+                    &.img {
+                      &::before {
+                        left: -32px;
+                        top: -5px;
+                        right: -5px;
+                        bottom: -5px;
+                        background-color: #cb2121;
+                      }
+                    }
+                  }
+                }
+
+                div {
+                  display: table-cell;
+                  vertical-align: top;
+
+                  &.img {
+                    position: relative;
+                    vertical-align: middle;
+
+                    &::before {
+                      position: absolute;
+                      left: 10%;
+                      top: 10%;
+                      right: 10%;
+                      bottom: 10%;
+                      @include transition(all 0.4s ease-in-out);
+                      content: '';
+                    }
+
+                    img {
+                      width: 160px;
+                      height: 90px;
+                      position: relative;
+                      z-index: 1;
+                    }
+                  }
+
+                  &:nth-of-type(2) {
+                    width: auto;
+                    padding: 0 15px;
+                    font-size: 0;
+
+                    * {
+                      color: rgba(255, 255, 255, 0.5);
+                    }
+
+                    b {
+                      font-size: 1.7rem;
+                      @include line-clamp2;
+                      max-height: 50px;
+                    }
+
+                    em {
+                      display: inline-block;
+                      line-height: 1;
+                      margin-top: 20px;
+                      font-size: 1.5rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .vd-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .vd-cover {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .vd-play {
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include transform(translate(-50%));
+          width: 100px;
+          height: 100px;
+          background-image: url('../images/icon-play_rounded.png');
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          cursor: pointer;
+          z-index: 10;
+        }
+      }
+
+      .vd-info {
+        margin-top: 30px;
+
+        .contents-header {
+          * {
+            display: inline-block;
+          }
+
+          .hash-list {
+            margin-left: -4px;
+
+            em {
+              display: inline-block;
+              vertical-align: top;
+              font-size: 1.6rem;
+              margin: 0 4px;
+              font-weight: 600;
+
+              color: #f07c01;
+              &::before {
+                content: '#';
+              }
+            }
+          }
+
+          .title {
+            color: $gray10;
+            font-size: 2.6rem;
+            margin-top: 20px;
+          }
+
+          .etc {
+            margin-top: 20px;
+
+            em {
+              font-size: 1.6rem;
+              color: $gray2;
+              font-weight: 400;
+              position: relative;
+              line-height: 1;
+
+              & + em {
+                padding-left: 20px;
+
+                &::before {
+                  position: absolute;
+                  width: 1px;
+                  height: 12px;
+                  top: 50%;
+                  left: 9px;
+                  margin-top: -5px;
+                  background-color: currentColor;
+                  content: '';
+                }
+              }
+            }
+          }
+        }
+
+        .contents-body {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}

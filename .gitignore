@@ -1,0 +1,6 @@
+
+# 배포용 파일 제외
+dist/
+
+# node_modules 제외
+node_modules/
