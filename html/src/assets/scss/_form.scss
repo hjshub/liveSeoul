@@ -21,7 +21,7 @@ button {
     position: relative;
 
     @include _bp(768px) {
-      min-width: 65px;
+      //min-width: 65px;
       min-height: 38px;
     }
 
@@ -122,6 +122,7 @@ button {
         &:not(.voice) {
           @include _bp(768px) {
             width: 65px;
+            min-width: auto;
           }
         }
 
@@ -129,16 +130,18 @@ button {
           padding-left: 30px;
           font-size: 1.7rem !important;
 
-          @include _bp(768px) {
-            overflow: hidden;
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            border: none;
-            padding: 0;
-            margin-left: -1px;
-            clip: rect(1px 1px 1px 1px);
-            clip: rect(1px, 1px, 1px, 1px);
+          &:not(.voice > em) {
+            @include _bp(768px) {
+              overflow: hidden;
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              border: none;
+              padding: 0;
+              margin-left: -1px;
+              clip: rect(1px 1px 1px 1px);
+              clip: rect(1px, 1px, 1px, 1px);
+            }
           }
 
           &::before {
@@ -149,9 +152,11 @@ button {
             background-position: 0 0;
             content: '';
 
-            @include _bp(768px) {
-              content: none;
-              display: none;
+            &:not(.voice > em::before) {
+              @include _bp(768px) {
+                content: none;
+                display: none;
+              }
             }
           }
         }
@@ -608,7 +613,7 @@ button {
           height: 20px;
           border: 1px solid $gray9;
           border-radius: 50%;
-          background-color: #fff;
+          background-color: $white;
           content: '';
 
           @include _bp(561px) {
@@ -685,7 +690,7 @@ button {
           height: 31px;
           border: 1px solid $gray9;
           border-radius: 5px;
-          background-color: #fff;
+          background-color: $white;
           content: '';
         }
 
@@ -763,6 +768,74 @@ button {
   }
 }
 
+.chk-wrap-type02 {
+  margin: 0 5px;
+
+  * {
+    @include transition(none !important);
+  }
+  span {
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+    height: 38px;
+
+    input[type='checkbox'] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 10;
+
+      & + label {
+        display: inline-block;
+        width: auto;
+        height: 100%;
+        vertical-align: top;
+        line-height: 38px;
+        border-radius: 30px;
+        padding: 0 30px;
+        color: $gray9;
+        border: 1px solid currentColor;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $white;
+          content: '';
+        }
+
+        em {
+          display: inline-block;
+          line-height: 1;
+          font-size: 1.7rem;
+          position: relative;
+          vertical-align: middle;
+          top: -2px;
+          z-index: 1;
+        }
+      }
+
+      &:checked + label {
+        color: $white;
+        border-color: $red2;
+      }
+
+      &:checked + label:before {
+        background-color: $red2;
+      }
+    }
+  }
+}
+
 /*file*/
 .file-attach {
   font-size: 0;
@@ -797,7 +870,7 @@ button {
     em {
       display: inline-block;
       position: relative;
-      color: #fff;
+      color: $white;
       font-size: 1.7rem;
       line-height: 1;
       // top: -2px;
@@ -1039,11 +1112,11 @@ html .ui-button.ui-state-disabled:active {
   background-image: none;
   background-color: #660d98;
   border-color: #660d98;
-  color: #fff;
+  color: $white;
 }
 .ui-widget-content {
   background-image: none;
-  background-color: #fff;
+  background-color: $white;
   color: #660d98;
 }
 .ui-state-default,
@@ -1054,7 +1127,7 @@ html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
   border-color: #660d98;
   background-image: none;
-  background-color: #fff;
+  background-color: $white;
   color: #660d98;
 }
 .ui-state-highlight,
@@ -1063,7 +1136,7 @@ html .ui-button.ui-state-disabled:active {
   border-color: #911bbd;
   background-image: none;
   background-color: #911bbd;
-  color: #fff;
+  color: $white;
 }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
@@ -1073,7 +1146,7 @@ a.ui-button:active,
 .ui-button.ui-state-active:hover {
   background-image: none;
   background-color: #660d98;
-  color: #fff;
+  color: $white;
 }
 .ui-widget-header .ui-icon,
 .ui-icon,
@@ -1095,7 +1168,7 @@ a.ui-button:active,
   background-image: none;
   background-color: #660d98;
   border-color: #660d98;
-  color: #fff;
+  color: $white;
 }
 .ui-datepicker .ui-datepicker-prev span,
 .ui-datepicker .ui-datepicker-next span {
@@ -1109,11 +1182,11 @@ a.ui-button:active,
   border-width: 6px 8px 6px 0;
   border-style: solid;
   border-color: transparent;
-  border-right-color: #fff;
+  border-right-color: $white;
 }
 .ui-datepicker .ui-datepicker-next span {
   border-width: 6px 0 6px 8px;
   border-style: solid;
   border-color: transparent;
-  border-left-color: #fff;
+  border-left-color: $white;
 }

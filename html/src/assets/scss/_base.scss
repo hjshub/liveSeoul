@@ -212,7 +212,7 @@ input:focus,
 textarea:focus,
 select:focus,
 button:focus {
-  // outline: none;
+  outline: none;
 }
 
 button {
@@ -267,26 +267,12 @@ hr {
 }
 
 /* Placeholder */
-::-webkit-input-placeholder {
-  color: $gray2 !important;
-  font-size: 1.6rem;
-}
-:-ms-input-placeholder {
-  color: $gray2 !important;
-  font-size: 1.6rem;
-}
-::-moz-placeholder {
-  color: $gray2 !important;
-  font-size: 1.6rem;
-}
-:-moz-placeholder {
-  color: $gray2 !important;
-  font-size: 1.6rem;
-}
-::placeholder {
-  color: $gray2 !important;
-  font-size: 1.6rem;
-}
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder,
+::placeholder,
 .placeholderTxt {
   color: $gray2 !important;
   font-size: 1.6rem;
