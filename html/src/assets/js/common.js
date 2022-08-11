@@ -486,7 +486,7 @@ function commonFunction() {
         datePick();
         vdOnPlay();
         modal();
-        //blockContextMenu();
+        blockContextMenu();
       };
 
     return {
