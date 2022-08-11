@@ -1,0 +1,547 @@
+/**
+ * ==============================+
+ * header
+ * ==============================+
+ */
+
+#gnb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  opacity: 0;
+  @include transform(translateY(-100%));
+
+  @include _bp(1200px) {
+    @include transform(translateY(0));
+  }
+
+  [class*='h-wrap'] {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 15px 0;
+    @include transition(all 0.5s ease-in-out);
+
+    @include _bp(1200px) {
+      border-bottom-color: $gray5;
+    }
+
+    @include _bp(1200px) {
+      padding: 0;
+    }
+
+    .inner {
+      > div {
+        float: left;
+        position: relative;
+        font-size: 0;
+
+        span {
+          display: inline-block;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  .h-wrap-01 {
+    background-color: $white;
+
+    @include _bp(1200px) {
+      display: none;
+    }
+
+    .inner {
+      .symbol-seoul {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -4px;
+        @include transform(translateY(-50%));
+
+        &::before {
+          width: 101px;
+          height: 26px;
+          background-image: url('../images/icon-set-gnb.png');
+          background-repeat: no-repeat;
+          background-position: 0 -48px;
+          content: '';
+        }
+
+        & + span {
+          position: relative;
+          margin-left: 180px;
+          padding-left: 24px;
+          color: #575757;
+          font-size: 1.5rem;
+
+          &::before {
+            width: 19px;
+            height: 15px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url('../images/icon-set-gnb.png');
+            background-position: -172px 0;
+            background-repeat: no-repeat;
+            content: '';
+          }
+        }
+      }
+
+      > ul {
+        float: right;
+        font-size: 0;
+
+        li {
+          display: inline-block;
+
+          & + li {
+            margin-left: 25px;
+          }
+
+          a {
+            display: inline-block;
+            line-height: 1;
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .h-wrap-02 {
+    background-color: rgba(0, 0, 0, 0.4);
+
+    @include _bp(1200px) {
+      background-color: $white;
+    }
+
+    .inner {
+      @include _bp(1200px) {
+        min-height: 55px;
+      }
+
+      .symbol-live-seoul {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: 6px;
+        @include transform(translateY(-50%));
+
+        @include _bp(1200px) {
+          position: static;
+          margin-top: 0;
+          @include transform(translateY(0));
+        }
+
+        &::before {
+          width: 110px;
+          height: 29px;
+          background-image: url('../images/icon-set-gnb.png');
+          background-repeat: no-repeat;
+          background-position: 0 -77px;
+          content: '';
+
+          @include _bp(1200px) {
+            width: 119px;
+            height: 31px;
+            background-image: url('../images/mob/img-symbol-live-seoul.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 100%;
+          }
+        }
+      }
+
+      > div {
+        @include _bp(1200px) {
+          display: inline-block;
+          float: none !important;
+        }
+
+        &.mob-menu {
+          display: none;
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          margin-top: -10px;
+
+          @include _bp(561px) {
+            right: 15px;
+          }
+
+          .search-pop,
+          .all-menu {
+            display: none;
+          }
+
+          > div {
+            display: inline-block;
+            font-size: 0;
+
+            > button {
+              &,
+              * {
+                display: inline-block;
+                background-color: transparent;
+              }
+            }
+
+            & + div {
+              margin-left: 20px;
+            }
+          }
+
+          .button-open-schLayer {
+            &::before {
+              width: 19px;
+              height: 20px;
+              background-image: url('../images/mob/icon-sch.png');
+              background-position: 0 0;
+              background-repeat: no-repeat;
+              background-size: 100%;
+              content: '';
+            }
+          }
+
+          .button-open-allMenu {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            color: $black;
+
+            &::before,
+            &::after,
+            span {
+              width: 100%;
+              height: 3px;
+              position: absolute;
+              background-color: currentColor;
+              @include transition(all ease-out 0.3s);
+            }
+
+            &::before {
+              top: 0;
+              left: 0;
+              content: '';
+            }
+
+            &::after {
+              bottom: 0;
+              left: 0;
+              content: '';
+            }
+
+            span {
+              top: 8px;
+              right: 0;
+            }
+
+            &.on {
+              &::before {
+                transform: rotate3d(0, 0, 1, -45deg);
+                -webkit-transform: rotate3d(0, 0, 1, -45deg);
+                -moz-transform: rotate3d(0, 0, 1, -45deg);
+                -ms-transform: rotate3d(0, 0, 1, -45deg);
+                top: 8px;
+              }
+
+              &::after {
+                transform: rotate3d(0, 0, 1, 45deg);
+                -webkit-transform: rotate3d(0, 0, 1, 45deg);
+                -moz-transform: rotate3d(0, 0, 1, 45deg);
+                -ms-transform: rotate3d(0, 0, 1, 45deg);
+                bottom: 9px;
+              }
+
+              span {
+                width: 0;
+              }
+            }
+          }
+
+          @include _bp(1200px) {
+            display: inline-block;
+          }
+        }
+      }
+
+      > div:first-of-type {
+        @include _bp(1200px) {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin: -15.5px 0 0 -60px;
+        }
+      }
+
+      > div:nth-of-type(2) {
+        float: right;
+        font-size: 0;
+        position: relative;
+        padding-left: 43px;
+
+        @include _bp(1200px) {
+          position: absolute;
+          left: 30px;
+          top: 50%;
+          margin-top: -16px;
+          padding-left: 0;
+        }
+
+        @include _bp(561px) {
+          left: 15px;
+        }
+
+        > a {
+          display: inline-block;
+          width: 26px;
+          height: 26px;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          @include transform(translateY(-50%));
+          background-color: transparent;
+
+          @include _bp(1200px) {
+            position: static;
+            width: 33px;
+            height: 33px;
+            @include transform(translateY(0));
+          }
+
+          &::before {
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/icon-set-gnb.png');
+            background-position: -31px 0;
+            background-repeat: no-repeat;
+            content: '';
+
+            @include _bp(1200px) {
+              background-image: url('../images/mob/icon-seoul.png');
+              background-position: 0 0;
+              background-size: 100%;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+
+        ul {
+          @include _bp(1200px) {
+            display: none;
+          }
+
+          li {
+            display: inline-block;
+
+            & + li {
+              margin-left: 20px;
+            }
+
+            &:nth-of-type(4) ~ li {
+              a {
+                color: $gray2;
+              }
+            }
+
+            a {
+              display: inline-block;
+              line-height: 1;
+              font-size: 1.5rem;
+              font-weight: 600;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .h-wrap-03 {
+    background-color: rgba(0, 0, 0, 0.4);
+
+    @include _bp(1200px) {
+      background-color: $white;
+    }
+
+    .inner {
+      > div {
+        float: right;
+
+        @include _bp(1200px) {
+          display: none;
+        }
+
+        .sign-in {
+          display: inline-block;
+          line-height: 1;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: $white;
+          padding-left: 34px;
+          margin-right: 29px;
+          position: relative;
+
+          &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            @include transform(translateY(-50%));
+            width: 26px;
+            height: 26px;
+            background-image: url('../images/icon-set-gnb.png');
+            background-position: -93px 0;
+            background-repeat: no-repeat;
+            content: '';
+          }
+        }
+
+        .text-wrap {
+          width: auto;
+          position: relative;
+
+          input[type='text'] {
+            width: 290px;
+            padding-right: 38px;
+            color: $white;
+            background-color: transparent;
+            height: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+          }
+
+          button {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 38px;
+            background-color: transparent;
+
+            &::before {
+              width: 18px;
+              height: 20px;
+              position: absolute;
+              right: 10px;
+              top: 50%;
+              @include transform(translateY(-50%));
+              background-image: url('../images/icon-set-gnb.png');
+              background-position: -124px 0;
+              background-repeat: no-repeat;
+              content: '';
+            }
+          }
+        }
+      }
+
+      > ul {
+        float: left;
+        font-size: 0;
+
+        li {
+          display: inline-block;
+
+          @include _bp(1200px) {
+            line-height: 40px;
+          }
+
+          & + li {
+            margin-left: 40px;
+
+            @include _bp(480px) {
+              margin-left: 20px;
+            }
+          }
+
+          a {
+            display: inline-block;
+            line-height: 30px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: $white;
+
+            @include _bp(1200px) {
+              line-height: 1;
+              color: $black !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.fixed,
+  &.active {
+    [class*='h-wrap'] {
+      border-bottom-color: $gray5;
+    }
+
+    .h-wrap-02 {
+      background-color: $white;
+
+      .inner {
+        > div:nth-of-type(2) {
+          > a {
+            &::before {
+              background-position: 0 0;
+            }
+          }
+
+          ul {
+            li {
+              a {
+                color: $gray3;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .h-wrap-03 {
+      background-color: $white;
+
+      .inner {
+        > div {
+          .sign-in {
+            color: $gray4;
+
+            &::before {
+              background-position: -62px 0;
+            }
+          }
+
+          .text-wrap {
+            input[type='text'] {
+              color: $gray3;
+              border-color: $gray5;
+            }
+
+            button {
+              &::before {
+                background-position: -147px 0;
+              }
+            }
+          }
+        }
+
+        > ul {
+          li {
+            a {
+              color: $gray3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}

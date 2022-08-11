@@ -1,0 +1,259 @@
+/**
+ * ==============================+
+ * modal
+ * ==============================+
+ */
+
+.dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 120;
+
+  &.bk {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+.modal {
+  width: auto;
+  min-width: 300px;
+  position: absolute;
+  padding: 25px 30px;
+  top: 60px;
+  color: #fff3e5;
+  background-color: currentColor;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 6px 10px 2px rgb(56, 56, 56, 0.15);
+  box-shadow: 3px 6px 10px 2px rgb(56, 56, 56, 0.15);
+  z-index: 10;
+
+  @include _bp(768px) {
+    width: -webkit-calc(100vw - 60px) !important;
+    width: -moz-calc(100vw - 60px) !important;
+    width: calc(100vw - 60px) !important;
+  }
+
+  @include _bp(561px) {
+    width: -webkit-calc(100vw - 30px) !important;
+    width: -moz-calc(100vw - 30px) !important;
+    width: calc(100vw - 30px) !important;
+  }
+
+  @include _bp(361px) {
+    padding: 18px 15px;
+  }
+
+  /* modal 백그라운드 컬러*/
+  &.purple {
+    color: #f4e9ff;
+  }
+
+  &.ivory {
+    color: #fff8e9;
+  }
+
+  /* modal 위치 설정 */
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 100%;
+    margin-right: -80px;
+
+    &::before {
+      right: 51px;
+    }
+  }
+
+  /* 화살표 */
+  &::before {
+    position: absolute;
+    top: -11px;
+    border-width: 0 11px 11px 11px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: currentColor;
+    content: '';
+  }
+
+  /* 음성ㆍ문자 지원 */
+  &.modal-text-support {
+    width: 620px;
+
+    &::before {
+      left: 75px;
+    }
+  }
+
+  /* SNS 공유 */
+  &.modal-share {
+    width: 282px;
+
+    @include _bp(1280px) {
+      margin-right: -92px;
+    }
+
+    &::before {
+      @include _bp(1280px) {
+        right: 63px;
+      }
+    }
+
+    .sns-list {
+      display: inline-block;
+      font-size: 0;
+
+      li {
+        display: inline-block;
+
+        a {
+          &::before {
+            width: 34px;
+            height: 34px;
+            background-image: url('../images/icon-set-sns.png');
+            background-repeat: no-repeat;
+            content: '';
+          }
+
+          &.share-facebook::before {
+            background-position: -2px -54px;
+          }
+
+          &.share-twitter::before {
+            background-position: -49px -54px;
+          }
+
+          &.share-kakaotalk::before {
+            background-position: -95px -54px;
+          }
+
+          &.share-N_blog::before {
+            background-position: -141px -54px;
+          }
+
+          &.share-URL::before {
+            background-position: -187px -54px;
+          }
+        }
+
+        & + li {
+          margin-left: 13px;
+        }
+      }
+    }
+  }
+
+  /* 다운로드 */
+  &.modal-download {
+    width: 720px;
+
+    @include _bp(1280px) {
+      margin-right: -145px;
+      width: 560px;
+    }
+
+    &::before {
+      @include _bp(1280px) {
+        right: 115px;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      padding: 20px 10px;
+      height: 105px;
+    }
+
+    .btn-wrap {
+      margin-top: 20px;
+    }
+
+    .modal-header {
+      margin-bottom: 20px;
+    }
+  }
+
+  .modal-header {
+    margin-bottom: 40px;
+    position: relative;
+    color: #010101;
+
+    h5 {
+      font-size: 2rem;
+      line-height: 1;
+
+      em {
+        display: inline-block;
+        color: $gray2;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 10px;
+      }
+
+      &.finish {
+        padding-top: 84px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -32px;
+          width: 64px;
+          height: 64px;
+          background-image: url('../images/icon-finish.png');
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          content: '';
+        }
+      }
+    }
+  }
+
+  .modal-body {
+    padding-top: 0;
+    line-height: 1;
+    color: #010101;
+    font-size: 1.6rem;
+
+    p {
+      line-height: 1.5;
+      & + p {
+        margin-top: 10px;
+      }
+    }
+
+    &.finish {
+      p {
+        color: $gray1;
+      }
+
+      .btn-wrap {
+        margin-top: 35px;
+      }
+    }
+  }
+
+  .button-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/icon-close.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      content: '';
+    }
+  }
+}
