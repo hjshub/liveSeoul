@@ -44,7 +44,7 @@
         width: calc((100% - 20px) / 2);
       }
 
-      @include _bp(375px) {
+      @include _bp(391px) {
         width: 100%;
       }
 
@@ -108,7 +108,7 @@
         }
       }
 
-      @include _bp(375px) {
+      @include _bp(391px) {
         &:nth-of-type(3n + 1) {
           margin-left: 0;
         }
@@ -354,7 +354,7 @@
                 width: calc(100% - 160px);
               }
 
-              @include _bp(375px) {
+              @include _bp(391px) {
                 width: 100%;
               }
             }
@@ -366,7 +366,7 @@
                 border-radius: 7px !important;
               }
 
-              @include _bp(375px) {
+              @include _bp(391px) {
                 width: 100% !important;
                 margin: 20px 0 0;
               }
@@ -412,7 +412,7 @@
   strong {
     padding-right: 16px;
 
-    @include _bp(375px) {
+    @include _bp(391px) {
       padding-right: 6px;
     }
 
@@ -432,7 +432,7 @@
       top: auto;
     }
 
-    @include _bp(375px) {
+    @include _bp(391px) {
       min-width: 0;
       min-height: 0;
       width: 100px;
@@ -1081,7 +1081,7 @@
             strong {
               padding: 0;
 
-              @include _bp(375px) {
+              @include _bp(391px) {
                 font-size: 3rem;
               }
 
@@ -1249,7 +1249,7 @@
             font-size: 1.6rem;
             background: url(../images/icon-hashtag.png) left center no-repeat;
 
-            @include _bp(375px) {
+            @include _bp(391px) {
               margin-bottom: 8px;
             }
           }
@@ -1267,7 +1267,7 @@
               font-size: 4.6rem;
             }
 
-            @include _bp(375px) {
+            @include _bp(391px) {
               font-size: 3.7rem;
             }
           }
@@ -1281,7 +1281,7 @@
               font-size: 1.6rem;
             }
 
-            @include _bp(375px) {
+            @include _bp(391px) {
               margin-top: 15px;
             }
           }

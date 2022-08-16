@@ -1369,7 +1369,7 @@ main {
             width: calc((100% - 22px) / 2);
           }
 
-          @include _bp(376px) {
+          @include _bp(391px) {
             width: 100%;
           }
 
@@ -1421,7 +1421,7 @@ main {
             }
           }
 
-          @include _bp(376px) {
+          @include _bp(391px) {
             &:nth-of-type(3n + 1) {
               margin-left: 0;
             }
@@ -1472,7 +1472,7 @@ main {
           width: calc((100% - 22px) / 2);
         }
 
-        @include _bp(376px) {
+        @include _bp(391px) {
           width: 100%;
         }
 
@@ -1536,7 +1536,7 @@ main {
           }
         }
 
-        @include _bp(376px) {
+        @include _bp(391px) {
           &:nth-of-type(3n + 1) {
             margin-left: 0;
           }
