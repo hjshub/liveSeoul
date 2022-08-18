@@ -366,12 +366,12 @@ function commonFunction() {
             trg.removeClass('on');
             gb.liveOnAir.slideUp(300, function () {
               gb._liveOnSwiper.destroy();
+              trg.find('em').html(trg.find('em').html().replace('닫기', '보기'));
             });
-            trg.find('em').html('LIVE ON Air<br/> 편성표 보기');
           } else {
             trg.addClass('on');
             gb.liveOnAir.slideDown(300, LiveOnSwiper);
-            trg.find('em').html('LIVE ON Air<br/> 편성표 닫기');
+            trg.find('em').html(trg.find('em').html().replace('보기', '닫기'));
           }
         });
 
