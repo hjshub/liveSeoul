@@ -320,7 +320,8 @@ button {
         border: 2px solid $gray9;
         min-width: 80px;
         padding: 0;
-        background-color: transparent;
+        /*background-color: transparent;*/
+        background-color: $white;
 
         em {
           font-weight: 600;
