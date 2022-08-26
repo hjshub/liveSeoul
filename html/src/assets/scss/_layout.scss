@@ -288,9 +288,11 @@ main {
           max-height: calc(100vh - 97px);
         }
 
-        @include _bp(640px) {
-          width: 150%;
+        @include _bp(561px) {
+          width: auto;
           left: 50%;
+          height: 305px;
+          min-height: auto;
           @include transform(translateX(-50%));
         }
       }
@@ -307,8 +309,8 @@ main {
             height: 100%;
             display: none;
 
-            @include _bp(640px) {
-              width: 150%;
+            @include _bp(561px) {
+              width: auto;
               left: 50%;
               @include transform(translateX(-50%));
             }
@@ -319,7 +321,7 @@ main {
             }
 
             @include _bp(768px) {
-              display: block;
+              //display: block;
             }
           }
 
@@ -337,6 +339,7 @@ main {
 
             @include _bp(561px) {
               left: 15px;
+              bottom: 100px;
             }
           }
 
@@ -405,6 +408,7 @@ main {
 
         @include _bp(561px) {
           left: 15px;
+          bottom: 30px;
         }
 
         .swiper-pagination-bullet {
@@ -841,11 +845,8 @@ main {
             min-height: 675px;
 
             @include _bp(1200px) {
-              min-height: auto;
-            }
-
-            @include _bp(1200px) {
               width: 100%;
+              min-height: auto;
             }
           }
         }
