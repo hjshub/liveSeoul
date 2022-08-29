@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>라이브서울 퍼블리싱 가이드</title>
 
-    <script src="../html/dist/assets/js/lib.js"></script>
-    <script defer src="../html/dist/assets/js/common.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
 
     <link rel="stylesheet" href="../html/dist/assets/css/jquery-ui.min.css" />
     <link rel="stylesheet" href="../html/dist/assets/css/style.css" />
@@ -374,7 +374,7 @@
                           id="file_01"
                           value=""
                           title="파일 첨부"
-                          onchange="commonFunction().fileUpload(this);"
+                          onchange="fileUpload(this);"
                         />
                       </span>
                     </div>
@@ -429,22 +429,6 @@
                       </select>
                     </span>
                   </div>
-                  <hr />
-                  <div>
-                    <span class="select-wrap type-03">
-                      <label for="creator">
-                        <em class="hidden-txt">프로그램 선택</em>
-                      </label>
-                      <select name="program" id="creator">
-                        <option value="">방영프로그램</option>
-                        <option value="">종영프로그램</option>
-                        <option value="" selected>서울 온에어</option>
-                        <option value="">자치구방송국</option>
-                        <option value="">마을미디어</option>
-                        <option value="">소통방송</option>
-                      </select>
-                    </span>
-                  </div>
                 </dd>
               </dl>
             </li>
@@ -452,5 +436,33 @@
         </div>
       </div>
     </div>
+
+    <script>
+      $(function () {
+        $('.calendar').datepicker({
+          showOn: 'both',
+          buttonImageOnly: true,
+          buttonImage: 'assets/images/icon-calendar.png',
+          dateFormat: 'yy-mm-dd',
+        });
+      });
+
+      function fileUpload(el, type) {
+        var pathpoint = el.value.lastIndexOf('.'),
+          filepoint = el.value.substring(pathpoint + 1, el.length),
+          filetype = filepoint.toLowerCase(); // 업로드 파일 확장자
+
+        if (window.FileReader) {
+          // modern browser
+          var fileReader = new FileReader(),
+            fileName = $(el)[0].files[0].name, // 첨부 파일 명
+            filesize = $(el)[0].files[0].size; // 첨부 파일 용량
+
+          fileReader.readAsDataURL($(el)[0].files[0]);
+        }
+
+        $(el).closest('.file-attach').find('.text-wrap input[type=text]').val(fileName);
+      }
+    </script>
   </body>
 </html>
