@@ -88,11 +88,7 @@
         <div class="page-body inner">
           <article>
             <div class="vd-container">
-              <video poster="../assets/images/thumbnail/sub-poster-01.jpg">
-                <source type="video/mp4" src="../assets/images/video/sample-video02.mp4" />
-              </video>
-              <span class="vd-play transition-none"><em class="hidden-txt">재생버튼</em></span>
-              <span class="vd-cover transition-none"><em class="hidden-txt">백그라운드 영역</em></span>
+              <div id="currentVd"></div>
             </div>
             <div class="vd-info">
               <div class="contents">
@@ -605,5 +601,213 @@
     <!-- #footer -->
     <footer id="footer">@@include('../include/footer_sub.html')</footer>
     <!-- // #footer -->
+
+    <script src="../tgplayer/plugin/js/jquery-3.4.1.min.js"></script>
+
+    <script src="../tgplayer/conponentRoot.js"></script>
+    <script src="../tgplayer/player_init.js"></script>
+
+    <script>
+      //화질 Object 리스트
+      var setVideoSrc = new Array();
+      var sizeList = new Array();
+
+      //모바일 확인
+      var isMob = window.innerWidth <= 768 ? true : false;
+
+      if (!isMob) {
+        //웹 브라우저 화질 default 1280x546
+        qualitySize = 1;
+      } else {
+        //모바일 화질 default    484x206
+        qualitySize = 2;
+      }
+
+      window.addEventListener('resize', function () {
+        isMob = window.innerWidth <= 768 ? true : false;
+        if (!isMob) {
+          //웹 브라우저 화질 default 1280x546
+          qualitySize = 1;
+        } else {
+          //모바일 화질 default    484x206
+          qualitySize = 2;
+        }
+        //console.log(qualitySize);
+      });
+
+      //video src 설정
+      if (true) {
+        // MP4 파일 테스트용
+        var videoObj = new Object();
+        videoObj.size = '1080';
+        videoObj.src = '../assets/images/video/sample-video02.mp4';
+        videoObj.type = 'video/mp4';
+        setVideoSrc.push(videoObj);
+        sizeList.push(1080);
+
+        // var videoObj = new Object();
+        // videoObj.size = '720';
+        // videoObj.src = '../assets/images/video/sample-video02.mp4';
+        // videoObj.type = 'video/mp4';
+        // setVideoSrc.push(videoObj);
+        // sizeList.push(720);
+
+        // var videoObj = new Object();
+        // videoObj.size = '480';
+        // videoObj.src = '../assets/images/video/sample-video02.mp4';
+        // videoObj.type = 'video/mp4';
+        // setVideoSrc.push(videoObj);
+        // sizeList.push(480);
+      } else {
+        // 실제 개발, 운영용 멀티 해상도 M3U8
+        //size가 1일 경우는 자동 화질
+        // var videoObj1 = new Object();
+        // videoObj1.size = '1';
+        // videoObj1.src = 'http://cjg.tigensoft.co.kr:38110/streaming/upload/encoding/video/2022/08/9ce14eec42094180b32f0afef4bc9567_media_,1280x720,484x272,.mp4.urlset/master.m3u8';
+        // videoObj1.type = 'video/mp4'
+        // setVideoSrc.push(videoObj1);
+        // sizeList.push(1);
+        // var videoObj2 = new Object();
+        // videoObj2.size = '720';
+        // videoObj2.src = 'http://cjg.tigensoft.co.kr:38110/streaming/upload/encoding/video/2022/08/9ce14eec42094180b32f0afef4bc9567_media_1280x720.mp4/index.m3u8';
+        // videoObj2.type = 'video/mp4'
+        // setVideoSrc.push(videoObj2);
+        // sizeList.push(720);
+        // var videoObj3 = new Object();
+        // videoObj3.size = '272';
+        // videoObj3.src = 'http://cjg.tigensoft.co.kr:38110/streaming/upload/encoding/video/2022/08/9ce14eec42094180b32f0afef4bc9567_media_484x272.mp4/index.m3u8';
+        // videoObj3.type = 'video/mp4'
+        // setVideoSrc.push(videoObj3);
+        // sizeList.push(272);
+      }
+
+      //품질 변경 버튼 리스트
+      $('#currentVd').createVideo({
+        // 플레이어 생성 영역 DIV의 아이디
+        id: 'video', // 생성될 비디오 태그 아이디 *필수값
+        src: setVideoSrc,
+        speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+        autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+        startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+        seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+        progress: true, // false : 프로그레스바 컨트롤 되지 않도록
+        preview: [{ enabled: false, src: '' }],
+        /*
+        ,clip: [
+          { enable: false, start: 5, end: 20, loop: false }
+          ]
+        ,capture: [
+          { enable: false, type: 'download'  } // 로컬에 저장
+          //{ enable: true, type: 'upload', url: 'http://movie/saveCapture.do'  } // 서버로 전송
+          //  전송 받는 java단 처리 sample
+          //	- 첨부된 라이브러리 import : /ktkbn/plugin/js/capture/rt.jar
+          //	HttpServletRequest request = ServletActionContext.getRequest();
+          //	String imageData = request.getParameter("imageData");
+          //	byte[] decodedBytes = DatatypeConverter.parseBase64Binary(imageData );
+          //	BufferedImage bfi = ImageIO.read(new ByteArrayInputStream(decodedBytes));
+          //	File outputfile = new File(업로드 파일 경로 + 업로드 파일 명);
+          //	ImageIO.write(bfi , "png", outputfile);
+          //	bfi.flush();
+        ]
+        */
+        callback: [
+          {
+            init: playOnLoad, // Player 가 준비 완료되면 호출할 함수
+            start: playOnStart, // Player 시작 시 호출할 함수
+            end: playOnEnd, // Player 종료 시 호출할 함수
+            pause: playOnPause, // Player 일시정지 시 호출할 함수
+            error: playOnError, // Player 에러 발생 시 호출할 함수
+            buffering: playOnBuffering, // Player 버퍼링 시 호출할 함수
+          },
+        ],
+        quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+
+        iconUrl: '../tgplayer/plugin/js/plyr.svg',
+        blankVideo: '../tgplayer/plugin/js/blank.mp4',
+      });
+
+      function vodPlay() {
+        $('#video').vodPlay();
+      }
+
+      function vodPause() {
+        $('#video').vodPause();
+      }
+
+      function vodCurrentTime() {
+        var time = $('#video').vodCurrentTime();
+        $('#currentTime').val(getTimeString(time));
+      }
+
+      function vodDuration() {
+        var time = $('#video').vodDuration();
+        $('#duration').val(getTimeString(time));
+      }
+
+      function playRate(rate) {
+        $('#video').playRate(rate); // rate 값으로 배속 변경
+      }
+
+      function playRateRtn(rate) {
+        var playRate = rate;
+        //alert(playRate);
+      }
+
+      function trackView() {
+        $('#video').trackView(0); // 자막 index(-1:disabled, 0: 첫번째 자막, 1: 두번째 자막 ...)
+      }
+
+      function trackViewRtn(stat) {
+        // 자막 index(-1:disabled, 0: 첫번째 자막, 1: 두번째 자막 ...)
+        var trackViewstat = stat;
+        //alert(trackViewstat);
+      }
+
+      function imgCapture() {
+        $('#video').imgCapture();
+      }
+
+      function vodStatus() {
+        var status = $('#video').vodStatus();
+        //alert(status);
+      }
+
+      function playOnLoad() {
+        //alert("player ready");
+      }
+
+      function playOnStart() {
+        //alert("player start");
+      }
+
+      //플레이 종료시 호출
+      function playOnEnd() {
+        //alert('player end');
+      }
+
+      function playOnPause() {
+        //alert("player pause");
+      }
+
+      function playOnError() {
+        //alert("player error");
+      }
+
+      function playOnBuffering() {
+        //alert("player buffering");
+      }
+
+      function offClip() {
+        $('#video').offClip();
+      }
+
+      function onClip() {
+        $('#video').onClip();
+      }
+
+      function ableClip() {
+        $('#video').ableClip();
+      }
+    </script>
   </body>
 </html>

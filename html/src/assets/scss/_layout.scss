@@ -784,6 +784,7 @@ main {
       > article {
         width: 100%;
         max-width: 1920px;
+        min-height: 675px;
         background-color: #f09300;
         position: relative;
         overflow: hidden;
@@ -847,6 +848,10 @@ main {
             @include _bp(1200px) {
               width: 100%;
               min-height: auto;
+            }
+
+            @include _bp(561px) {
+              height: auto;
             }
           }
         }
@@ -2184,6 +2189,12 @@ main {
       background: #ba87d8;
     }
   }
+}
+
+/*tgplayer preload video*/
+.plyr + video {
+  min-height: auto !important;
+  display: none !important;
 }
 
 /*motion*/

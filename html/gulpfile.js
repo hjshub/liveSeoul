@@ -133,6 +133,18 @@ const Css = () => {
 
 /**
  * ==============================+
+ * tgplayer(환경설정)
+ * ==============================+
+ */
+const Tgplayer = () => {
+  // Tgplayer 배포 경로로 복사
+  return src(`./src/tgplayer/**/*`)
+    .pipe(dest('./dist/tgplayer/'))
+    .pipe(browserSync.reload({ stream: true }));
+};
+
+/**
+ * ==============================+
  * SCSS Config(환경설정)
  * ==============================+
  */
@@ -152,5 +164,5 @@ const Sass_compile = () => {
     .pipe(browserSync.reload({ stream: true }));
 };
 
-exports.prod = series(Clean, Js_library, Js_common, Sass_compile, Css, Images, Webfont, Template);
+exports.prod = series(Clean, Js_library, Js_common, Sass_compile, Css, Images, Webfont, Template, Tgplayer);
 exports.watch = parallel(Watch, browserSyncInit);

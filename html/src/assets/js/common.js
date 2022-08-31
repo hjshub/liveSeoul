@@ -635,7 +635,7 @@ function commonFunction() {
         listTabMenu();
         allCheck();
         datePick();
-        vdOnPlay();
+        //vdOnPlay();
         modal();
         //blockContextMenu();
       };

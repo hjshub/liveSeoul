@@ -18,6 +18,10 @@
   }
 
   .list-view {
+    &.byTopic {
+      margin-top: 50px;
+    }
+
     @include _bp(768px) {
       margin-top: 50px;
 
