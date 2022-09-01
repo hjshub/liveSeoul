@@ -10,70 +10,72 @@
   <body>
     @@include('../include/skipNav.html')
 
-    <!-- #gnb -->
-    <header class="active" id="gnb">@@include('../include/gnb_sub.html')</header>
-    <!-- // #gnb -->
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb">@@include('../include/gnb_sub.html')</header>
+      <!-- // #gnb -->
 
-    <!-- #contents -->
-    <div class="wrap creater board view" id="contents">
-      <section class="board_top">
-        <header class="page-header">
+      <!-- #contents -->
+      <div class="wrap creater board view" id="contents">
+        <section class="board_top">
+          <header class="page-header">
+            <div class="inner">
+              <div class="location">
+                <span
+                  ><a href=""
+                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
+                  ></span
+                >
+                <span><a href="">영상크리에이터</a></span>
+                <span><a href="">커뮤니티채널</a></span>
+                <span><a href="">자료실</a></span>
+              </div>
+
+              <h2 class="no_st">자료실 상세</h2>
+            </div>
+          </header>
+        </section>
+
+        <!-- 자료실 상세 -->
+        <section>
           <div class="inner">
-            <div class="location">
-              <span
-                ><a href=""
-                  ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
-                ></span
-              >
-              <span><a href="">영상크리에이터</a></span>
-              <span><a href="">커뮤니티채널</a></span>
-              <span><a href="">자료실</a></span>
-            </div>
-
-            <h2 class="no_st">자료실 상세</h2>
-          </div>
-        </header>
-      </section>
-
-      <!-- 자료실 상세 -->
-      <section>
-        <div class="inner">
-          <div class="b-view">
-            <h3 class="contents-head">텍스트 모션 자료 공유</h3>
-            <div class="contents-info">
-              <span class="name"><strong>이름</strong>홍길동</span>
-              <span class="date"><strong>날짜</strong>2022-06-07</span>
-              <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-            </div>
-            <div class="contents-body">
-              <p>텍스트 모션 자료 공유 합니다.</p>
-              <p>텍스트 모션 자료 공유 합니다.</p>
-            </div>
-            <div class="contents-file">
-              <dl>
-                <dt>첨부파일</dt>
-                <dd>
-                  <ul>
-                    <li><a href="" download>text_motion1.zip</a></li>
-                    <li><a href="" download>text_motion2.zip</a></li>
-                  </ul>
-                </dd>
-              </dl>
-              <div class="has-btn">
-                <div>
-                  <button class="btn-default md rounded darkGray" type="button"><em>목록</em></button>
-                  <button class="btn-default md rounded purple" type="button"><em>수정</em></button>
+            <div class="b-view">
+              <h3 class="contents-head">텍스트 모션 자료 공유</h3>
+              <div class="contents-info">
+                <span class="name"><strong>이름</strong>홍길동</span>
+                <span class="date"><strong>날짜</strong>2022-06-07</span>
+                <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+              </div>
+              <div class="contents-body">
+                <p>텍스트 모션 자료 공유 합니다.</p>
+                <p>텍스트 모션 자료 공유 합니다.</p>
+              </div>
+              <div class="contents-file">
+                <dl>
+                  <dt>첨부파일</dt>
+                  <dd>
+                    <ul>
+                      <li><a href="" download>text_motion1.zip</a></li>
+                      <li><a href="" download>text_motion2.zip</a></li>
+                    </ul>
+                  </dd>
+                </dl>
+                <div class="has-btn">
+                  <div>
+                    <button class="btn-default md rounded darkGray" type="button"><em>목록</em></button>
+                    <button class="btn-default md rounded purple" type="button"><em>수정</em></button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-    <!-- // #contents -->
+        </section>
+      </div>
+      <!-- // #contents -->
 
-    <!-- #footer -->
-    <footer id="footer">@@include('../include/footer_sub.html')</footer>
-    <!-- // #footer -->
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer_sub.html')</footer>
+      <!-- // #footer -->
+    </div>
   </body>
 </html>

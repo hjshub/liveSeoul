@@ -10,64 +10,66 @@
   <body>
     @@include('../include/skipNav.html')
 
-    <!-- #gnb -->
-    <header class="active" id="gnb">@@include('../include/gnb_sub.html')</header>
-    <!-- // #gnb -->
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb">@@include('../include/gnb_sub.html')</header>
+      <!-- // #gnb -->
 
-    <!-- #contents -->
-    <div class="wrap program" id="contents">
-      <section class="list-view byTopic">
-        <header class="page-header">
-          <div class="inner">
-            <h2 class="pc-only">서울온에어<strong>특집방송</strong></h2>
-            <div class="location">
-              <span>
-                <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em> </a>
-              </span>
-              <span><a href="">#서울</a></span>
-            </div>
-          </div>
-        </header>
-        <div class="page-body clear inner">
-          <!-- 영상 목록 -->
-          <section>
-            <h3 class="heading-wrap-03">
-              <div class="sort">
-                <a href="javascript:;" class="on">최신순</a>
-                <a href="javascript:;">인기순</a>
-                <a href="javascript:;">가나다순</a>
+      <!-- #contents -->
+      <div class="wrap program" id="contents">
+        <section class="list-view byTopic">
+          <header class="page-header">
+            <div class="inner">
+              <h2 class="pc-only">서울온에어<strong>특집방송</strong></h2>
+              <div class="location">
+                <span>
+                  <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em> </a>
+                </span>
+                <span><a href="">#서울</a></span>
               </div>
-            </h3>
-            <div class="vd-list program">@@include('../include/vd_list.html')</div>
-            <div class="paging pc-only orange">
-              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-              <strong>1</strong>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
             </div>
-            <div class="btn-wrap align-c mob-only">
-              <button type="button" class="btn-prev"><em>이전</em></button>
-              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-              <button type="button" class="btn-next"><em>다음</em></button>
-            </div>
-          </section>
-        </div>
-      </section>
-    </div>
-    <!-- // #contents -->
+          </header>
+          <div class="page-body clear inner">
+            <!-- 영상 목록 -->
+            <section>
+              <h3 class="heading-wrap-03">
+                <div class="sort">
+                  <a href="javascript:;" class="on">최신순</a>
+                  <a href="javascript:;">인기순</a>
+                  <a href="javascript:;">가나다순</a>
+                </div>
+              </h3>
+              <div class="vd-list program">@@include('../include/vd_list.html')</div>
+              <div class="paging pc-only orange">
+                <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+                <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+                <strong>1</strong>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+                <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+                <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+              </div>
+              <div class="btn-wrap align-c mob-only">
+                <button type="button" class="btn-prev"><em>이전</em></button>
+                <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+                <button type="button" class="btn-next"><em>다음</em></button>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+      <!-- // #contents -->
 
-    <!-- #footer -->
-    <footer id="footer">@@include('../include/footer_sub.html')</footer>
-    <!-- // #footer -->
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer_sub.html')</footer>
+      <!-- // #footer -->
+    </div>
   </body>
 </html>
