@@ -796,7 +796,7 @@ button {
         width: auto;
         height: 100%;
         vertical-align: top;
-        line-height: 38px;
+        line-height: 36px;
         border-radius: 30px;
         padding: 0 30px;
         color: $gray9;
@@ -805,13 +805,16 @@ button {
         overflow: hidden;
         position: relative;
 
+        @include _bp(561px) {
+          padding: 0 15px;
+        }
+
         em {
           display: inline-block;
           line-height: 1;
           font-size: 1.7rem;
           position: relative;
           vertical-align: middle;
-          top: -2px;
           z-index: 1;
         }
       }

@@ -24,7 +24,7 @@ var crVisSwiper = new Swiper('.cr-vis-swiper', {
 crVisSwiper.on('slideChangeTransitionEnd', function (swiper) {
   setTimeout(function () {
     var currentVd = document.querySelector('.swiper-slide-active video'),
-      notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video'),
+      notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
       animate = $('.swiper-slide-active .animate').get(),
       animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
 
@@ -34,10 +34,10 @@ crVisSwiper.on('slideChangeTransitionEnd', function (swiper) {
     animate.forEach(function (elem) {
       $(elem).addClass('animation--start');
     });
-
-    for (var i = 0; i <= notCurrentvd.length; i++) {
-      notCurrentvd.get(i).pause();
-    }
+    notCurrentvd.forEach(function (elem) {
+      elem.pause();
+      $(elem).prop('currentTime', 0);
+    });
   }, 100);
 });
 

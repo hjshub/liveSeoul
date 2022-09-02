@@ -9,26 +9,49 @@
     margin-top: 50px;
 
     .page-header {
+      h2 {
+        strong {
+          padding-left: 40px;
+          position: relative;
+
+          &::before {
+            width: 7px;
+            height: 13px;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            margin-top: -6.5px;
+            background-image: url('../images/icon-arr_nxt_th-s.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            content: '';
+          }
+        }
+      }
       .location {
         @include _bp(768px) {
-          top: -20px;
+          top: -30px;
         }
       }
     }
   }
 
   .list-view {
-    &.byTopic {
-      margin-top: 50px;
-    }
+    margin-top: 50px;
 
     @include _bp(768px) {
-      margin-top: 50px;
-
       .page-header {
         .location {
-          top: -20px;
+          top: -30px;
         }
+      }
+    }
+
+    .page-body {
+      margin-top: 0;
+
+      @include _bp(768px) {
+        margin-top: 20px;
       }
     }
 
@@ -38,6 +61,10 @@
           display: none;
         }
       }
+    }
+
+    .button-open-sideMenu {
+      margin-top: 10px;
     }
 
     .icon-wrap {
@@ -80,6 +107,12 @@
             background-position: -45px -5px;
           }
         }
+      }
+    }
+
+    .contents {
+      .contents-body {
+        margin-top: 60px;
       }
     }
   }
@@ -482,11 +515,18 @@
           }
         }
       }
+
+      .mob-sideMenu,
+      .dimmed.side {
+        top: 40px;
+      }
     }
 
     .list-view {
-      .page-body {
-        margin-top: 0;
+      margin-top: 0;
+
+      @include _bp(768px) {
+        margin-top: 50px;
       }
 
       /* 사이드메뉴*/
@@ -1015,11 +1055,10 @@
           position: relative;
 
           @include _bp(1024px) {
-            padding: 20px 150px 20px 20px;
+            padding: 20px 0 20px 20px;
           }
 
           @include _bp(768px) {
-            padding-right: 0;
             padding-left: 0;
           }
 
@@ -1052,6 +1091,7 @@
 
         .contents-body {
           padding: 60px 0 0 50px;
+          margin-top: 0;
 
           @include _bp(1024px) {
             padding: 40px 0 0 30px;
@@ -1068,7 +1108,7 @@
     .mob-sideMenu {
       width: 80%;
       position: absolute;
-      top: 38px;
+      top: 60px;
       left: -80%;
       color: $gray10;
       background-color: $white;
@@ -1389,7 +1429,7 @@
     background: transparent;
     color: #999;
     font-size: 2rem;
-    height: 38px;
+    line-height: 1;
 
     em {
       padding-right: 30px;
@@ -1423,7 +1463,7 @@
       padding-left: 30px;
       color: #222;
       font-size: 2rem;
-      line-height: 38px;
+      line-height: 1;
       position: relative;
 
       &::before {
@@ -1432,12 +1472,21 @@
         position: absolute;
         top: 50%;
         left: 10px;
-        margin-top: -6.5px;
+        margin-top: -6px;
         background-image: url('../images/mob/icon-arr_nxt_th.png');
         background-repeat: no-repeat;
         background-position: 0 0;
         background-size: 100%;
         content: '';
+      }
+    }
+  }
+
+  &.byTopic,
+  &.curation {
+    .heading-wrap-03 {
+      .sort {
+        margin-top: 0;
       }
     }
   }

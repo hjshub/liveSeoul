@@ -16,11 +16,13 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap program" id="contents">
-        <section class="list-view byTopic">
+      <div class="wrap byTopic" id="contents">
+        <section class="list-view">
           <header class="page-header">
             <div class="inner">
-              <h2 class="pc-only">서울온에어<strong>특집방송</strong></h2>
+              <h2 class="txt-color darkGray">
+                <span>원하는 주제를 선택하여 <br class="mob-only" /><b>관련 영상을 확인</b>해보세요.</span>
+              </h2>
               <div class="location">
                 <span>
                   <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em> </a>
@@ -30,38 +32,156 @@
             </div>
           </header>
           <div class="page-body clear inner">
-            <!-- 영상 목록 -->
-            <section>
-              <h3 class="heading-wrap-03">
-                <div class="sort">
-                  <a href="javascript:;" class="on">최신순</a>
-                  <a href="javascript:;">인기순</a>
-                  <a href="javascript:;">가나다순</a>
+            <div class="contents">
+              <div class="contents-header">
+                <div class="list-filter">
+                  <div class="filter-wrap">
+                    <ul>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" checked="" name="chkAll" id="chk_all" />
+                            <label for="chk_all"><em>전체</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>문화관광</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>축제공연</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>경제&middot;일자리</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>복지&middot;여성&middot;가족</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>안전&middot;건강&middot;환경</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>주택&middot;건설</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>문화관광</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>축제공연</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>경제&middot;일자리</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>복지&middot;여성&middot;가족</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>안전&middot;건강&middot;환경</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                            <label for="chk_1"><em>주택&middot;건설</em></label>
+                          </span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button class="button-more-list" type="button"><em>더 보기</em></button>
                 </div>
-              </h3>
-              <div class="vd-list program">@@include('../include/vd_list.html')</div>
-              <div class="paging pc-only orange">
-                <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-                <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-                <strong>1</strong>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">7</a>
-                <a href="#">8</a>
-                <a href="#">9</a>
-                <a href="#">10</a>
-                <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-                <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
               </div>
-              <div class="btn-wrap align-c mob-only">
-                <button type="button" class="btn-prev"><em>이전</em></button>
-                <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-                <button type="button" class="btn-next"><em>다음</em></button>
+              <div class="contents-body">
+                <!-- 영상 목록 -->
+                <section>
+                  <h3 class="heading-wrap-03">
+                    <span class="txt-color lightGray">검색된 영상 <b class="txt-color darkGray">132</b>개</span>
+                    <span class="sort">
+                      <a href="javascript:;" class="on">최신순</a>
+                      <a href="javascript:;">인기순</a>
+                      <a href="javascript:;">가나다순</a>
+                    </span>
+                  </h3>
+                  <div class="vd-list">@@include('../include/vd_list.html')</div>
+                  <div class="paging pc-only orange">
+                    <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+                    <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+                    <strong>1</strong>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+                    <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+                  </div>
+                  <div class="btn-wrap align-c mob-only">
+                    <button type="button" class="btn-prev"><em>이전</em></button>
+                    <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+                    <button type="button" class="btn-next"><em>다음</em></button>
+                  </div>
+                </section>
               </div>
-            </section>
+            </div>
           </div>
         </section>
       </div>

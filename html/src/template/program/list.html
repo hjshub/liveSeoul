@@ -3,7 +3,7 @@
   <head>
     @@include('../include/head.html')
 
-    <title>프로그램 리스트 | 라이브 서울</title>
+    <title>프로그램 목록 | 라이브 서울</title>
 
     @@include('../include/header_sub.html')
   </head>
@@ -34,7 +34,7 @@
                 </div>
               </div>
 
-              <div class="mob-only">
+              <div class="mob-only clear">
                 <button type="button" class="button-open-sideMenu">
                   <em>최신영상</em>
                 </button>
@@ -305,17 +305,17 @@
                 <section>
                   <h3 class="heading-wrap-03">
                     <strong>최신영상</strong>
-                    <div class="icon-wrap pc-only inline">
+                    <span class="icon-wrap pc-only inline">
                       <button type="button" class="icon-share button-active-modal" data-modal-name="share">
                         <em class="hidden-txt">공유하기</em>
                       </button>
                       <div class="modal-wrap"></div>
-                    </div>
-                    <div class="sort">
+                    </span>
+                    <span class="sort">
                       <a href="javascript:;" class="on">최신순</a>
                       <a href="javascript:;">인기순</a>
                       <a href="javascript:;">가나다순</a>
-                    </div>
+                    </span>
                   </h3>
                   <div class="vd-list program">@@include('../include/vd_list.html')</div>
                   <div class="paging pc-only orange">
