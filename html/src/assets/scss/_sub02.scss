@@ -105,6 +105,38 @@
       }
     }
   }
+  &.col-2 {
+    ul {
+      li {
+        width: 50%;
+      }
+    }
+  }
+
+  &.col-3 {
+    ul {
+      li {
+        width: -webkit-calc(100% / 3);
+        width: -moz-calc(100% / 3);
+        width: calc(100% / 3);
+      }
+    }
+  }
+
+  &.red {
+    ul {
+      li {
+        &.on,
+        &:hover {
+          a {
+            &:before {
+              background: $red2;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .box-style-list {
@@ -559,6 +591,10 @@
       color: $gray11;
       font-weight: 500;
 
+      @include _bp(376px) {
+        font-size: 1.5rem;
+      }
+
       &.on,
       &:hover {
         color: $gray10;
@@ -566,6 +602,10 @@
       }
       &:not(:first-child) {
         margin-left: 33px;
+
+        @include _bp(768px) {
+          margin-left: 25px;
+        }
       }
       &:not(:first-child):before {
         content: '|';

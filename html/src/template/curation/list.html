@@ -16,86 +16,96 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap curation" id="contents">
-        <section class="list-view">
+      <div class="wrap curation board list" id="contents">
+        <section class="board_top">
           <header class="page-header">
             <div class="inner">
-              <h2>
-                <strong>큐레이션</strong>
-              </h2>
               <div class="location">
-                <span>
-                  <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em> </a>
-                </span>
+                <span
+                  ><a href=""
+                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
+                  ></span
+                >
                 <span><a href="">#서울</a></span>
                 <span><a href="">큐레이션</a></span>
               </div>
+
+              <h2 class="no_st">큐레이션</h2>
+
+              <nav class="tabStyle-nav col-2 red">
+                <ul>
+                  <li class="on">
+                    <a href=""><span>전문가 큐레이션</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>사용자 큐레이션</span></a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </header>
-          <div class="page-body inner">
-            <div class="contents">
-              <div class="contents-header"></div>
-              <div class="contents-body">
-                <!-- 검색 영역 -->
-                <section>
-                  <div class="b-search-area">
-                    <form>
-                      <fieldset>
-                        <span class="select-wrap" style="background-color: #f9f9f9">
-                          <label for="b-search-select">
-                            <em class="hidden-txt">검색 옵션 선택</em>
-                          </label>
-                          <select name="" id="b-search-select">
-                            <option value="">전체</option>
-                            <option value="">전체</option>
-                            <option value="">전체</option>
-                            <option value="">전체</option>
-                          </select>
-                        </span>
-                        <div class="text-wrap has-button">
-                          <input type="text" name="" id="" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-                          <button class="btn-has-icon rounded search purple" type="submit"><em>검색하기</em></button>
-                          <button class="btn-has-icon rounded refresh lightPurple" type="button"><em>새로고침</em></button>
-                        </div>
-                      </fieldset>
-                    </form>
-                  </div>
-                </section>
+        </section>
 
-                <!-- 큐레이션 목록 -->
-                <section>
-                  <h3 class="heading-wrap-03">
-                    <span class="txt-color lightGray">등록된 큐레이션 수 <b class="txt-color darkGray">132</b>개</span>
-                    <span class="sort">
-                      <a href="javascript:;" class="on">최신순</a>
-                      <a href="javascript:;">인기순</a>
-                      <a href="javascript:;">가나다순</a>
-                    </span>
-                  </h3>
-                  <div class="vd-list">@@include('../include/vd_list.html')</div>
-                  <div class="paging pc-only orange">
-                    <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-                    <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-                    <strong>1</strong>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-                    <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+        <!-- 큐레이션 목록 -->
+        <section>
+          <div class="inner">
+            <div class="search-area">
+              <form>
+                <fieldset>
+                  <span class="select-wrap" style="background-color: #f9f9f9">
+                    <label for="b-search-select">
+                      <em class="hidden-txt">검색 옵션 선택</em>
+                    </label>
+                    <select name="" id="b-search-select">
+                      <option value="">전체</option>
+                      <option value="">전체</option>
+                      <option value="">전체</option>
+                      <option value="">전체</option>
+                    </select>
+                  </span>
+                  <div class="text-wrap has-button">
+                    <input type="text" name="" id="" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
+                    <button class="btn-has-icon rounded search orange" type="submit"><em>검색하기</em></button>
+                    <button class="btn-has-icon rounded refresh burgundy" type="button"><em>새로고침</em></button>
                   </div>
-                  <div class="btn-wrap align-c mob-only">
-                    <button type="button" class="btn-prev"><em>이전</em></button>
-                    <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-                    <button type="button" class="btn-next"><em>다음</em></button>
+                  <div class="hash-list">
+                    <span>코로나19</span>
+                    <span>경제</span>
+                    <span>서울</span>
+                    <span>나들이</span>
                   </div>
-                </section>
-              </div>
+                </fieldset>
+              </form>
+            </div>
+            <h3 class="heading-wrap-03">
+              <span class="txt-color lightGray">등록된 큐레이션 수 <b class="txt-color darkGray">132</b>개</span>
+              <span class="sort mrt-none">
+                <a href="javascript:;" class="on">최신순</a>
+                <a href="javascript:;">인기순</a>
+                <a href="javascript:;">가나다순</a>
+              </span>
+            </h3>
+            <div class="curation-list">@@include('../include/curation_list.html')</div>
+            <div class="paging pc-only orange">
+              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+              <strong>1</strong>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">7</a>
+              <a href="#">8</a>
+              <a href="#">9</a>
+              <a href="#">10</a>
+              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+            </div>
+            <div class="btn-wrap align-c mob-only">
+              <button type="button" class="btn-prev"><em>이전</em></button>
+              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+              <button type="button" class="btn-next"><em>다음</em></button>
             </div>
           </div>
         </section>

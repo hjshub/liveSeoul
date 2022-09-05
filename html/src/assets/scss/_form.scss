@@ -86,6 +86,13 @@ button {
       }
     }
 
+    &.burgundy {
+      background-color: $burgundy !important;
+      em {
+        color: $white !important;
+      }
+    }
+
     &.lightPurple {
       background-color: $light-purple !important;
       em {
