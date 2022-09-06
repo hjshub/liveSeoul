@@ -21,7 +21,7 @@ var crVisSwiper = new Swiper('.cr-vis-swiper', {
   debugger: true, // Enable debugger
 });
 
-crVisSwiper.on('slideChangeTransitionEnd', function (swiper) {
+crVisSwiper.on('activeIndexChange', function (swiper) {
   setTimeout(function () {
     var currentVd = document.querySelector('.swiper-slide-active video'),
       notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
@@ -74,7 +74,7 @@ var crProfileSwiper = new Swiper('.cr-profile-swiper', {
   debugger: true, // Enable debugger
 });
 
-crProfileSwiper.on('slideChangeTransitionEnd', function (swiper) {
+crProfileSwiper.on('activeIndexChange', function (swiper) {
   setTimeout(function () {
     var animate = $('.swiper-slide-active .animate').get(),
       animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
@@ -93,5 +93,5 @@ var animate = $('.swiper-slide-active .animate').get();
 setTimeout(function () {
   animate.forEach(function (elem) {
     $(elem).addClass('animation--start');
-  }, 1000);
-});
+  });
+}, 100);

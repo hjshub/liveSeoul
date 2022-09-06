@@ -40,6 +40,7 @@ window.addEventListener('load', function () {
   if (gb.vdSwiper.length) commonFunction().VdSwiper();
   if (gb.tabSwiper.length) commonFunction().TabSwiper();
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
+  if ($('.curation-swiper').length) commonFunction().CurationSwiper();
 });
 
 function commonFunction() {
@@ -238,8 +239,8 @@ function commonFunction() {
         setTimeout(function () {
           animate.forEach(function (elem) {
             $(elem).addClass('animation--start');
-          }, 1000);
-        });
+          });
+        }, 100);
 
         /*********************************************
           동영상 재생이 끝나고
@@ -374,6 +375,53 @@ function commonFunction() {
         };
 
         gb.filterSwiper = new Swiper('.list-filter-swiper', gb.filterSwiperOption);
+      },
+      CurationSwiper = function () {
+        // 큐레이션 스와이퍼
+        gb.curationSwiper = new Swiper('.curation-swiper', {
+          // Optional parameters
+          loop: true,
+          speed: 500,
+          centeredSlides: true,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          slidesPerView: 1,
+          debugger: true, // Enable debugger
+        });
+
+        gb.curationSwiper.on('activeIndexChange', function (swiper) {
+          setTimeout(function () {
+            var currentVd = document.querySelector('.swiper-slide-active video'),
+              notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
+              animate = $('.swiper-slide-active .animate').get(),
+              animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
+
+            animate_.forEach(function (elem) {
+              $(elem).removeClass('animation--start');
+            });
+            animate.forEach(function (elem) {
+              $(elem).addClass('animation--start');
+            });
+            notCurrentvd.forEach(function (elem) {
+              elem.pause();
+              $(elem).prop('currentTime', 0);
+            });
+          }, 100);
+        });
+
+        var animate = $('.swiper-slide-active .animate').get();
+
+        setTimeout(function () {
+          animate.forEach(function (elem) {
+            $(elem).addClass('animation--start');
+          });
+        }, 100);
       },
       showOnLayer = function () {
         $('.button-showLayer').on('click', function () {
@@ -671,6 +719,7 @@ function commonFunction() {
       LiveOnSwiper: LiveOnSwiper,
       TabSwiper: TabSwiper,
       FilterSwiper: FilterSwiper,
+      CurationSwiper: CurationSwiper,
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
       fileUpload: fileUpload,

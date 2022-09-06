@@ -89,6 +89,9 @@ textarea {
 .txt-line-clamp2 {
   @include line-clamp2;
 }
+.txt-line-clamp3 {
+  @include line-clamp3;
+}
 .txt-underline {
   text-decoration-line: underline;
   text-decoration-color: rgba(102, 13, 152, 0.1);
@@ -271,7 +274,7 @@ main,
   width: 100%;
   overflow: hidden;
 
-  *:not(.transition-none, button > *, .preview, .paging) {
+  *:not(.animate, .transition-none, button > *, .preview, .paging) {
     @include transition(all 0.4s ease-in-out);
   }
 }
@@ -2297,6 +2300,12 @@ main {
     }
   }
 
+  &.red {
+    &::-webkit-scrollbar-thumb {
+      background: $red1;
+    }
+  }
+
   &.lightPurple {
     &::-webkit-scrollbar-thumb {
       background: #ba87d8;
@@ -2316,7 +2325,7 @@ main {
   @include transition-timing-function(cubic-bezier(0.25, 0.1, 0.25, 1));
 }
 .animate.fast {
-  @include transition-duration(0.5s);
+  @include transition-duration(0.3s);
 }
 @for $i from 1 to 10 {
   .animate-delay-0#{$i} {
