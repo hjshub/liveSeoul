@@ -20,7 +20,13 @@
         <section class="detail-view">
           <header class="page-header">
             <div class="inner">
-              <h2><strong>서울 나들이 영상 모음</strong></h2>
+              <h2>
+                <strong class="txt-ellipsis">서울 나들이 영상 모음</strong>
+                <span class="btn-wrap inline">
+                  <button class="btn-has-icon rounded sm like white" type="submit"><em>좋아요</em></button>
+                  <button class="btn-has-icon rounded sm flag white" type="button"><em>찜하기</em></button>
+                </span>
+              </h2>
               <div class="location">
                 <span
                   ><a href=""
@@ -405,6 +411,7 @@
           progress: true, // false : 프로그레스바 컨트롤 되지 않도록
           preview: [{ enabled: false, src: '' }],
           quality: { default: multiVideoObj.sizeList[idx][qualitySize], options: multiVideoObj.sizeList[idx] }, // "default" : 0, options : [0]
+          isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
           iconUrl: '../tgplayer/plugin/js/plyr.svg',
           blankVideo: '../tgplayer/plugin/js/blank.mp4',
         });

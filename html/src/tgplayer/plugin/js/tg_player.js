@@ -1949,7 +1949,8 @@ typeof navigator === "object" && (function (global, factory) {
         'aria-label': i18n.get(type, this.config),
         'aria-valuemin': 0,
         'aria-valuemax': 100,
-        'aria-valuenow': 0
+        'aria-valuenow': 0,
+        title : 'inputTitle'
       }, attributes));
       this.elements.inputs[type] = input; // Set the fill for webkit now
 

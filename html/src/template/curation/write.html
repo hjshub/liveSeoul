@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    @@include('../include/head.html')
+
+    <title>큐레이션 만들기 | 라이브 서울</title>
+
+    @@include('../include/header_sub.html')
+  </head>
+  <body>
+    @@include('../include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb">@@include('../include/gnb_sub.html')</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <div class="wrap curation board write" id="contents">
+        <section class="board_top">
+          <header class="page-header">
+            <div class="inner-wrap">
+              <div class="location">
+                <span
+                  ><a href=""
+                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
+                  ></span
+                >
+                <span><a href="">#서울</a></span>
+                <span><a href="">큐레이션</a></span>
+                <span><a href="">큐레이션 만들기</a></span>
+              </div>
+
+              <h2 class="no_st">큐레이션 만들기</h2>
+            </div>
+          </header>
+        </section>
+
+        <!-- 큐레이션 정보 등록 -->
+        <section>
+          <div class="inner-wrap">
+            <h4 class="hidden-txt">큐레이션 정보 등록</h4>
+            <div class="b-write">
+              <form>
+                <fieldset>
+                  <legend>큐레이션 정보 등록</legend>
+                  <div class="tblStyle-write">
+                    <dl>
+                      <dt><label for="input-tit">큐레이션 제목</label></dt>
+                      <dd>
+                        <span class="text-wrap">
+                          <input placeholder="제목필수 입력" type="text" name="" id="input-tit" />
+                        </span>
+                        <p class="txt-bite">0 / 30자</p>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt><label for="input-tit">태그 등록</label></dt>
+                      <dd>
+                        <span class="text-wrap">
+                          <input placeholder="(,) 쉼표로 구분하여 입력" type="text" name="" id="input-tit" />
+                        </span>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt><label>썸네일 등록</label></dt>
+                      <dd>
+                        <div class="file-up-list">
+                          <div class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file" class="orange"><em>첨부하기</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file"
+                                value=""
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </div>
+                          <p class="info-txt">* JPG, PNG, GIF, BMP 이미지 형식 파일의 5MB 이하로 등록해주세요.</p>
+                          <p class="info-txt">* 썸네일을 등록하지 않을 경우 기본 썸네일이 노출 됩니다.</p>
+                        </div>
+                      </dd>
+                    </dl>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- TOP영역 영상 설정 -->
+        <section>
+          <div class="inner-wrap">
+            <div class="set-crTop clear">
+              <h4>
+                <strong>TOP영역 영상 설정</strong>&nbsp;&nbsp;
+                <span>※ TOP 공간에 노출되는 영상 입니다. 최대 5개까지 등록가능합니다.</span>
+              </h4>
+
+              <!-- 영상 검색 영역 -->
+              <div class="vd-search">
+                <h5>
+                  <strong>영상찾기</strong>&nbsp;
+                  <span>영상선택 후 이동버튼을 눌러주세요.</span>
+                </h5>
+                <div class="list-wrap">
+                  <div class="search-area clear">
+                    <span class="select-wrap">
+                      <label for="selectCate">
+                        <em class="hidden-txt">카테고리</em>
+                      </label>
+                      <select name="" id="selectCate">
+                        <option value="">카테고리</option>
+                        <option value="">카테고리 1</option>
+                        <option value="">카테고리 2</option>
+                        <option value="">카테고리 3</option>
+                      </select>
+                    </span>
+                    <span class="text-wrap has-button">
+                      <label class="hidden-txt" for="cateSearch">검색어 입력</label>
+                      <input placeholder="검색어 입력" type="text" id="cateSearch" />
+                      <button class="btn-default xs rounded orange"><em>조회</em></button>
+                    </span>
+                  </div>
+                  <div class="dragArea list-box customedScroll pink">
+                    <ul>
+                      <li class="drag-item">
+                        <div class="dataArea">
+                          <div class="img-thumb">
+                            <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="영상 썸네일 01" />
+                          </div>
+                          <div class="info">
+                            <dl>
+                              <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
+                              <dd>
+                                <b class="txt-line-clamp2">
+                                  성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이!
+                                </b>
+                              </dd>
+                            </dl>
+                            <div class="date">2021-01-11</div>
+                          </div>
+                          <div class="chk-wrap inline">
+                            <span>
+                              <input type="checkbox" id="chk1" />
+                              <label for="chk1"><em class="hidden-txt">checked</em></label>
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="drag-item">
+                        <div class="dataArea">
+                          <div class="img-thumb">
+                            <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="영상 썸네일 02" />
+                          </div>
+                          <div class="info">
+                            <dl>
+                              <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
+                              <dd>
+                                <b class="txt-line-clamp2">
+                                  도심속 산책,<br />
+                                  청계천 나들이 어때요??
+                                </b>
+                              </dd>
+                            </dl>
+                            <div class="date">2019-12-30</div>
+                          </div>
+                          <div class="chk-wrap inline">
+                            <span>
+                              <input type="checkbox" id="chk2" />
+                              <label for="chk2"><em class="hidden-txt">checked</em></label>
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="drag-item">
+                        <div class="dataArea">
+                          <div class="img-thumb">
+                            <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="영상 썸네일 03" />
+                          </div>
+                          <div class="info">
+                            <dl>
+                              <dt><span class="txt-ellipsis">방영프로그램</span></dt>
+                              <dd>
+                                <b class="txt-line-clamp2"> 익선동 혼자 가는 건 처음이지?! 혼자여서 즐거운 *한옥마을* </b>
+                              </dd>
+                            </dl>
+                            <div class="date">2019-12-30</div>
+                          </div>
+                          <div class="chk-wrap inline">
+                            <span>
+                              <input type="checkbox" id="chk3" />
+                              <label for="chk3"><em class="hidden-txt">checked</em></label>
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="drag-item">
+                        <div class="dataArea">
+                          <div class="img-thumb">
+                            <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="영상 썸네일 04" />
+                          </div>
+                          <div class="info">
+                            <dl>
+                              <dt><span class="txt-ellipsis">방영프로그램</span></dt>
+                              <dd>
+                                <b class="txt-line-clamp2">왕이 되었다 경복궁 나들이</b>
+                              </dd>
+                            </dl>
+                            <div class="date">2019-12-30</div>
+                          </div>
+                          <div class="chk-wrap inline">
+                            <span>
+                              <input type="checkbox" id="chk4" />
+                              <label for="chk4"><em class="hidden-txt">checked</em></label>
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="drag-item">
+                        <div class="dataArea">
+                          <div class="img-thumb">
+                            <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="영상 썸네일 05" />
+                          </div>
+                          <div class="info">
+                            <dl>
+                              <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
+                              <dd>
+                                <b class="txt-line-clamp2">
+                                  서울의 터줏대감들!<br />
+                                  노포 대신 오래가게
+                                </b>
+                              </dd>
+                            </dl>
+                            <div class="date">2020-06-16</div>
+                          </div>
+                          <div class="chk-wrap inline">
+                            <span>
+                              <input type="checkbox" id="chk5" />
+                              <label for="chk5"><em class="hidden-txt">checked</em></label>
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="drag-item">
+                        <div class="dataArea">
+                          <div class="img-thumb">
+                            <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="영상 썸네일 06" />
+                          </div>
+                          <div class="info">
+                            <dl>
+                              <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
+                              <dd>
+                                <b class="txt-line-clamp2"> 서울의 가을을 만끽할 수 있는 안산자락길 </b>
+                              </dd>
+                            </dl>
+                            <div class="date">2021-11-22</div>
+                          </div>
+                          <div class="chk-wrap inline">
+                            <span>
+                              <input type="checkbox" id="chk6" />
+                              <label for="chk6"><em class="hidden-txt">checked</em></label>
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- paging -->
+                  <div class="paging pc-only orange">
+                    <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+                    <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+                    <strong>1</strong>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+                    <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+                  </div>
+
+                  <!-- 더보기 (mobile) -->
+                  <div class="btn-wrap align-c mob-only">
+                    <button type="button" class="btn-prev"><em>이전</em></button>
+                    <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+                    <button type="button" class="btn-next"><em>다음</em></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 영상 등록 -->
+              <div class="vd-regist">
+                <h5>
+                  <strong>등록할 영상</strong>&nbsp;&nbsp;
+                  <span>Drag&amp;drop으로 영상 선택 및 순서변경이 가능합니다.</span>
+                </h5>
+                <div class="list-wrap">
+                  <div class="dropArea list-box">
+                    <ul class="sort-inner"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="has-btn">
+              <div class="btn-wrap align-c">
+                <button class="btn-default md rounded navy" type="button"><em>임시저장</em></button>
+                <button class="btn-default md rounded red2" type="button"><em>등록</em></button>
+                <button class="btn-default md rounded darkGray" type="submit"><em>취소</em></button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer_sub.html')</footer>
+      <!-- // #footer -->
+    </div>
+  </body>
+</html>

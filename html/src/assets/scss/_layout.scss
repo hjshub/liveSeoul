@@ -269,12 +269,29 @@ textarea {
     padding: 0 15px;
   }
 }
+
+.inner-wrap {
+  padding: 0 75px;
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  @include _bp(1200px) {
+    padding: 0 30px;
+  }
+
+  @include _bp(561px) {
+    padding: 0 15px;
+  }
+}
+
 main,
 .wrap {
   width: 100%;
   overflow: hidden;
 
-  *:not(.animate, .transition-none, button > *, .preview, .paging) {
+  *:not(.animate, .transition-none, .sort-inner > *, button > *, .preview, .paging) {
     @include transition(all 0.4s ease-in-out);
   }
 }

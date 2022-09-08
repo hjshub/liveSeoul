@@ -41,6 +41,7 @@ window.addEventListener('load', function () {
   if (gb.tabSwiper.length) commonFunction().TabSwiper();
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
   if ($('.curation-swiper').length) commonFunction().CurationSwiper();
+  if ($('.dropArea').length) commonFunction().setCrVideoList();
 });
 
 function commonFunction() {
@@ -424,6 +425,7 @@ function commonFunction() {
         }, 100);
       },
       showOnLayer = function () {
+        // 편성표 보기
         $('.button-showLayer').on('click', function () {
           var trg = $(this);
 
@@ -498,7 +500,7 @@ function commonFunction() {
         });
       },
       listTabMenu = function () {
-        // 리스트 탭 메뉴
+        // 공통 목록 탭 메뉴
         gb.listTabMenu.each(function () {
           var trg_tabList = this;
 
@@ -531,6 +533,7 @@ function commonFunction() {
         });
       },
       fileUpload = function (el, type) {
+        // input file
         var pathpoint = el.value.lastIndexOf('.'),
           filepoint = el.value.substring(pathpoint + 1, el.length),
           filetype = filepoint.toLowerCase(); // 업로드 파일 확장자
@@ -562,6 +565,7 @@ function commonFunction() {
         }
       },
       copyToClipboard = function (val) {
+        // 클립 보드에 복사
         var t = document.createElement('textarea');
 
         document.body.appendChild(t);
@@ -573,10 +577,12 @@ function commonFunction() {
         document.body.removeChild(t);
       },
       copyUrl = function () {
+        // url 복사
         copyToClipboard(location.href);
         alert('링크가 복사되었습니다.\n ' + location.href);
       },
       allCheck = function () {
+        // 전체 선택
         var checked_ItemAll = $('input[type=checkbox][name^=chkAll]'),
           check_Item = $('input[type=checkbox][name^=chk_]');
 
@@ -595,7 +601,8 @@ function commonFunction() {
       goScrollTop = function () {
         gb.html.stop().animate({ scrollTop: 0 }, 400);
       },
-      menuAll = function (t, el, status) {
+      menuAll = function (t, el) {
+        // 프로그램 전체메뉴
         if ($(t).hasClass('active')) {
           $(t).removeClass('active');
           $(el).stop().fadeOut(300);
@@ -605,6 +612,7 @@ function commonFunction() {
         }
       },
       setLnb = function () {
+        // 모바일 사이드 메뉴 (공통 목록, 공통 상세)
         $('.button-open-sideMenu').on('click', function () {
           var trg = $(this);
           if (trg.hasClass('active')) {
@@ -673,6 +681,7 @@ function commonFunction() {
         });
       },
       filterMoreView = function () {
+        // 주제별 영상 목록 필터 더보기
         $('.button-more-list').each(function () {
           var trg = $(this),
             filterWrap = trg.siblings('.list-filter .filter-wrap'),
@@ -693,6 +702,48 @@ function commonFunction() {
             }
           });
         });
+      },
+      setCrVideoList = function () {
+        $('.drag-item').draggable({
+          helper: function () {
+            var trg = $(this),
+              _cloneItem = trg.clone();
+
+            trg.addClass('dropped');
+
+            if (!$(_cloneItem).hasClass('dropped')) {
+              return _cloneItem
+                .appendTo('.sort-inner')
+                .css({
+                  zIndex: 10,
+                })
+                .show();
+            }
+          },
+          cursor: 'move',
+          containment: 'document',
+        });
+
+        $('.sort-inner')
+          .droppable({
+            accept: '.drag-item',
+            drop: function (e, el) {
+              var _currentItem = $(el.draggable),
+                _cloneItem = _currentItem.clone();
+
+              _cloneItem.removeClass('ui-draggable').removeClass('drag-item').removeClass('dropped');
+
+              $(_cloneItem).find('.dataArea').append('<button class="button-delete"><em class="hiddne-txt">삭제</em></button>');
+
+              $(this).append(_cloneItem);
+            },
+          })
+          .sortable({
+            placeholder: 'ui-shift',
+            cursor: 'move',
+          });
+
+        $('.sort-inner li').disableSelection();
       },
       blockContextMenu = function () {
         // 우 클릭, 드래그 방지
@@ -723,6 +774,7 @@ function commonFunction() {
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
       fileUpload: fileUpload,
+      setCrVideoList: setCrVideoList,
       menuAll: menuAll,
       copyUrl: copyUrl,
     };

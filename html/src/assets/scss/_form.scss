@@ -9,6 +9,11 @@
   width: 100%;
   text-align: left;
   font-size: 0;
+
+  &.inline {
+    width: auto;
+    display: inline-block;
+  }
 }
 
 button {
@@ -28,6 +33,10 @@ button {
     &.md {
       width: 220px;
       height: 54px;
+
+      @include _bp(561px) {
+        width: 100%;
+      }
 
       em {
         font-size: 2rem;
@@ -51,6 +60,15 @@ button {
     }
 
     /*button color*/
+    &.white {
+      background-color: $white !important;
+      border: 1px solid currentColor;
+
+      @include _bp(768px) {
+        border-width: 2px;
+      }
+    }
+
     &.yellow {
       background-color: $yellow2 !important;
       em {
@@ -81,6 +99,13 @@ button {
 
     &.red {
       background-color: $red4 !important;
+      em {
+        color: $white !important;
+      }
+    }
+
+    &.red2 {
+      background-color: $red2 !important;
       em {
         color: $white !important;
       }
@@ -258,6 +283,70 @@ button {
                   }
                 }
               }
+            }
+          }
+        }
+
+        &.like {
+          width: auto;
+          color: $red2;
+
+          @include _bp(768px) {
+            width: 40px;
+
+            &::before {
+              width: 20px;
+              height: 18px;
+              background-image: url('../images/mob/icon-like-red.png');
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              margin: -9px 0 0 -9px;
+              background-repeat: no-repeat;
+              background-position: 0 0;
+              background-size: 100% auto;
+              content: '';
+            }
+          }
+
+          em {
+            &::before {
+              width: 15px;
+              height: 13px;
+              top: 3px;
+              background-image: url('../images/icon-like-red.png');
+            }
+          }
+        }
+
+        &.flag {
+          width: auto;
+          color: $navy3;
+
+          @include _bp(768px) {
+            width: 40px;
+
+            &::before {
+              width: 16px;
+              height: 19px;
+              background-image: url('../images/mob/icon-flag.png');
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              margin: -9px 0 0 -7px;
+              background-repeat: no-repeat;
+              background-position: 0 0;
+              background-size: 100% auto;
+              content: '';
+            }
+          }
+
+          em {
+            &::before {
+              width: 12px;
+              height: 14px;
+              top: 2px;
+              background-image: url('../images/icon-flag.png');
             }
           }
         }
@@ -669,6 +758,10 @@ button {
 
 /*checkbox*/
 .chk-wrap {
+  &.inline {
+    display: inline-block;
+  }
+
   span {
     display: inline-block;
     font-size: 0;
@@ -679,7 +772,7 @@ button {
       left: 0;
       top: 0;
       border: 0;
-      width: 31x;
+      width: 31px;
       height: 31px;
       opacity: 0;
 
@@ -866,6 +959,10 @@ button {
     z-index: 10;
     background-color: $yellow3;
 
+    &.orange {
+      background-color: $orange;
+    }
+
     em {
       display: inline-block;
       position: relative;
@@ -942,6 +1039,7 @@ button {
       line-height: 21px;
       border: 1px solid $gray9;
       border-radius: 3px;
+      background-color: $white;
 
       &::before {
         height: 12px;
