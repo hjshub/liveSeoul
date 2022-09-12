@@ -61,11 +61,13 @@ const Template = () => {
  */
 const Js_library = () => {
   // 라이브러리 묶음
-  return src(`${path.assets.js}lib/*.js`, { sourcemaps: true })
-    .pipe(concat('lib.js'))
-    .pipe(uglify())
-    .pipe(dest(destPath.assets.js), { sourcemaps: true })
-    .pipe(browserSync.reload({ stream: true }));
+  return (
+    src(`${path.assets.js}lib/*.js`, { sourcemaps: true })
+      //.pipe(concat('lib.js'))
+      //.pipe(uglify())
+      .pipe(dest(destPath.assets.js), { sourcemaps: true })
+      .pipe(browserSync.reload({ stream: true }))
+  );
 };
 
 const Js_common = () => {

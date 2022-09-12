@@ -704,22 +704,32 @@ function commonFunction() {
         });
       },
       setCrVideoList = function () {
+        // 큐레이션 등록 TOP영역 영상 설정
         $('.drag-item').draggable({
           helper: function () {
             var trg = $(this),
               _cloneItem = trg.clone();
 
-            trg.addClass('dropped');
+            trg.addClass('drag');
 
-            if (!$(_cloneItem).hasClass('dropped')) {
-              return _cloneItem
-                .appendTo('.sort-inner')
-                .css({
-                  zIndex: 10,
-                })
-                .show();
-            }
+            $('.sort-inner').prepend(
+              '<div class="dropped"><b>TOP영역에 등록할 영상을<br/> 드래그해서 이곳에 놓아주세요.</br></div>'
+            );
+
+            return _cloneItem
+              .appendTo('.sort-inner')
+              .css({
+                zIndex: 20,
+              })
+              .show();
           },
+          stop: function (e, el) {
+            var trg = $(this);
+
+            $('.sort-inner').find('.dropped').remove();
+            trg.removeClass('drag');
+          },
+          opacity: 0.7,
           cursor: 'move',
           containment: 'document',
         });
@@ -729,13 +739,22 @@ function commonFunction() {
             accept: '.drag-item',
             drop: function (e, el) {
               var _currentItem = $(el.draggable),
-                _cloneItem = _currentItem.clone();
+                _cloneItem = _currentItem.clone(),
+                trg = $(this),
+                dropEl = trg.find('li').get();
 
-              _cloneItem.removeClass('ui-draggable').removeClass('drag-item').removeClass('dropped');
-
+              _cloneItem.removeClass('ui-draggable').removeClass('drag-item').removeClass('drag');
+              $(_cloneItem).find('.chk-wrap').remove();
               $(_cloneItem).find('.dataArea').append('<button class="button-delete"><em class="hiddne-txt">삭제</em></button>');
 
-              $(this).append(_cloneItem);
+              if (dropEl.length <= 5) {
+                trg.append(_cloneItem);
+                trg.find('.dropped').remove();
+              } else {
+                alert('영상은 최대 5개까지 등록 가능합니다.');
+                trg.find('.dropped').remove();
+                return false;
+              }
             },
           })
           .sortable({
@@ -744,6 +763,10 @@ function commonFunction() {
           });
 
         $('.sort-inner li').disableSelection();
+
+        $(document).on('click', '.button-delete', function () {
+          $(this).closest('li').remove();
+        });
       },
       blockContextMenu = function () {
         // 우 클릭, 드래그 방지
