@@ -46,19 +46,19 @@
                   <legend>큐레이션 정보 등록</legend>
                   <div class="tblStyle-write">
                     <dl>
-                      <dt><label for="input-tit">큐레이션 제목</label></dt>
+                      <dt><label for="cur_tit">큐레이션 제목</label></dt>
                       <dd>
                         <span class="text-wrap">
-                          <input placeholder="제목필수 입력" type="text" name="" id="input-tit" />
+                          <input placeholder="제목필수 입력" type="text" id="cur_tit" />
                         </span>
                         <p class="txt-bite">0 / 30자</p>
                       </dd>
                     </dl>
                     <dl>
-                      <dt><label for="input-tit">태그 등록</label></dt>
+                      <dt><label for="cur_hashTag">태그 등록</label></dt>
                       <dd>
                         <span class="text-wrap">
-                          <input placeholder="(,) 쉼표로 구분하여 입력" type="text" name="" id="input-tit" />
+                          <input placeholder="(,) 쉼표로 구분하여 입력" type="text" id="cur_hashTag" />
                         </span>
                       </dd>
                     </dl>
@@ -76,7 +76,6 @@
                                 class="hidden-txt"
                                 type="file"
                                 id="file"
-                                value=""
                                 title="파일 첨부"
                                 onchange="commonFunction().fileUpload(this);"
                               />
@@ -115,7 +114,7 @@
                       <label for="selectCate">
                         <em class="hidden-txt">카테고리</em>
                       </label>
-                      <select name="" id="selectCate">
+                      <select id="selectCate">
                         <option value="">카테고리</option>
                         <option value="">카테고리 1</option>
                         <option value="">카테고리 2</option>
@@ -336,10 +335,10 @@
                 <div class="list-wrap">
                   <div class="search-area clear">
                     <span class="select-wrap">
-                      <label for="selectCate">
+                      <label for="selectCate2">
                         <em class="hidden-txt">카테고리</em>
                       </label>
-                      <select name="" id="selectCate">
+                      <select id="selectCate2">
                         <option value="">카테고리</option>
                         <option value="">카테고리 1</option>
                         <option value="">카테고리 2</option>
@@ -347,8 +346,8 @@
                       </select>
                     </span>
                     <span class="text-wrap has-button">
-                      <label class="hidden-txt" for="cateSearch">검색어 입력</label>
-                      <input placeholder="검색어 입력" type="text" id="cateSearch" />
+                      <label class="hidden-txt" for="cateSearch2">검색어 입력</label>
+                      <input placeholder="검색어 입력" type="text" id="cateSearch2" />
                       <button class="btn-default xs rounded orange"><em>조회</em></button>
                     </span>
                   </div>
