@@ -60,7 +60,7 @@ textarea {
     left: 0;
     top: -50px;
     text-align: center;
-    background-color: #6222ce;
+    background-color: $black;
     @include transition(all 0.2s ease-in-out);
 
     &:focus {
@@ -250,7 +250,28 @@ textarea {
 
     &,
     * {
-      vertical-align: top;
+      vertical-align: baseline;
+    }
+  }
+
+  .desc {
+    float: left;
+    line-height: 1.2;
+
+    @include _bp(768px) {
+      max-width: -webkit-calc(100% - 200px);
+      max-width: -moz-calc(100% - 200px);
+      max-width: calc(100% - 200px);
+    }
+
+    @include _bp(768px) {
+      max-width: -webkit-calc(100% - 180px);
+      max-width: -moz-calc(100% - 180px);
+      max-width: calc(100% - 180px);
+    }
+
+    em {
+      margin-left: 20px;
     }
   }
 }
@@ -334,8 +355,6 @@ main {
 
   .main-section {
     &-01 {
-      position: relative;
-
       video {
         object-fit: fill;
         width: 100%;
@@ -359,7 +378,10 @@ main {
           @include transform(translateX(-50%));
         }
       }
+
       .main-swiper {
+        position: relative;
+
         article {
           position: relative;
           overflow: hidden;
@@ -1294,7 +1316,7 @@ main {
 
 /*sub*/
 .wrap {
-  padding: 160px 0 140px;
+  padding: 153px 0 140px;
 
   .contents-header {
     .swiper-controller {
@@ -1326,6 +1348,7 @@ main {
       }
 
       * {
+        display: inline-block;
         vertical-align: top;
       }
 
@@ -1339,8 +1362,22 @@ main {
       }
 
       strong {
-        display: inline-block;
         color: $gray10;
+      }
+
+      em {
+        line-height: 1;
+        font-size: 2.6rem;
+        font-weight: 400;
+        vertical-align: bottom;
+
+        @include _bp(640px) {
+          font-size: 2.2rem;
+        }
+
+        @include _bp(480px) {
+          font-size: 1.8rem;
+        }
       }
     }
 
@@ -1412,6 +1449,13 @@ main {
 
   .vd-list {
     padding-top: 20px;
+
+    .txt-info {
+      font-size: 1.7rem;
+      color: $gray15;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
 
     &.program {
       padding-top: 20px;
@@ -1844,9 +1888,11 @@ main {
   display: inline-block;
   width: 13px;
   height: 17px;
+  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center center;
   margin-left: 20px;
+  cursor: pointer;
 
   @include _bp(768px) {
     display: none;

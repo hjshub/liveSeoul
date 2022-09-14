@@ -65,10 +65,12 @@
         }
 
         & + span {
+          display: inline-block;
           position: relative;
           margin-left: 180px;
           padding-left: 24px;
           color: #575757;
+          line-height: 1;
           font-size: 1.5rem;
 
           &::before {
@@ -596,7 +598,8 @@
           display: none;
         }
 
-        .sign-in {
+        .sign-in,
+        .sign-out {
           display: inline-block;
           line-height: 1;
           font-size: 1.5rem;
@@ -764,7 +767,8 @@
 
       .inner {
         > div {
-          .sign-in {
+          .sign-in,
+          .sign-out {
             color: $gray4;
 
             &::before {

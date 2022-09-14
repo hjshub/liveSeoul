@@ -859,10 +859,18 @@ button {
           }
         }
 
-        &:checked + label:before {
-          background-image: url('../images/icon-checked.png');
-          background-repeat: no-repeat;
-          background-position: center;
+        &:checked {
+          & + label {
+            &::before {
+              background-image: url('../images/icon-checked.png');
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+
+            em {
+              font-weight: 700;
+            }
+          }
         }
       }
     }

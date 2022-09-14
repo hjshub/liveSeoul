@@ -52,7 +52,7 @@
         position: relative;
         left: 0;
 
-        .modal.modal-share {
+        .modal#modal-share2 {
           margin-right: -39px;
 
           &::before {
@@ -2448,6 +2448,22 @@
             }
           }
         }
+      }
+    }
+  }
+
+  &.mypage {
+    &.board {
+      &.list {
+        @include _bp(768px) {
+          padding-bottom: 60px;
+        }
+      }
+    }
+
+    .wish-list {
+      & + .btn-wrap {
+        margin-top: 40px;
       }
     }
   }

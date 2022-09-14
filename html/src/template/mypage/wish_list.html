@@ -3,7 +3,7 @@
   <head>
     @@include('../include/head.html')
 
-    <title>큐레이션 목록 | 라이브 서울</title>
+    <title>마이페이지 | 라이브 서울</title>
 
     @@include('../include/header_sub.html')
   </head>
@@ -16,7 +16,7 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap curation board list" id="contents">
+      <div class="wrap mypage board list" id="contents">
         <section class="board_top">
           <header class="page-header">
             <div class="inner">
@@ -26,19 +26,27 @@
                     ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
                   ></span
                 >
-                <span><a href="">#서울</a></span>
-                <span><a href="">큐레이션</a></span>
+                <span><a href="">마이페이지</a></span>
               </div>
 
-              <h2 class="no_st">큐레이션</h2>
+              <h2 class="no_st"><strong>홍길동</strong><em>님 안녕하세요.</em></h2>
 
-              <nav class="tabStyle-nav col-2 red">
+              <nav class="tabStyle-nav red">
                 <ul>
-                  <li class="on">
-                    <a href=""><span>전문가 큐레이션</span></a>
+                  <li>
+                    <a href=""><span>내가 좋아요한 영상</span></a>
                   </li>
                   <li>
-                    <a href=""><span>사용자 큐레이션</span></a>
+                    <a href=""><span>내가 시청한 영상</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>영상다운로드 내역</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>큐레이션 영상</span></a>
+                  </li>
+                  <li class="on">
+                    <a href=""><span>나의 관심분야</span></a>
                   </li>
                 </ul>
               </nav>
@@ -46,48 +54,41 @@
           </header>
         </section>
 
-        <!-- 큐레이션 목록 -->
+        <!-- 영상 목록 -->
         <section>
           <div class="inner">
-            <div class="search-area">
-              <form>
-                <fieldset>
-                  <span class="select-wrap" style="background-color: #f9f9f9">
-                    <label for="search-select">
-                      <em class="hidden-txt">검색 옵션 선택</em>
-                    </label>
-                    <select id="search-select">
-                      <option value="">전체</option>
-                      <option value="">전체</option>
-                      <option value="">전체</option>
-                      <option value="">전체</option>
-                    </select>
-                  </span>
-                  <div class="text-wrap has-button">
-                    <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-                    <button class="btn-has-icon rounded search orange" type="submit"><em>검색하기</em></button>
-                    <button class="btn-has-icon rounded refresh burgundy" type="button"><em>새로고침</em></button>
-                  </div>
-                  <div class="hash-list">
-                    <span>코로나19</span>
-                    <span>경제</span>
-                    <span>서울</span>
-                    <span>나들이</span>
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-            <h3 class="heading-wrap-03">
-              <span class="desc txt-color lightGray">등록된 큐레이션 수 <b class="txt-color darkGray">132</b>개</span>
+            <h3 class="heading-wrap-03 type02">
+              <span class="desc txt-color lightGray"> 영상 <b class="txt-color darkGray">18</b>개 </span>
               <span class="sort mrt-none">
                 <a href="javascript:;" class="on">최신순</a>
                 <a href="javascript:;">인기순</a>
                 <a href="javascript:;">가나다순</a>
               </span>
             </h3>
-            <div class="curation-list">@@include('../include/curation_list.html')</div>
+            <div class="vd-list wish-list">@@include('../include/vd_list.html')</div>
             <div class="btn-wrap align-r">
-              <button class="btn-default md rounded red2" type="submit"><em>큐레이션 제작</em></button>
+              <button class="btn-default md rounded red2 button-active-modal fixed" data-modal-name="set-wish" type="button">
+                <em>관심분야 설정하기</em>
+              </button>
+              <div class="modal-wrap">
+                <div class="modal fixed wish" id="modal-set-wish">
+                  <header class="modal-header">
+                    <h5>관심분야를 선택해주세요</h5>
+                    <button type="button" class="button-close modal-off">
+                      <em class="hidden-txt">레이어 팝업 닫기</em>
+                    </button>
+                  </header>
+                  <div class="modal-body">
+                    <div class="modal-contents">
+                      <div class="wish-list customedScroll pink">@@include('../include/wish_list.html')</div>
+                      <div class="btn-wrap align-c">
+                        <button class="btn-default md rounded darkGray modal-off" type="button"><em>닫기</em></button>
+                        <button class="btn-default md rounded red2" type="submit"><em>저장</em></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- paging -->

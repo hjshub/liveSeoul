@@ -140,43 +140,55 @@ function commonFunction() {
 
           if (trg.hasClass('on')) {
             $('.button-active-modal').removeClass('on');
-            $('.modal').stop().fadeOut(300).remove();
+            $('.modal').css('display', 'none');
+
+            if (trg.hasClass('fixed')) {
+              $('.dimmed fixed').remove();
+              gb.layout.css({
+                height: 'auto',
+                overflow: 'visible',
+              });
+            }
           } else {
-            $('.button-active-modal').removeClass('on');
+            $('.button-active-modal').not(trg).removeClass('on');
             trg.addClass('on');
-            $('.modal').stop().fadeOut(300).remove();
 
-            $.get('../modal/modal.html', function (data) {
-              gb.result = $(data)
-                .filter('#modal-' + modalName)
-                .html();
+            $('.modal').css('display', 'none');
+            $('.modal#modal-' + modalName)
+              .stop()
+              .fadeIn(300);
 
-              if (trg.hasClass('fixed')) {
-                gb.body.append(gb.result);
-              } else {
-                trg.next('.modal-wrap').append(gb.result);
-              }
-            });
+            if (trg.hasClass('fixed')) {
+              gb.currentScroll = document.documentElement.scrollTop;
+              gb.body.append('<div class="dimmed fixed"></div>');
+              gb.layout.css({
+                height: '100vh',
+                overflow: 'hidden',
+              });
+              console.log(gb.currentScroll);
+            }
           }
         });
 
-        $(document).on('click', '.modal-change', function () {
-          var _trg = $(this),
-            _modalName = _trg.data('modal-name');
-
-          $.get('../modal/modal.html', function (data) {
-            gb.result = $(data)
-              .filter('#modal-' + _modalName)
-              .html();
-
-            _trg.closest('.modal').html(gb.result);
-          });
+        $(document).on('click', '.modal-off, .dimmed.fixed', function () {
+          modalOff();
+        });
+      },
+      modalOff = function () {
+        $('.button-active-modal').removeClass('on');
+        $('.modal').css('display', 'none');
+        $('.dimmed.fixed').remove();
+        gb.layout.css({
+          height: 'auto',
+          overflow: 'visible',
         });
 
-        $(document).on('click', '.modal-off', function () {
-          $('.modal').stop().fadeOut(300).remove();
-          $('.button-active-modal').removeClass('on');
-        });
+        gb.html.stop().animate(
+          {
+            scrollTop: gb.currentScroll,
+          },
+          300
+        );
       },
       MainSwiper = function () {
         // 메인 스와이퍼
@@ -252,7 +264,7 @@ function commonFunction() {
 
         $('.main-swiper')
           .find('.swiper-pagination')
-          .append('<span class="button-swiperController pause"><em class="hidden-txt">일시정지</em></span>');
+          .append('<button type="button" class="button-swiperController pause"><em class="hidden-txt">일시정지</em></button>');
 
         $(document).on('click', '.button-swiperController', function () {
           var trg = $(this),
@@ -880,6 +892,7 @@ function commonFunction() {
 
     return {
       init: init,
+      modalOff: modalOff,
       MainSwiper: MainSwiper,
       VdSwiper: VdSwiper,
       LiveOnSwiper: LiveOnSwiper,
