@@ -144,7 +144,7 @@ function commonFunction() {
 
             if (trg.hasClass('fixed')) {
               $('.dimmed fixed').remove();
-              gb.layout.css({
+              gb.body.css({
                 height: 'auto',
                 overflow: 'visible',
               });
@@ -159,13 +159,11 @@ function commonFunction() {
               .fadeIn(300);
 
             if (trg.hasClass('fixed')) {
-              gb.currentScroll = document.documentElement.scrollTop;
               gb.body.append('<div class="dimmed fixed"></div>');
-              gb.layout.css({
+              gb.body.css({
                 height: '100vh',
                 overflow: 'hidden',
               });
-              console.log(gb.currentScroll);
             }
           }
         });
@@ -178,17 +176,10 @@ function commonFunction() {
         $('.button-active-modal').removeClass('on');
         $('.modal').css('display', 'none');
         $('.dimmed.fixed').remove();
-        gb.layout.css({
+        gb.body.css({
           height: 'auto',
           overflow: 'visible',
         });
-
-        gb.html.stop().animate(
-          {
-            scrollTop: gb.currentScroll,
-          },
-          300
-        );
       },
       MainSwiper = function () {
         // 메인 스와이퍼

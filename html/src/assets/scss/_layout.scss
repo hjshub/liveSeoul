@@ -533,8 +533,8 @@ main {
         .floating-wrap {
           display: -ms-grid;
           display: grid;
-          -ms-grid-columns: 170px 0 170px 0 calc(100% - 340px);
-          grid-template-columns: 170px 170px auto;
+          -ms-grid-columns: 180px 0 180px 0 180px 0 calc(100% - 540px);
+          grid-template-columns: 180px 180px 180px auto;
           -ms-grid-rows: 1fr;
           grid-template-rows: 1fr;
           grid-column-gap: 0;
@@ -548,8 +548,12 @@ main {
             padding-bottom: 120px;
           }
 
-          @include _bp(640px) {
+          @include _bp(768px) {
             padding-bottom: 90px;
+          }
+
+          @include _bp(480px) {
+            padding-bottom: 180px;
           }
 
           > div {
@@ -560,8 +564,12 @@ main {
               height: 120px;
             }
 
-            @include _bp(640px) {
+            @include _bp(768px) {
               height: 90px;
+            }
+
+            @include _bp(480px) {
+              height: 60px;
             }
 
             &:first-of-type {
@@ -571,10 +579,18 @@ main {
               background-color: #f07d00;
 
               @include _bp(1200px) {
-                width: 50%;
+                width: -webkit-calc(100% / 3);
+                width: -moz-calc(100% / 3);
+                width: calc(100% / 3);
                 position: absolute;
                 bottom: 0;
                 left: 0;
+              }
+
+              @include _bp(480px) {
+                width: 100%;
+                left: 0;
+                bottom: 120px;
               }
 
               button {
@@ -612,8 +628,12 @@ main {
                     line-height: 1.2;
                   }
 
-                  @include _bp(640px) {
-                    padding-left: 63px;
+                  @include _bp(768px) {
+                    padding-left: 55px;
+                  }
+
+                  @include _bp(480px) {
+                    padding-left: 65px;
                   }
 
                   &::before {
@@ -628,7 +648,7 @@ main {
                       background-repeat: no-repeat;
                       content: '';
                     }
-                    @include _bp(640px) {
+                    @include _bp(768px) {
                       width: 43px;
                       height: 33px;
                       margin-top: -16px;
@@ -643,13 +663,113 @@ main {
               -ms-grid-row: 1;
               -ms-grid-column: 3;
 
+              background-color: $orange2;
+
+              @include _bp(1200px) {
+                width: -webkit-calc(100% / 3);
+                width: -moz-calc(100% / 3);
+                width: calc(100% / 3);
+                position: absolute;
+                bottom: 0;
+                left: -webkit-calc(100% / 3);
+                left: -moz-calc(100% / 3);
+                left: calc(100% / 3);
+              }
+
+              @include _bp(480px) {
+                width: 100%;
+                left: 0;
+                bottom: 60px;
+              }
+
+              button {
+                display: inline-block;
+                padding-top: 100px;
+                width: 100%;
+                height: 100%;
+
+                @include _bp(1200px) {
+                  padding-top: 0;
+                }
+
+                &::before {
+                  position: absolute;
+                  top: 37px;
+                  left: 50%;
+                  @include transform(translateX(-50%));
+                  width: 70px;
+                  height: 52px;
+                  background-image: url('../images/icon-calendar-wh.png');
+                  background-repeat: no-repeat;
+                  content: '';
+
+                  @include _bp(1200px) {
+                    content: none;
+                    display: none;
+                  }
+                }
+
+                em {
+                  @include _bp(1200px) {
+                    display: inline-block;
+                    position: relative;
+                    padding-left: 103px;
+                  }
+
+                  @include _bp(768px) {
+                    padding-left: 55px;
+                  }
+
+                  @include _bp(480px) {
+                    padding-left: 65px;
+                  }
+
+                  &::before {
+                    @include _bp(1200px) {
+                      position: absolute;
+                      top: 50%;
+                      left: 0;
+                      width: 70px;
+                      height: 52px;
+                      margin-top: -26px;
+                      background-image: url('../images/icon-calendar-wh.png');
+                      background-repeat: no-repeat;
+                      content: '';
+                    }
+                    @include _bp(768px) {
+                      width: 40px;
+                      height: 30px;
+                      margin-top: -13px;
+                      background-size: 100%;
+                    }
+
+                    @include _bp(480px) {
+                      left: 2px;
+                    }
+                  }
+                }
+              }
+            }
+
+            &:nth-of-type(3) {
+              -ms-grid-row: 1;
+              -ms-grid-column: 5;
+
               background-color: #111734;
 
               @include _bp(1200px) {
-                width: 50%;
+                width: -webkit-calc(100% / 3);
+                width: -moz-calc(100% / 3);
+                width: calc(100% / 3);
                 position: absolute;
                 bottom: 0;
                 right: 0;
+              }
+
+              @include _bp(480px) {
+                width: 100%;
+                left: 0;
+                bottom: 0;
               }
 
               button {
@@ -686,8 +806,12 @@ main {
                     padding-left: 103px;
                   }
 
-                  @include _bp(640px) {
-                    padding-left: 62px;
+                  @include _bp(768px) {
+                    padding-left: 55px;
+                  }
+
+                  @include _bp(480px) {
+                    padding-left: 65px;
                   }
 
                   &::before {
@@ -702,20 +826,24 @@ main {
                       background-repeat: no-repeat;
                       content: '';
                     }
-                    @include _bp(640px) {
+                    @include _bp(768px) {
                       width: 42px;
                       height: 27px;
                       margin-top: -14px;
                       background-size: 100%;
+                    }
+
+                    @include _bp(480px) {
+                      left: -5px;
                     }
                   }
                 }
               }
             }
 
-            &:nth-of-type(3) {
+            &:nth-of-type(4) {
               -ms-grid-row: 1;
-              -ms-grid-column: 5;
+              -ms-grid-column: 7;
               background-color: $red2;
               padding: 23px 30px 30px;
 
@@ -820,6 +948,10 @@ main {
               em {
                 font-size: 2rem;
                 line-height: 1.1;
+
+                @include _bp(480px) {
+                  font-size: 1.6rem;
+                }
               }
             }
           }
@@ -869,10 +1001,14 @@ main {
       > article {
         width: 100%;
         max-width: 1920px;
-        min-height: 675px;
+        height: 675px;
         background-color: #f09300;
         position: relative;
         overflow: hidden;
+
+        @include _bp(1200px) {
+          height: auto;
+        }
 
         &::before,
         &::after {
@@ -911,28 +1047,32 @@ main {
           width: -moz-calc(100% - 720px);
           width: calc(100% - 720px);
           left: 50%;
-          @include transform(translateX(-50%));
+          top: 50%;
+          @include transform(translate(-50%, -50%));
           z-index: 1;
 
           @include _bp(1680px) {
-            width: -webkit-calc(100% - 360px);
-            width: -moz-calc(100% - 360px);
-            width: calc(100% - 360px);
-            @include transform(translateX(0));
+            width: -webkit-calc(100% - 435px);
+            width: -moz-calc(100% - 435px);
+            width: calc(100% - 435px);
+            @include transform(translate(0, -50%));
             left: 360px;
           }
 
           @include _bp(1200px) {
             width: 100%;
+            top: 0;
             left: 0;
+            @include transform(none);
           }
 
           video {
-            min-height: 675px;
+            height: auto;
+            max-height: 675px;
 
             @include _bp(1200px) {
               width: 100%;
-              min-height: auto;
+              max-height: auto;
             }
 
             @include _bp(561px) {
@@ -943,17 +1083,21 @@ main {
 
         .live-contentsInfo {
           position: absolute;
-          top: 75px;
+          max-height: 600px;
+          top: 50%;
           left: 75px;
           max-width: 270px;
+          @include transform(translateY(-50%));
 
           @include _bp(1200px) {
             position: relative;
             top: 0;
             left: 0;
             max-width: none;
+            max-height: none;
             width: 100%;
             padding: 30px;
+            @include transform(none);
           }
 
           @include _bp(561px) {
@@ -988,7 +1132,7 @@ main {
             padding-top: 50px;
             font-size: 0;
 
-            * {
+            *:not([class*='txt-line-clamp']) {
               display: inline-block;
               vertical-align: top;
             }
@@ -1003,45 +1147,63 @@ main {
               font-size: 1.4rem;
               font-weight: 400;
             }
+
             strong {
               font-size: 3.6rem;
               color: $gray10;
               letter-spacing: -1.7px;
               line-height: 1.3;
               margin-top: 0;
+              max-height: 95px;
+
+              @include _bp(1200px) {
+                display: inline-block;
+                max-height: none;
+              }
             }
           }
 
           .info-wrap {
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 0;
 
             @include _bp(1200px) {
               position: relative;
             }
 
-            * {
-              display: inline-block;
+            > div {
+              line-height: 1;
               font-size: 1.6rem;
               text-indent: 0;
-            }
 
-            b {
-              font-weight: 700;
-              color: $gray10;
-              line-height: 1;
-            }
+              b {
+                display: inline-block;
+                font-weight: 700;
+                color: $gray10;
+                line-height: 1;
+              }
 
-            em {
-              font-weight: 600;
-              color: #333;
-              margin-top: 15px;
-              line-height: 1.4;
+              & + div {
+                padding-right: 10px;
+                max-height: 110px;
+                font-weight: 600;
+                color: #333;
+                margin-top: 15px;
+                line-height: 1.4;
+
+                @include _bp(1200px) {
+                  max-height: 210px;
+                }
+
+                * {
+                  word-break: break-all;
+                }
+              }
             }
           }
 
           .sns-wrap {
-            margin-top: 50px;
+            margin-top: 40px;
 
             @include _bp(1200px) {
               display: inline-block;
@@ -1119,7 +1281,7 @@ main {
           }
 
           .btn-wrap {
-            margin-top: 120px;
+            margin-top: 40px;
 
             @include _bp(1200px) {
               margin-top: 60px;
@@ -1130,10 +1292,10 @@ main {
 
             button {
               @include _bp(1200px) {
-                width: 49%;
+                width: 32%;
               }
 
-              @include _bp(480px) {
+              @include _bp(768px) {
                 width: 100%;
               }
 
@@ -1146,7 +1308,7 @@ main {
                   margin-left: 2%;
                 }
 
-                @include _bp(480px) {
+                @include _bp(768px) {
                   margin-top: 20px;
                   margin-left: 0;
                 }

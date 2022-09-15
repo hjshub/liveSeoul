@@ -14,6 +14,44 @@
     width: auto;
     display: inline-block;
   }
+
+  &[class*='col-'] {
+    button {
+      @include _bp(768px) {
+        min-width: auto !important;
+      }
+
+      @include _bp(561px) {
+        height: auto !important;
+
+        em {
+          font-size: 1.7rem !important;
+        }
+      }
+    }
+
+    &.col-2 {
+      button {
+        @include _bp(768px) {
+          width: -webkit-calc((100% - 10px) / 2) !important;
+          width: -moz-calc((100% - 10px) / 2) !important;
+          width: calc((100% - 10px) / 2) !important;
+        }
+      }
+    }
+
+    &.col-3 {
+      button {
+        @include _bp(768px) {
+          width: -webkit-calc((100% - 20px) / 3) !important;
+          width: -moz-calc((100% - 20px) / 3) !important;
+          width: calc((100% - 20px) / 3) !important;
+          min-width: auto !important;
+          height: auto !important;
+        }
+      }
+    }
+  }
 }
 
 button {
@@ -78,6 +116,13 @@ button {
 
     &.orange {
       background-color: $orange !important;
+      em {
+        color: $white !important;
+      }
+    }
+
+    &.orange2 {
+      background-color: $orange2 !important;
       em {
         color: $white !important;
       }
@@ -384,6 +429,28 @@ button {
               @include _bp(1200px) {
                 background-image: url('../images/icon-praza24.png');
                 background-size: 100%;
+              }
+
+              @include _bp(1024px) {
+                top: 0;
+              }
+            }
+          }
+        }
+
+        &.schedule {
+          em {
+            padding-left: 35px;
+
+            &::before {
+              width: 19px;
+              height: 18px;
+              background-image: url('../images/icon-calendar-xs-wh.png');
+
+              @include _bp(1200px) {
+                background-image: url('../images/icon-calendar-wh.png');
+                background-size: 100%;
+                top: 2px;
               }
 
               @include _bp(1024px) {

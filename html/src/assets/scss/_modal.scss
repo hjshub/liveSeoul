@@ -73,8 +73,9 @@
     }
 
     .button-close {
-      top: 25px;
+      top: 50%;
       right: 30px;
+      margin-top: -9px;
     }
 
     .modal-header {
@@ -89,6 +90,14 @@
     .modal-body {
       padding: 20px 25px 40px;
 
+      @include _bp(561px) {
+        padding: 15px 15px 25px;
+      }
+
+      @include _bp_landscape(821px) {
+        padding-bottom: 25px;
+      }
+
       .modal-contents {
         background-color: #f9f9f9;
         padding: 15px 10px;
@@ -96,6 +105,14 @@
         .wish-list {
           max-height: 250px;
           padding: 5px 10px;
+
+          @include _bp(561px) {
+            padding: 5px;
+          }
+
+          @include _bp_landscape(821px) {
+            max-height: 150px;
+          }
 
           ul {
             width: 100%;
@@ -121,6 +138,42 @@
 
               &:nth-of-type(4) ~ li {
                 margin-top: 10px;
+              }
+
+              @include _bp(768px) {
+                width: -webkit-calc((100% - 20px) / 3);
+                width: -moz-calc((100% - 20px) / 3);
+                width: calc((100% - 20px) / 3);
+
+                &:nth-of-type(4n + 1) {
+                  margin-left: 10px;
+                }
+
+                &:nth-of-type(3n + 1) {
+                  margin-left: 0;
+                }
+
+                &:nth-of-type(3) ~ li {
+                  margin-top: 10px;
+                }
+              }
+
+              @include _bp(561px) {
+                width: -webkit-calc((100% - 10px) / 2);
+                width: -moz-calc((100% - 10px) / 2);
+                width: calc((100% - 10px) / 2);
+
+                &:nth-of-type(3n + 1) {
+                  margin-left: 10px;
+                }
+
+                &:nth-of-type(2n + 1) {
+                  margin-left: 0;
+                }
+
+                &:nth-of-type(2) ~ li {
+                  margin-top: 10px;
+                }
               }
             }
           }
