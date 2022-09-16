@@ -18,7 +18,6 @@ var _gb = function () {
     this.allMenu = $('#allMenu');
     this.footer = $('footer');
     this.tabMenu = $('.tab-menu');
-    this.listTabMenu = $('.list-tab-menu');
     this.vdSwiper = $('.vd-swiper').get();
     this.tabSwiper = $('.tab-swiper').get();
     this.liveOnAir = $('.liveOnAir');
@@ -41,7 +40,7 @@ window.addEventListener('load', function () {
   if (gb.tabSwiper.length) commonFunction().TabSwiper();
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
   if ($('.curation-swiper').length) commonFunction().CurationSwiper();
-  if ($('.dropArea').length) commonFunction().setCrVideoList();
+  if ($('.dropArea').length) commonFunction().setCurList();
 });
 
 function commonFunction() {
@@ -501,31 +500,6 @@ function commonFunction() {
             });
         });
       },
-      listTabMenu = function () {
-        // 공통 목록 탭 메뉴
-        gb.listTabMenu.each(function () {
-          var trg_tabList = this;
-
-          $(trg_tabList)
-            .find('a')
-            .on('click', function (e) {
-              e.preventDefault();
-              e.stopPropagation();
-
-              var trg = $(this),
-                tabId = trg.attr('href').substr(1);
-
-              if (!trg.closest('li').hasClass('on')) {
-                $(trg_tabList).find('li').removeClass('on');
-                trg.closest('li').addClass('on');
-                $('.list-tab-contents').css('display', 'none');
-                $('.list-tab-contents')
-                  .filter('#' + tabId)
-                  .css('display', 'block');
-              }
-            });
-        });
-      },
       datePick = function () {
         $('.calendar').datepicker({
           showOn: 'both',
@@ -705,7 +679,7 @@ function commonFunction() {
           });
         });
       },
-      setCrVideoList = function () {
+      setCurList = function () {
         // 큐레이션 등록 영상 설정
         $('.set-cur-list').each(function () {
           var curTrg = $(this),
@@ -730,10 +704,11 @@ function commonFunction() {
           curTrg.find('.drag-item').draggable({
             helper: function () {
               var trg = $(this),
+                chWidth = trg.find('.dataArea').outerWidth(),
                 _cloneItem = trg.clone();
               gb.dragItemNumb = $(_cloneItem).data('number');
 
-              trg.addClass('drag');
+              _cloneItem.css('width', chWidth + 'px').addClass('drag');
 
               curTrg.find('.sort-inner').prepend('<div class="dropped"><em class="hidden-txt">드롭영역</em></div>');
 
@@ -873,7 +848,6 @@ function commonFunction() {
         setGnb();
         setLnb();
         tabMenu();
-        listTabMenu();
         allCheck();
         datePick();
         modal();
@@ -893,7 +867,7 @@ function commonFunction() {
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
       fileUpload: fileUpload,
-      setCrVideoList: setCrVideoList,
+      setCurList: setCurList,
       menuAll: menuAll,
       copyUrl: copyUrl,
     };

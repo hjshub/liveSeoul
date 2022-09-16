@@ -3,7 +3,7 @@
   <head>
     @@include('../include/head.html')
 
-    <title>프로그램 상세(서울온에어) | 라이브 서울</title>
+    <title>프로그램 상세 | 라이브 서울</title>
 
     @@include('../include/header_sub.html')
   </head>
@@ -17,6 +17,7 @@
 
       <!-- #contents -->
       <div class="wrap program" id="contents">
+        <h1 class="hidden-txt">프로그램 상세</h1>
         <section class="detail-view">
           <header class="page-header">
             <div class="inner">
@@ -660,44 +661,24 @@
 
         <!-- 관련영상, 추천영상 -->
         <section>
-          <div class="list-tab-menu inner">
-            <ul>
-              <li class="on"><a href="#recommend-list">추천영상</a></li>
-              <li><a href="#related-list">관련영상</a></li>
-            </ul>
+          <div class="inner mob-only">
+            <nav class="tabStyle-nav col-2 red">
+              <ul>
+                <li class="on">
+                  <a href=""><span>관련 영상</span></a>
+                </li>
+                <li>
+                  <a href=""><span>추천 영상</span></a>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <div class="inner list-tab-contents" id="related-list">
+
+          <div class="list-tab-contents inner">
             <h3 class="heading-wrap-03">
               <strong><a href="">관련 영상</a></strong>
             </h3>
-            <div class="vd-list related-list">@@include('../include/vd_list.html')</div>
-            <div class="paging pc-only orange">
-              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-              <strong>1</strong>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-            </div>
-            <div class="btn-wrap align-c mob-only">
-              <button type="button" class="btn-prev"><em>이전</em></button>
-              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-              <button type="button" class="btn-next"><em>다음</em></button>
-            </div>
-          </div>
-          <div class="inner list-tab-contents" id="recommend-list">
-            <h3 class="heading-wrap-03">
-              <strong><a href="">추천 영상</a></strong>
-            </h3>
-            <div class="vd-list recommend-list">@@include('../include/vd_list.html')</div>
+            <div class="vd-list">@@include('../include/vd_list.html')</div>
             <div class="paging pc-only orange">
               <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
               <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
