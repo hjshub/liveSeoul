@@ -562,6 +562,10 @@ button {
       position: relative;
       font-size: 1.7rem;
       top: -1px;
+
+      @include _bp(768px) {
+        top: 0;
+      }
     }
   }
 }
