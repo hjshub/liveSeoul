@@ -583,15 +583,7 @@
                       line-height: 1;
 
                       @include _bp(1485px) {
-                        overflow: hidden;
-                        position: absolute;
-                        width: 1px;
-                        height: 1px;
-                        border: none;
-                        padding: 0;
-                        margin-left: -1px;
-                        clip: rect(1px 1px 1px 1px);
-                        clip: rect(1px, 1px, 1px, 1px);
+                        @include hiddenText;
                       }
                     }
 
@@ -1376,6 +1368,7 @@
 
       > div {
         padding: 22px 0;
+        background-color: $gray16;
 
         &:first-of-type {
           padding-top: 0;
@@ -1398,7 +1391,7 @@
               width: 100%;
               padding: 22px 22px 22px 75px;
               position: relative;
-              background-color: $white;
+              background-color: transparent;
               line-height: 1;
               @include transition(none);
 
@@ -1409,8 +1402,6 @@
               &:hover,
               &:focus,
               &.active {
-                background-color: #f2f2f2;
-
                 &::after {
                   position: absolute;
                   top: 50%;

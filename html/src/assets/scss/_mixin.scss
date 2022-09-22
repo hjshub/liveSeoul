@@ -109,6 +109,18 @@
   -webkit-line-clamp: 3;
 }
 
+@mixin hiddenText {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: none;
+  padding: 0;
+  margin-left: -1px;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 @mixin _bp($val) {
   @media only screen and (max-width: $val) {
     @content;

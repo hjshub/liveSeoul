@@ -136,9 +136,9 @@
                     </div>
                     <div class="td-detail">
                       <button
-                        class="btn-default rounded xs2 white txt-color lgtRed"
+                        class="btn-default rounded xs2 white txt-color lgtRed button-active-modal fixed"
+                        data-modal-name="reject"
                         type="button"
-                        onclick="location.href='../curation/view.html'"
                       >
                         <em>반려내역</em>
                       </button>
@@ -165,7 +165,7 @@
                       <button
                         class="btn-default rounded xs2 white txt-color org"
                         type="button"
-                        onclick="location.href='../curation/view.html'"
+                        onclick="commonFunction().modalDownload();"
                       >
                         <em>영상다운</em>
                       </button>
@@ -192,7 +192,7 @@
                       <button
                         class="btn-default rounded xs2 white txt-color org"
                         type="button"
-                        onclick="location.href='../curation/view.html'"
+                        onclick="commonFunction().modalDownload();"
                       >
                         <em>영상다운</em>
                       </button>
@@ -219,7 +219,7 @@
                       <button
                         class="btn-default rounded xs2 white txt-color org"
                         type="button"
-                        onclick="location.href='../curation/view.html'"
+                        onclick="commonFunction().modalDownload();"
                       >
                         <em>영상다운</em>
                       </button>
@@ -255,6 +255,26 @@
         </section>
       </div>
       <!-- // #contents -->
+
+      <!-- modal -->
+      <!-- 영상 다운로드 반려내역 -->
+      <div class="modal fixed reject" id="modal-reject">
+        <header class="modal-header">
+          <h5>반려내역</h5>
+          <button type="button" class="button-close type02 modal-off">
+            <em class="hidden-txt">레이어 팝업 닫기</em>
+          </button>
+        </header>
+        <div class="modal-body">
+          <div class="modal-contents">
+            <p><img src="../assets/images/img-notice.png" width="85" alt="반려내역" /></p>
+            <p>
+              타 웹사이트 게재를 위해서는 <br />
+              영상 다운로드가 <b>불가능</b> 합니다.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <!-- #footer -->
       <footer id="footer">@@include('../include/footer_sub.html')</footer>

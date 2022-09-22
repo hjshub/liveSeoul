@@ -218,15 +218,7 @@ button {
 
           &:not(.voice > em) {
             @include _bp(768px) {
-              overflow: hidden;
-              position: absolute;
-              width: 1px;
-              height: 1px;
-              border: none;
-              padding: 0;
-              margin-left: -1px;
-              clip: rect(1px 1px 1px 1px);
-              clip: rect(1px, 1px, 1px, 1px);
+              @include hiddenText;
             }
           }
 
@@ -810,7 +802,7 @@ button {
           z-index: 10;
 
           @include _bp(561px) {
-            top: 2px;
+            top: 3px;
           }
         }
 
@@ -819,6 +811,11 @@ button {
           line-height: 1;
           font-size: 1.7rem;
         }
+      }
+
+      &:focus + label {
+        outline: 1px dashed $blue1;
+        outline-offset: -1px;
       }
 
       &:checked + label:before {
@@ -894,6 +891,11 @@ button {
           text-align: left;
           font-size: 1.7rem;
         }
+      }
+
+      &:focus + label {
+        outline: 1px dashed $blue1;
+        outline-offset: -1px;
       }
 
       &:checked + label:after {
@@ -1005,6 +1007,11 @@ button {
           vertical-align: middle;
           z-index: 1;
         }
+      }
+
+      &:focus + label {
+        outline: 1px dashed $blue1;
+        outline-offset: -1px;
       }
 
       &:checked + label {

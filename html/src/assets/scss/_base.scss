@@ -247,15 +247,7 @@ strong {
 legend,
 caption,
 .hidden-txt {
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  border: none;
-  padding: 0;
-  margin-left: -1px;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
+  @include hiddenText;
 }
 
 hr {
@@ -268,12 +260,30 @@ hr {
 }
 
 /* Placeholder */
-::-webkit-input-placeholder,
-:-moz-placeholder,
-::-moz-placeholder,
-:-ms-input-placeholder,
-::-ms-input-placeholder,
-::placeholder,
+::-webkit-input-placeholder {
+  color: $gray2 !important;
+  font-size: 1.6rem;
+}
+:-moz-placeholder {
+  color: $gray2 !important;
+  font-size: 1.6rem;
+}
+::-moz-placeholder {
+  color: $gray2 !important;
+  font-size: 1.6rem;
+}
+:-ms-input-placeholder {
+  color: $gray2 !important;
+  font-size: 1.6rem;
+}
+::-ms-input-placeholder {
+  color: $gray2 !important;
+  font-size: 1.6rem;
+}
+::placeholder {
+  color: $gray2 !important;
+  font-size: 1.6rem;
+}
 .placeholderTxt {
   color: $gray2 !important;
   font-size: 1.6rem;
