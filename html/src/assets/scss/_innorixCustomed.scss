@@ -1,0 +1,64 @@
+#uploadArea-wrapper {
+  width: 100% !important;
+}
+
+.innorix_basic {
+  border: 1px solid $gray9 !important;
+  font-size: 1.6rem !important;
+
+  div {
+    &.irx_filetree {
+      &.empty-uploader {
+        background-image: url('../images/bg-drop_zone.png') !important;
+      }
+
+      .irx_filetree_list {
+        li {
+          & + li {
+            margin-top: 0 !important;
+          }
+
+          .irx-file-inner-wrapper {
+            height: 26px !important;
+            padding: 10px !important;
+
+            .tree-icon {
+              &.filetree-checkbox {
+                margin-top: 7px !important;
+              }
+              &.file-icon {
+                overflow: hidden;
+                position: absolute;
+                width: 1px !important;
+                height: 1px !important;
+                border: none;
+                padding: 0;
+                margin-left: -1px !important;
+                margin-top: 0 !important;
+                clip: rect(1px 1px 1px 1px);
+                clip: rect(1px, 1px, 1px, 1px);
+              }
+            }
+
+            .filename {
+              width: -webkit-calc(65% - 18px);
+              width: -moz-calc(65% - 18px);
+              width: calc(65% - 18px);
+              text-align: center;
+              height: 24px !important;
+              line-height: 24px !important;
+            }
+
+            .filesize {
+              width: 35%;
+              text-align: center;
+              margin-left: 0 !important;
+              height: 24px !important;
+              line-height: 24px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
