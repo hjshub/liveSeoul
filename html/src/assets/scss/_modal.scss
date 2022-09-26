@@ -653,6 +653,86 @@
     }
   }
 
+  /* 큐레이션 담기 */
+  &.addCuration {
+    width: 490px;
+    margin-right: -140px;
+
+    @include _bp(1280px) {
+      margin-right: -320px;
+    }
+
+    @include _bp(561px) {
+      margin-right: 0;
+      right: 0;
+    }
+
+    &::before {
+      @include _bp(1280px) {
+        right: 230px;
+      }
+
+      @include _bp(561px) {
+        right: 110px;
+      }
+    }
+
+    .modal-header {
+      margin-bottom: 15px;
+    }
+
+    .modal-body {
+      .modal-contents {
+        ul {
+          li {
+            & + li {
+              margin-top: 15px;
+            }
+          }
+        }
+
+        & + .btn-wrap {
+          margin-top: 20px;
+        }
+
+        &.customedScroll {
+          max-height: 155px;
+        }
+      }
+    }
+  }
+
+  /* 다운로드 */
+  &.applyDownload {
+    width: 720px;
+
+    @include _bp(1280px) {
+      margin-right: -145px;
+      width: 560px;
+    }
+
+    &::before {
+      @include _bp(1280px) {
+        right: 115px;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      padding: 20px 10px;
+      height: 105px;
+    }
+
+    .btn-wrap {
+      margin-top: 20px;
+    }
+
+    .modal-header {
+      margin-bottom: 20px;
+    }
+  }
+
   /* SNS 공유 */
   &.share {
     width: 282px;
@@ -708,37 +788,6 @@
           margin-left: 13px;
         }
       }
-    }
-  }
-
-  /* 다운로드 */
-  &.applyDownload {
-    width: 720px;
-
-    @include _bp(1280px) {
-      margin-right: -145px;
-      width: 560px;
-    }
-
-    &::before {
-      @include _bp(1280px) {
-        right: 115px;
-      }
-    }
-
-    textarea {
-      width: 100%;
-      resize: vertical;
-      padding: 20px 10px;
-      height: 105px;
-    }
-
-    .btn-wrap {
-      margin-top: 20px;
-    }
-
-    .modal-header {
-      margin-bottom: 20px;
     }
   }
 

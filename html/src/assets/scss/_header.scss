@@ -126,7 +126,7 @@
         position: absolute;
         left: 0;
         top: 50%;
-        margin-top: 6px;
+        margin-top: 10px;
         @include transform(translateY(-50%));
 
         @include _bp(1200px) {
@@ -137,19 +137,17 @@
 
         &::before {
           width: 110px;
-          height: 29px;
-          background-image: url('../images/icon-set-gnb.png');
+          height: 24px;
+          background-image: url('../images/logo/liveseoul_wh.svg');
           background-repeat: no-repeat;
-          background-position: 0 -77px;
+          background-size: 100% auto;
+          background-position: 0 0;
           content: '';
 
           @include _bp(1200px) {
-            width: 119px;
-            height: 31px;
-            background-image: url('../images/mob/img-symbol-live-seoul.png');
-            background-repeat: no-repeat;
-            background-position: 0 0;
-            background-size: 100%;
+            width: 120px;
+            height: 26px;
+            background-image: url('../images/logo/liveseoul.svg');
           }
         }
       }
@@ -494,7 +492,7 @@
           position: absolute;
           top: 50%;
           left: 50%;
-          margin: -15.5px 0 0 -60px;
+          margin: -13px 0 0 -60px;
         }
       }
 
@@ -744,6 +742,12 @@
       background-color: $white;
 
       .inner {
+        .symbol-live-seoul {
+          &::before {
+            background-image: url('../images/logo/liveseoul.svg');
+          }
+        }
+
         > div:nth-of-type(2) {
           > a {
             &::before {

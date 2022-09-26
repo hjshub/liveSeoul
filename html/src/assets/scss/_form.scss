@@ -15,6 +15,23 @@
     display: inline-block;
   }
 
+  &.half {
+    button {
+      width: -webkit-calc((100% - 10px) / 2) !important;
+      width: -moz-calc((100% - 10px) / 2) !important;
+      width: calc((100% - 10px) / 2) !important;
+
+      @include _bp(480px) {
+        width: 100% !important;
+
+        & + button {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
   &[class*='col-'] {
     button {
       @include _bp(768px) {
@@ -95,6 +112,17 @@ button {
 
       em {
         font-size: 1.6rem;
+      }
+    }
+
+    &.xs3 {
+      min-width: 60px;
+      padding: 0;
+      height: 24px;
+      min-height: auto;
+
+      em {
+        font-size: 1.4rem;
       }
     }
 
@@ -205,7 +233,7 @@ button {
       &has-icon {
         width: 170px;
 
-        &:not(.voice) {
+        &:not(.voice, .add) {
           @include _bp(768px) {
             width: 65px;
             min-width: auto;
@@ -216,7 +244,7 @@ button {
           padding-left: 30px;
           font-size: 1.7rem !important;
 
-          &:not(.voice > em) {
+          &:not(.voice > em, .add > em) {
             @include _bp(768px) {
               @include hiddenText;
             }
@@ -230,7 +258,7 @@ button {
             background-position: 0 0;
             content: '';
 
-            &:not(.voice > em::before) {
+            &:not(.voice > em::before, .add > em::before) {
               @include _bp(768px) {
                 content: none;
                 display: none;
@@ -328,6 +356,52 @@ button {
                     background-image: url('../images/mob/icon-voice-wh.png');
                   }
                 }
+              }
+            }
+          }
+
+          &.type-02 {
+            background: #3f2756;
+            border: 1px solid #be84d3;
+
+            em {
+              color: $white;
+
+              &::before {
+                background-image: url('../images/icon-voice-wh.png');
+
+                @include _bp(768px) {
+                  background-image: url('../images/mob/icon-voice-wh.png');
+                }
+              }
+            }
+
+            &:hover,
+            &:focus,
+            &.on {
+              background: #be84d3;
+            }
+          }
+        }
+
+        &.add {
+          width: auto;
+          min-width: 155px;
+
+          em {
+            padding-left: 26px;
+            font-size: 1.6rem !important;
+
+            &::before {
+              width: 17px;
+              height: 17px;
+              top: 50%;
+              margin-top: -8px;
+              background-image: url('../images/icon-add.png');
+
+              @include _bp(768px) {
+                background-image: url('../images/mob/icon-add-xs.png');
+                background-size: 100%;
               }
             }
           }
@@ -680,6 +754,16 @@ button {
   display: inline-block;
   position: relative;
   font-size: 0;
+
+  &.line {
+    input[type='text'] {
+      border-width: 0 0 1px 0;
+      border-style: solid;
+      border-color: $gray2;
+      padding: 0;
+      background-color: transparent;
+    }
+  }
 
   input[type='text'] {
     width: 100%;

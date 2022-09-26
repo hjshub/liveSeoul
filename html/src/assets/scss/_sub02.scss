@@ -1574,22 +1574,6 @@
               }
             }
             .contents-mid {
-              .btn-has-icon {
-                background: #3f2756;
-                border-color: #be84d3;
-                color: $white;
-
-                &:hover,
-                &:focus,
-                &.on {
-                  background: #be84d3;
-                }
-                em {
-                  &:before {
-                    background-image: url(../images/icon-voice-wh.png);
-                  }
-                }
-              }
               .modal-text-support {
                 color: #f4e9ff;
               }
@@ -1602,9 +1586,11 @@
               }
             }
             .utility {
-              li {
-                em {
-                  color: rgba(255, 255, 255, 0.8);
+              > ul {
+                > li {
+                  em {
+                    color: rgba(255, 255, 255, 0.8);
+                  }
                 }
               }
             }
@@ -2490,9 +2476,9 @@
           }
         }
 
-        @include _bp(640px){
-          padding:15px;
-          margin-top:20px;
+        @include _bp(640px) {
+          padding: 15px;
+          margin-top: 20px;
         }
       }
 
@@ -2815,6 +2801,82 @@
 
               @include _bp(768px) {
                 padding: 20px 10px;
+              }
+
+              .file-list-tit {
+                display: table;
+                width: 100%;
+                background-color: $white;
+                border-width: 1px 1px 0 1px;
+                border-style: solid;
+                border-color: $gray9;
+
+                span {
+                  display: table-cell;
+                  text-align: center;
+                  line-height: 60px;
+
+                  b {
+                    display: inline-block;
+                    line-height: 1.4;
+                  }
+
+                  &.tit-name {
+                    width: 65%;
+                  }
+                  &.tit-size {
+                    width: -webkit-calc(35% - 60px) !important;
+                    width: -moz-calc(35% - 60px) !important;
+                    width: calc(35% - 60px) !important;
+                  }
+                  &.tit-button {
+                    width: 60px;
+                  }
+                }
+              }
+
+              .file-list-size {
+                width: 100%;
+                text-align: right;
+                background-color: $white;
+                border-width: 0 1px 1px 1px;
+                border-style: solid;
+                border-color: $gray9;
+                color: $gray2;
+                padding: 20px;
+                line-height: 1;
+
+                span {
+                  display: inline-block;
+                  line-height: 1;
+                  position: relative;
+                  font-size: 0;
+                  vertical-align: top;
+
+                  em {
+                    vertical-align: top;
+                    font-size: 1.6rem;
+
+                    & + em {
+                      margin-left: 5px;
+                    }
+                  }
+
+                  &:nth-of-type(2) {
+                    padding-left: 40px;
+
+                    &::before {
+                      width: 1px;
+                      height: 12px;
+                      position: absolute;
+                      top: 50%;
+                      margin-top: -6px;
+                      left: 20px;
+                      background-color: currentColor;
+                      content: '';
+                    }
+                  }
+                }
               }
 
               li {

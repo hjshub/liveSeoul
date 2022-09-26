@@ -67,24 +67,15 @@
                     <dt><label>파일 첨부</label></dt>
                     <dd>
                       <div class="file-up-list">
-                        <div id="uploadArea-wrapper"></div>
-                        <div class="btn-wrap align-r hidden-txt">
-                          <button
-                            type="button"
-                            class="btn-default xs rounded lightPurple"
-                            title="파일추가"
-                            onclick="uploadController.openFileDialog();"
-                          >
-                            <em>파일추가</em>
-                          </button>
-                          <button
-                            type="button"
-                            class="btn-default xs rounded purple"
-                            title="업로드"
-                            onclick="uploadController.upload();"
-                          >
-                            <em>업로드</em>
-                          </button>
+                        <div class="file-list-tit">
+                          <span class="tit-name"><b>파일이름</b></span>
+                          <span class="tit-size"><b>파일크기(Bytes)</b></span>
+                          <span class="tit-button">&nbsp;</span>
+                        </div>
+                        <div id="uploadWrapper"></div>
+                        <div class="file-list-size">
+                          <span class="cur-size"><em>현재 용량</em><em>0.00MB</em></span>
+                          <span class="rm-size"><em>남은 용량</em><em>00.00MB</em></span>
                         </div>
                         <p class="info-txt">* pdf, ppt, doc, hwp, txt, zip 파일만 등록 가능하며 최대 5개까지 등록 가능 합니다.</p>
                       </div>
@@ -115,7 +106,7 @@
 
       // 파일전송 컨트롤 생성
       uploadController = innorix.create({
-        el: '#uploadArea-wrapper', // 컨트롤 출력 HTML 객체 ID
+        el: '#uploadWrapper', // 컨트롤 출력 HTML 객체 ID
         agent: false, // true = Agent 설치, false = html5 모드 사용 (기본값 : true)
         // maxFileCount: 100, // 첨부가능 파일 전체 개수 (기본값 : 무제한)
         maxFileSize: 104857600, // 100MB 첨부가능 전체 사이즈(bytes) (기본값 : 무제한)
@@ -126,12 +117,6 @@
         addDuplicateFile: false, // 중복파일 추가 유무 (기본값 : true)
         allowExtension: ['pdf', 'ppt', 'pptx', 'doc', 'hwp', 'txt', 'zip'], // 허용 확장자 지정
         showFileListHeader: false, // 리스트 헤더에 선택 툴팁 출력
-      });
-
-      uploadController.on('afterAddFiles', function (t) {
-        var size = t[0].fileSize;
-
-        console.log(size);
       });
 
       // 업로드 완료 이벤트

@@ -541,94 +541,172 @@
             }
 
             .contents-mid {
+              width: 100%;
               position: relative;
+              font-size: 0;
 
               .text-support,
               .utility {
                 display: inline-block;
+                vertical-align: top;
+              }
+
+              .text-support {
                 position: relative;
+
+                @include _bp(561px) {
+                  width: -webkit-calc((100% - 10px) / 2);
+                  width: -moz-calc((100% - 10px) / 2);
+                  width: -ms-calc((100% - 10px) / 2);
+                  font-size: 0;
+
+                  > button {
+                    width: 100%;
+                  }
+                }
               }
 
               .utility {
                 position: absolute;
-                top: 10px;
+                top: 0;
                 right: 0;
                 font-size: 0;
 
-                @include _bp(1485px) {
-                  top: 0;
+                &.etc {
+                  @include _bp(561px) {
+                    padding-bottom: 0;
+                  }
+
+                  > ul {
+                    top: 0;
+                    margin-left: 0;
+                  }
                 }
 
-                > li {
-                  display: inline-block;
+                @include _bp(561px) {
                   position: relative;
+                  width: -webkit-calc((100% - 10px) / 2);
+                  width: -moz-calc((100% - 10px) / 2);
+                  width: -ms-calc((100% - 10px) / 2);
+                  margin-left: 10px;
+                  padding-bottom: 60px;
+                }
 
-                  > a {
-                    display: inline-block;
-                    line-height: 1;
-                    color: #656565;
-                    font-size: 1.6rem;
-                    padding-left: 50px;
-                    position: relative;
-                    vertical-align: top;
+                .add-curation {
+                  display: inline-block;
 
-                    @include _bp(1485px) {
-                      padding-left: 0;
-                      width: 39px;
-                      height: 39px;
-                    }
+                  @include _bp(561px) {
+                    width: 100%;
 
-                    em {
-                      display: inline-block;
-                      line-height: 1;
-
-                      @include _bp(1485px) {
-                        @include hiddenText;
-                      }
-                    }
-
-                    &::before {
-                      position: absolute;
-                      top: 50%;
-                      left: 0;
-                      background-image: url('../images/icon-set-sns.png');
-                      background-repeat: no-repeat;
-                      content: '';
-                    }
-
-                    &.icon-download {
-                      &::before {
-                        margin-top: -19px;
-                        width: 39px;
-                        height: 39px;
-                        background-position: -2px -5px;
-                      }
-                    }
-
-                    &.icon-share {
-                      &::before {
-                        margin-top: -19px;
-                        width: 39px;
-                        height: 39px;
-                        background-position: -45px -5px;
-                      }
-                    }
-
-                    &.icon-like {
-                      &::before {
-                        margin-top: -19px;
-                        width: 39px;
-                        height: 39px;
-                        background-position: -87px -5px;
-                      }
+                    > button {
+                      width: 100%;
                     }
                   }
 
-                  & + li {
-                    margin-left: 20px;
+                  .my-curation {
+                    li {
+                      .text-wrap {
+                        width: -webkit-calc(100% - 26px);
+                        width: -moz-calc(100% - 26px);
+                        width: -ms-calc(100% - 26px);
+                        margin-left: 10px;
 
-                    @include _bp(1485px) {
-                      margin-left: 15px;
+                        input[type='text'] {
+                          width: -webkit-calc(100% - 70px);
+                          width: -moz-calc(100% - 70px);
+                          width: -ms-calc(100% - 70px);
+                          height: 24px;
+
+                          & + button {
+                            margin-left: 10px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                > ul {
+                  display: inline-block;
+                  margin-left: 20px;
+
+                  @include _bp(561px) {
+                    position: absolute;
+                    right: 0;
+                    top: 60px;
+                  }
+
+                  > li {
+                    display: inline-block;
+                    position: relative;
+
+                    > a {
+                      display: inline-block;
+                      line-height: 1;
+                      color: #656565;
+                      font-size: 1.6rem;
+                      padding-left: 50px;
+                      position: relative;
+                      vertical-align: top;
+
+                      @include _bp(1485px) {
+                        padding-left: 0;
+                        width: 39px;
+                        height: 39px;
+                      }
+
+                      em {
+                        display: inline-block;
+                        line-height: 1;
+
+                        @include _bp(1485px) {
+                          @include hiddenText;
+                        }
+                      }
+
+                      &::before {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        background-image: url('../images/icon-set-sns.png');
+                        background-repeat: no-repeat;
+                        content: '';
+                      }
+
+                      &.icon-download {
+                        &::before {
+                          margin-top: -19px;
+                          width: 39px;
+                          height: 39px;
+                          background-position: -2px -5px;
+                        }
+                      }
+
+                      &.icon-share {
+                        &::before {
+                          margin-top: -19px;
+                          width: 39px;
+                          height: 39px;
+                          background-position: -45px -5px;
+                        }
+                      }
+
+                      &.icon-like {
+                        &::before {
+                          margin-top: -19px;
+                          width: 39px;
+                          height: 39px;
+                          background-position: -87px -5px;
+                        }
+                      }
+                    }
+
+                    & + li {
+                      margin-left: 20px;
+
+                      @include _bp(1485px) {
+                        margin-left: 15px;
+                      }
                     }
                   }
                 }
