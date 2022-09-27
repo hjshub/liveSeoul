@@ -387,35 +387,35 @@ main {
         }
       }
 
-      img {
-        width: 100%;
-        max-height: -webkit-calc(100vh - 46px);
-        max-height: -moz-calc(100vh - 46px);
-        max-height: calc(100vh - 46px);
-        min-height: 380px;
-        position: relative;
-
-        @include _bp(1200px) {
-          max-height: -webkit-calc(100vh - 97px);
-          max-height: -moz-calc(100vh - 97px);
-          max-height: calc(100vh - 97px);
-        }
-
-        @include _bp(561px) {
-          width: auto;
-          left: 50%;
-          height: 305px;
-          min-height: auto;
-          @include transform(translateX(-50%));
-        }
-      }
-
       .main-swiper {
         position: relative;
 
         article {
           position: relative;
           overflow: hidden;
+
+          > img {
+            width: 100%;
+            max-height: -webkit-calc(100vh - 46px);
+            max-height: -moz-calc(100vh - 46px);
+            max-height: calc(100vh - 46px);
+            min-height: 380px;
+            position: relative;
+
+            @include _bp(1200px) {
+              max-height: -webkit-calc(100vh - 97px);
+              max-height: -moz-calc(100vh - 97px);
+              max-height: calc(100vh - 97px);
+            }
+
+            @include _bp(561px) {
+              width: auto;
+              left: 50%;
+              height: 305px;
+              min-height: auto;
+              @include transform(translateX(-50%));
+            }
+          }
 
           .poster {
             position: absolute;
@@ -1412,7 +1412,7 @@ main {
               width: 320px !important;
             }
 
-            article {
+            .article {
               border-top: 2px solid rgba(255, 255, 255, 0.2);
 
               .time {
@@ -1471,7 +1471,7 @@ main {
             }
 
             &.swiper-slide-active {
-              article {
+              .article {
                 .info {
                   color: #f5b400;
                   dl {
@@ -1849,7 +1849,7 @@ main {
           }
         }
 
-        article {
+        .article {
           > div {
             & + div {
               margin-top: 25px;
@@ -1930,7 +1930,7 @@ main {
     width: 298px !important;
     padding: 0 10px;
 
-    article {
+    .article {
       > div {
         & + div {
           margin-top: 25px;
@@ -2135,7 +2135,7 @@ main {
         width: 340px !important;
       }
 
-      article {
+      .article {
         margin-top: 30px;
         position: relative;
         border-top: 2px solid $gray9;
@@ -2278,7 +2278,7 @@ main {
       }
 
       &.swiper-slide-active {
-        article {
+        .article {
           .info {
             color: $red1;
 

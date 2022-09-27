@@ -326,7 +326,7 @@
         }
       }
 
-      article {
+      .article {
         > div {
           & + div {
             margin-top: 20px;
@@ -1332,21 +1332,21 @@
             }
 
             &:hover {
-              article {
+              .article {
                 background: $light-purple;
               }
               .info {
                 dl {
                   dt,
                   dd {
-                    color: $white;
+                    color: $white !important;
                     @include transition(none);
                   }
                 }
               }
             }
 
-            article {
+            .article {
               position: relative;
               padding: 17px 20px 25px;
               background: $white;
