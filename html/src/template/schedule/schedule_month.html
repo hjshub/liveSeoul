@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../include/head.html')
+
+    <title>편성표 | 라이브 서울</title>
+
+    @@include('../include/header_sub.html')
+  </head>
+  <body>
+    @@include('../include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb">@@include('../include/gnb_sub.html')</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <div class="wrap schedule list" id="contents">
+        <h1 class="hidden-txt">편성표</h1>
+        <section class="list_top">
+          <header class="page-header">
+            <div class="inner">
+              <div class="location">
+                <span>
+                  <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em> </a>
+                </span>
+                <span><a href="">서울온에어</a></span>
+                <span><a href="">편성표</a></span>
+              </div>
+
+              <h2 class="no_st">
+                <strong>편성표</strong>
+              </h2>
+            </div>
+          </header>
+        </section>
+
+        <!-- 편성표 -->
+        <section>
+          <div class="inner">
+            <header class="schedule-month-header clear">
+              <div class="classify">
+                <span>생방송</span>
+                <span>다시보기</span>
+                <span>예정</span>
+                <span>다시보기 준비중</span>
+              </div>
+              <div class="r-box ctrl">
+                <button class="btn-view-calendar" type="button"><em>달력형</em></button>
+                <button class="btn-view-list" type="button"><em>목록형</em></button>
+              </div>
+            </header>
+            <div clas="schedule-calendarType"></div>
+            <div clas="schedule-listType"></div>
+          </div>
+        </section>
+      </div>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer_sub.html')</footer>
+      <!-- // #footer -->
+    </div>
+
+    <script></script>
+  </body>
+</html>

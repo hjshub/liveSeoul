@@ -3521,4 +3521,131 @@
       }
     }
   }
+
+  &.schedule {
+    &.list {
+      @include _bp(768px) {
+        padding-bottom: 0;
+      }
+
+      .list_top {
+        min-height: 0;
+
+        .page-header {
+          padding: 50px 0 20px;
+
+          @include _bp(768px) {
+            padding-bottom: 20px;
+          }
+
+          .inner {
+            position: static;
+          }
+        }
+
+        & + section {
+          margin-top: 0;
+        }
+      }
+
+      .schedule-month-header {
+        border-top: 2px solid $red2;
+        padding: 30px 0;
+
+        .classify {
+          display: inline-block;
+        }
+
+        .ctrl {
+          font-size: 0;
+
+          button {
+            color: $gray2;
+            border: 1px solid currentColor;
+            background-color: $white;
+
+            &::before {
+              position: absolute;
+              left: -1px;
+              top: -1px;
+              bottom: -1px;
+              right: 100%;
+              @include transition-duration(0.3s);
+              content: '';
+            }
+
+            em {
+              font-size: 1.7rem;
+
+              &::before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                background-image: url('../images/icon-set-schedule.png');
+                background-repeat: no-repeat;
+                content: '';
+              }
+            }
+
+            &.btn-view-calendar {
+              em {
+                padding-left: 23px;
+
+                &::before {
+                  width: 13px;
+                  height: 13px;
+                  margin-top: -6px;
+                  background-position: -6px -6px;
+                }
+              }
+            }
+
+            &.btn-view-list {
+              em {
+                padding-left: 26px;
+
+                &::before {
+                  width: 16px;
+                  height: 11px;
+                  margin-top: -5px;
+                  background-position: -6px -26px;
+                }
+              }
+            }
+
+            & + button {
+              left: -1px;
+              margin-left: 0;
+            }
+
+            &:hover,
+            &:focus {
+              color: $white;
+
+              &::before {
+                right: -1px;
+                background-color: $red2;
+              }
+
+              &.btn-view-calendar {
+                em {
+                  &::before {
+                    background-position: -26px -6px;
+                  }
+                }
+              }
+
+              &.btn-view-list {
+                em {
+                  &::before {
+                    background-position: -26px -26px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
