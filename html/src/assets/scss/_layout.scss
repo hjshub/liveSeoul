@@ -79,6 +79,7 @@ textarea {
     }
   }
 }
+
 .txt-roboto {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
@@ -103,6 +104,10 @@ textarea {
   @include transform(rotate(-0.03deg));
 }
 .txt-color {
+  &.black {
+    color: $black !important;
+  }
+
   &.darkGray {
     color: $gray10 !important;
   }
@@ -118,6 +123,10 @@ textarea {
   &.lgtRed {
     color: $red1 !important;
   }
+
+  &.navy {
+    color: $navy2 !important;
+  }
 }
 .clear {
   &::after {
@@ -125,6 +134,15 @@ textarea {
     clear: both;
     content: '';
   }
+}
+.l-box {
+  float: left;
+}
+.r-box {
+  float: right;
+}
+.cl {
+  clear: both;
 }
 .center {
   position: relative;
@@ -174,6 +192,29 @@ textarea {
 }
 .mrl-none {
   margin-left: 0 !important;
+}
+.ft-md {
+  font-size: 2.6rem;
+  font-weight: 400;
+
+  @include _bp(480px) {
+    font-size: 2.4rem;
+  }
+
+  &,
+  * {
+    vertical-align: top;
+  }
+}
+
+.ft-sm {
+  font-size: 1.7rem;
+  font-weight: 400;
+
+  &,
+  * {
+    vertical-align: top;
+  }
 }
 .visible {
   overflow: visible !important;
@@ -232,11 +273,26 @@ textarea {
   line-height: 1;
   position: relative;
 
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
   strong {
+    padding-right: 16px;
     font-size: 3.6rem;
 
     @include _bp(640px) {
       font-size: 2.8rem;
+    }
+
+    @include _bp(391px) {
+      padding-right: 6px;
+    }
+
+    @include _bp(320px) {
+      font-size: 2.7rem;
     }
 
     & + button {

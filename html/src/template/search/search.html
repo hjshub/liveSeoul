@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../include/head.html')
+
+    <title>통합검색 | 라이브 서울</title>
+
+    @@include('../include/header_sub.html')
+  </head>
+  <body>
+    @@include('../include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb">@@include('../include/gnb_sub.html')</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <div class="wrap search board list" id="contents">
+        <h1 class="hidden-txt">통합 검색</h1>
+        <section class="board_top">
+          <header class="page-header pdb-none">
+            <div class="inner">
+              <div class="location">
+                <span
+                  ><a href=""
+                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
+                  ></span
+                >
+                <span><a href="">검색결과</a></span>
+              </div>
+            </div>
+          </header>
+
+          <div class="inner">
+            <div class="date-search-area type-02">
+              <form>
+                <fieldset>
+                  <ul>
+                    <li>
+                      <dl>
+                        <dt>기간선택</dt>
+                        <dd>
+                          <div class="datePick-bt">
+                            <button type="button"><em>오늘</em></button>
+                            <button type="button"><em>최근 일주일</em></button>
+                            <button type="button"><em>최근한달</em></button>
+                          </div>
+                          <div class="both">
+                            <span class="text-wrap">
+                              <input
+                                class="calendar"
+                                title="기간 선택 - 기간을 선택하세요"
+                                placeholder="기간을 선택하세요"
+                                type="text"
+                              />
+                            </span>
+                            <span class="text-wrap">
+                              <input
+                                class="calendar"
+                                title="기간 선택 - 기간을 선택하세요"
+                                placeholder="기간을 선택하세요"
+                                type="text"
+                              />
+                            </span>
+                          </div>
+                        </dd>
+                      </dl>
+                    </li>
+                    <li>
+                      <dl>
+                        <dt>검색어</dt>
+                        <dd>
+                          <div class="text-wrap has-button">
+                            <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
+                            <button class="btn-has-icon rounded search orange" type="submit"><em>검색하기</em></button>
+                          </div>
+                        </dd>
+                      </dl>
+                    </li>
+                  </ul>
+                  <div class="keyword">
+                    <dl>
+                      <dt><strong>추천키워드</strong></dt>
+                      <dd>
+                        <div class="keyword-swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"><span>취업</span></div>
+                            <div class="swiper-slide"><span>경제</span></div>
+                            <div class="swiper-slide"><span>봄나들이</span></div>
+                            <div class="swiper-slide"><span>야경</span></div>
+                            <div class="swiper-slide"><span>역사</span></div>
+                            <div class="swiper-slide"><span>드론영상</span></div>
+                            <div class="swiper-slide"><span>낮과밤</span></div>
+                            <div class="swiper-slide"><span>봄</span></div>
+                          </div>
+                        </div>
+                      </dd>
+                    </dl>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- 영상 목록 -->
+        <section>
+          <div class="inner">
+            <h2 class="clear">
+              <span class="ft-md txt-color black">
+                <b class="txt-color navy">&lsquo;서울시&rsquo;</b>에 대한 검색결과는 <b class="txt-color navy">2,555건</b>입니다.
+              </span>
+              <span class="sort">
+                <a href="javascript:;" class="on">최신순</a>
+                <a href="javascript:;">인기순</a>
+                <a href="javascript:;">가나다순</a>
+              </span>
+            </h2>
+
+            <nav class="tabStyle-nav col-3 red">
+              <ul>
+                <li class="on">
+                  <a href=""><span>전체</span></a>
+                </li>
+                <li>
+                  <a href=""><span>프로그램</span></a>
+                </li>
+                <li>
+                  <a href=""><span>영상크리에이터</span></a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="vd-list">@@include('../include/vd_list.html')</div>
+          </div>
+        </section>
+
+        <!-- paging -->
+        <div class="paging pc-only orange">
+          <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+          <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+          <strong>1</strong>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+          <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+        </div>
+
+        <!-- 더보기 (mobile) -->
+        <div class="btn-wrap align-c mob-only">
+          <button type="button" class="btn-prev"><em>이전</em></button>
+          <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+          <button type="button" class="btn-next"><em>다음</em></button>
+        </div>
+      </div>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer_sub.html')</footer>
+      <!-- // #footer -->
+    </div>
+  </body>
+</html>
