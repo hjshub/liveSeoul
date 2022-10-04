@@ -3638,7 +3638,6 @@
             text-align: left;
 
             @include _bp(768px) {
-              width: 25%;
               vertical-align: top;
             }
 
@@ -3656,10 +3655,6 @@
 
             & + span {
               margin-left: 10px;
-
-              @include _bp(768px) {
-                margin-left: 0;
-              }
             }
 
             &.live {
@@ -3668,19 +3663,19 @@
               }
             }
 
-            &.replay {
+            &.rep {
               &::before {
                 background-position: 0 -25px;
               }
             }
 
-            &.expected {
+            &.exp {
               &::before {
                 background-position: 0 -50px;
               }
             }
 
-            &.ready {
+            &.prep {
               &::before {
                 background-position: 0 -75px;
               }
@@ -3971,19 +3966,19 @@
                 }
               }
 
-              &.replay {
+              &.rep {
                 &::before {
                   background-position: 0 -25px;
                 }
               }
 
-              &.expected {
+              &.exp {
                 &::before {
                   background-position: 0 -50px;
                 }
               }
 
-              &.ready {
+              &.prep {
                 &::before {
                   background-position: 0 -75px;
                 }
@@ -4019,6 +4014,182 @@
       // 편성표 (mobile)
       .mob-sched-list {
         position: relative;
+
+        ul {
+          position: relative;
+
+          li {
+            a {
+              display: block;
+              padding: 30px;
+              border-radius: 15px;
+              background-color: $white;
+              box-shadow: 5px 5px 13px rgba(67, 67, 67, 0.2);
+              font-size: 0;
+
+              @include _bp(640px) {
+                padding: 15px;
+              }
+
+              > div {
+                display: inline-block;
+                vertical-align: top;
+                font-size: 0;
+
+                &.img {
+                  width: 270px;
+
+                  @include _bp(640px) {
+                    width: 180px;
+                  }
+
+                  @include _bp(421px) {
+                    width: 100%;
+                  }
+
+                  img {
+                    width: 100%;
+                  }
+                }
+
+                &.info {
+                  width: -webkit-calc(100% - 270px);
+                  width: -moz-calc(100% - 270px);
+                  width: calc(100% - 270px);
+                  padding-left: 30px;
+
+                  @include _bp(640px) {
+                    width: -webkit-calc(100% - 180px);
+                    width: -moz-calc(100% - 180px);
+                    width: calc(100% - 180px);
+                    padding-left: 15px;
+                  }
+
+                  @include _bp(421px) {
+                    width: 100%;
+                    padding-left: 0;
+                    margin-top: 15px;
+                  }
+
+                  * {
+                    display: inline-block;
+                  }
+
+                  > span {
+                    width: 100%;
+                    font-size: 1.8rem;
+                    line-height: 1;
+
+                    @include _bp(640px) {
+                      font-size: 1.6rem;
+                    }
+
+                    & + span {
+                      margin-top: 20px;
+
+                      @include _bp(640px) {
+                        margin-top: 10px;
+                      }
+                    }
+
+                    &.tit {
+                      position: relative;
+                      text-indent: 30px;
+                      line-height: 1.4;
+
+                      &::before {
+                        width: 24px;
+                        height: 24px;
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                        background-image: url('../images/icon-set-txt_icon.png');
+                        background-repeat: no-repeat;
+                        background-color: transparent;
+                        content: '';
+
+                        @include _bp(640px) {
+                          top: 0;
+                        }
+                      }
+
+                      &.live {
+                        &::before {
+                          background-position: 0 0;
+                        }
+                      }
+
+                      &.rep {
+                        &::before {
+                          background-position: 0 -25px;
+                        }
+                      }
+
+                      &.exp {
+                        &::before {
+                          background-position: 0 -50px;
+                        }
+                      }
+
+                      &.prep {
+                        &::before {
+                          background-position: 0 -75px;
+                        }
+                      }
+                    }
+
+                    b {
+                      font-size: 2.2rem;
+                      color: $gray10;
+                      @include line-clamp2;
+
+                      @include _bp(640px) {
+                        font-size: 1.8rem;
+                      }
+                    }
+
+                    em {
+                      color: $gray2;
+                      line-height: 1;
+
+                      @include _bp(640px) {
+                        font-size: 1.5rem;
+                      }
+
+                      & + em {
+                        padding-left: 35px;
+                        position: relative;
+
+                        @include _bp(640px) {
+                          padding-left: 21px;
+                        }
+
+                        &::before {
+                          position: absolute;
+                          top: 50%;
+                          left: 17px;
+                          width: 1px;
+                          height: 12px;
+                          margin-top: -6px;
+                          background-color: currentColor;
+                          content: '';
+
+                          @include _bp(640px) {
+                            left: 10px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            & + li {
+              margin-top: 40px;
+            }
+          }
+        }
 
         &::before {
           position: absolute;
