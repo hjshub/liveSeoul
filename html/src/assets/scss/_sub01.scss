@@ -89,6 +89,61 @@
     .contents {
       .contents-body {
         margin-top: 60px;
+
+        .search-area {
+          .select-wrap {
+            select,
+            label {
+              z-index: 1;
+            }
+          }
+
+          .text-wrap {
+            input[type='text'] {
+              width: -webkit-calc(100% - 170px);
+              width: -moz-calc(100% - 170px);
+              width: calc(100% - 170px);
+
+              @include _bp(1024px) {
+                width: -webkit-calc(100% - 130px);
+                width: -moz-calc(100% - 130px);
+                width: calc(100% - 130px);
+              }
+
+              @include _bp(768px) {
+                width: -webkit-calc(100% - 60px);
+                width: -moz-calc(100% - 60px);
+                width: calc(100% - 60px);
+              }
+
+              @include _bp(640px) {
+                width: 100%;
+                margin: 5px 0 15px;
+              }
+            }
+
+            button {
+              width: 160px;
+
+              @include _bp(1024px) {
+                width: 120px;
+                min-width: 0;
+              }
+
+              @include _bp(768px) {
+                width: 60px;
+              }
+
+              @include _bp(640px) {
+                width: 100%;
+
+                &:last-child {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -756,7 +811,7 @@
         color: $gray10;
 
         @include _bp(1200px) {
-          width: 250px;
+          width: 220px;
         }
 
         @include _bp(768px) {
@@ -1077,9 +1132,9 @@
         border-left: 1px solid #e4e3e3;
 
         @include _bp(1200px) {
-          width: -webkit-calc(100% - 220px);
-          width: -moz-calc(100% - 220px);
-          width: calc(100% - 220px);
+          width: -webkit-calc(100% - 190px);
+          width: -moz-calc(100% - 190px);
+          width: calc(100% - 190px);
         }
 
         @include _bp(768px) {
@@ -3522,7 +3577,7 @@
     }
   }
 
-  &.schedule {
+  &.sched {
     &.list {
       @include _bp(768px) {
         padding-bottom: 0;
@@ -3548,16 +3603,177 @@
         }
       }
 
-      .schedule-month-header {
+      // 편성표 공통 헤더
+      .sched-header {
         border-top: 2px solid $red2;
-        padding: 30px 0;
+        padding: 30px 0 25px;
+        position: relative;
 
-        .classify {
-          display: inline-block;
+        @include _bp(1024px) {
+          border-top: 0;
+          padding: 0;
         }
 
-        .ctrl {
+        .classify {
+          margin-top: 7px;
+
+          @include _bp(1200px) {
+            width: 100%;
+            margin-top: 0;
+            padding-bottom: 20px;
+          }
+
+          @include _bp(1024px) {
+            text-align: center;
+            font-size: 0;
+          }
+
+          span {
+            display: inline-block;
+            position: relative;
+            padding-left: 30px;
+            line-height: 25px;
+            font-size: 1.6rem;
+            color: $gray2;
+            text-align: left;
+
+            @include _bp(768px) {
+              width: 25%;
+              vertical-align: top;
+            }
+
+            &::before {
+              width: 24px;
+              height: 24px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background-image: url('../images/icon-set-txt_icon.png');
+              background-repeat: no-repeat;
+              background-color: transparent;
+              content: '';
+            }
+
+            & + span {
+              margin-left: 10px;
+
+              @include _bp(768px) {
+                margin-left: 0;
+              }
+            }
+
+            &.live {
+              &::before {
+                background-position: 0 0;
+              }
+            }
+
+            &.replay {
+              &::before {
+                background-position: 0 -25px;
+              }
+            }
+
+            &.expected {
+              &::before {
+                background-position: 0 -50px;
+              }
+            }
+
+            &.ready {
+              &::before {
+                background-position: 0 -75px;
+              }
+            }
+          }
+        }
+
+        .s-month {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include transform(translate(-50%, -50%));
+
+          @include _bp(1200px) {
+            position: static;
+            float: left;
+            margin-top: 30px;
+            @include transform(none);
+          }
+
+          @include _bp(1024px) {
+            width: 100%;
+            margin-top: 0;
+            padding: 25px 0;
+            text-align: center;
+            float: none;
+            position: relative;
+            left: 0;
+            top: 0;
+
+            &::before {
+              position: absolute;
+              left: -30px;
+              right: -30px;
+              bottom: 0;
+              top: 0;
+              background-color: #f9f9f9;
+              content: '';
+            }
+          }
+
+          &,
+          * {
+            display: inline-block;
+          }
+
+          span {
+            margin: 0 30px;
+            font-size: 3rem;
+            position: relative;
+          }
+
+          .button-nxt,
+          .button-prev {
+            position: relative;
+            width: 51px;
+            height: 51px;
+            border-radius: 50%;
+            background-color: #fff;
+            -webkit-box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.15);
+            box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.15);
+
+            &::before {
+              width: 13px;
+              height: 23px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              margin: -11.5px 0 0 -6.5px;
+              background-image: url('../images/icon-arr_prev.png');
+              background-repeat: no-repeat;
+              background-position: 0 0;
+              content: '';
+            }
+          }
+
+          .button-nxt {
+            &::before {
+              background-image: url('../images/icon-arr_nxt.png');
+            }
+          }
+        }
+
+        .ctrl-box {
           font-size: 0;
+
+          @include _bp(1200px) {
+            margin-top: 40px;
+          }
+
+          @include _bp(1024px) {
+            display: none;
+          }
 
           button {
             color: $gray2;
@@ -3618,8 +3834,7 @@
               margin-left: 0;
             }
 
-            &:hover,
-            &:focus {
+            &.selected {
               color: $white;
 
               &::before {
@@ -3644,6 +3859,175 @@
               }
             }
           }
+        }
+      }
+
+      .sched-pc-only {
+        display: block;
+
+        @include _bp(1024px) {
+          display: none;
+        }
+      }
+
+      .sched-mob-only {
+        display: none;
+
+        @include _bp(1024px) {
+          display: block;
+        }
+      }
+
+      // 편성표 달력형 (pc)
+      .sched-calendar {
+        display: block;
+        border-top: 1px solid $gray2;
+
+        dl {
+          display: table;
+          width: 100%;
+          table-layout: fixed;
+
+          dt,
+          dd {
+            display: table-cell;
+            font-size: 1.6rem;
+          }
+
+          &.days {
+            dd {
+              line-height: 70px;
+              text-align: center;
+              background-color: #f9f9f9;
+              font-size: 2rem;
+              color: $gray10;
+              padding: 0;
+              height: auto;
+
+              @include _bp(1200px) {
+                line-height: 50px;
+              }
+
+              &.sun {
+                background-color: #ffd0d0;
+              }
+
+              &.sat {
+                background-color: #ffd4a5;
+              }
+            }
+          }
+
+          dd {
+            width: -webkit-calc(100% / 7);
+            width: -moz-calc(100% / 7);
+            width: calc(100% / 7);
+            border-width: 0 1px 1px 0;
+            border-color: $gray14;
+            border-style: solid;
+            vertical-align: top;
+            padding: 20px 10px 20px 20px;
+            height: 200px;
+
+            @include _bp(1200px) {
+              padding: 10px;
+            }
+
+            &:last-of-type {
+              border-width: 0 0 1px 0;
+            }
+
+            .dates {
+              display: block;
+              line-height: 1;
+              margin-bottom: 15px;
+              color: $gray1;
+            }
+
+            div {
+              line-height: 1;
+              position: relative;
+              padding-left: 30px;
+
+              & + div {
+                margin-top: 20px;
+              }
+
+              &::before {
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 1px;
+                left: 0;
+                background-image: url('../images/icon-set-txt_icon.png');
+                background-repeat: no-repeat;
+                background-color: transparent;
+                content: '';
+              }
+
+              &.live {
+                &::before {
+                  background-position: 0 0;
+                }
+              }
+
+              &.replay {
+                &::before {
+                  background-position: 0 -25px;
+                }
+              }
+
+              &.expected {
+                &::before {
+                  background-position: 0 -50px;
+                }
+              }
+
+              &.ready {
+                &::before {
+                  background-position: 0 -75px;
+                }
+              }
+
+              strong,
+              em {
+                display: inline-block;
+                width: 100%;
+                @include break-word;
+                line-height: 1.5;
+              }
+
+              strong {
+                margin-bottom: 7px;
+              }
+
+              em {
+                line-height: 1.2;
+                font-size: 1.4rem;
+                color: $gray2;
+              }
+            }
+          }
+        }
+      }
+
+      // 편성표 목록형 (pc)
+      .sched-list {
+        display: none;
+      }
+
+      // 편성표 (mobile)
+      .mob-sched-list {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          left: -30px;
+          right: -30px;
+          bottom: 0;
+          top: 0;
+          background-color: #f9f9f9;
+          content: '';
         }
       }
     }
