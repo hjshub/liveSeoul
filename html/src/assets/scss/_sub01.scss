@@ -2354,6 +2354,45 @@
               max-width: calc(100% - 120px);
             }
           }
+
+          .btn-has-icon {
+            &.like {
+              &.active {
+                background-color: #cb2121 !important;
+
+                &::before {
+                  @include _bp(768px) {
+                    background-image: url('../images/mob/icon-like-wh.png');
+                  }
+                }
+
+                em {
+                  color: $white !important;
+                  &::before {
+                    background-image: url('../images/icon-like-wh.png');
+                  }
+                }
+              }
+            }
+            &.flag {
+              &.active {
+                background-color: #081240 !important;
+
+                &::before {
+                  @include _bp(768px) {
+                    background-image: url('../images/mob/icon-flag-wh.png');
+                  }
+                }
+
+                em {
+                  color: $white !important;
+                  &::before {
+                    background-image: url('../images/icon-flag-wh.png');
+                  }
+                }
+              }
+            }
+          }
         }
 
         .location {
@@ -3578,6 +3617,10 @@
   }
 
   &.sched {
+    @include _bp(1024px) {
+      padding-bottom: 0;
+    }
+
     &.list {
       @include _bp(768px) {
         padding-bottom: 0;
@@ -3595,6 +3638,56 @@
 
           .inner {
             position: static;
+          }
+
+          h2 {
+            * {
+              vertical-align: middle;
+            }
+
+            .sub-tit {
+              display: none;
+              position: relative;
+              padding-left: 30px;
+              margin-left: 30px;
+              line-height: 1;
+              font-size: 2.5rem;
+              color: $gray2;
+
+              @include _bp(1024px) {
+                display: inline-block;
+              }
+
+              @include _bp(768px) {
+                padding-left: 20px;
+                margin-left: 20px;
+              }
+
+              @include _bp(480px) {
+                font-size: 2rem;
+              }
+
+              &::before {
+                width: 1px;
+                height: 30px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -15px;
+                background-color: #bebebe;
+                content: '';
+
+                @include _bp(768px) {
+                  height: 20px;
+                  margin-top: -10px;
+                }
+
+                @include _bp(480px) {
+                  height: 14px;
+                  margin-top: -7px;
+                }
+              }
+            }
           }
         }
 
@@ -3994,6 +4087,10 @@
 
               strong {
                 margin-bottom: 7px;
+
+                a {
+                  vertical-align: top;
+                }
               }
 
               em {
@@ -4014,6 +4111,7 @@
       // 편성표 (mobile)
       .mob-sched-list {
         position: relative;
+        padding-bottom: 60px;
 
         ul {
           position: relative;
@@ -4092,10 +4190,21 @@
                       }
                     }
 
+                    &:last-of-type {
+                      @include _bp(421px) {
+                        padding-left: 30px;
+                      }
+                    }
+
                     &.tit {
                       position: relative;
                       text-indent: 30px;
                       line-height: 1.4;
+
+                      @include _bp(421px) {
+                        text-indent: 0;
+                        padding-left: 30px;
+                      }
 
                       &::before {
                         width: 24px;
