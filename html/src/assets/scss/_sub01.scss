@@ -28,29 +28,19 @@
       }
     }
 
-    .heading-wrap-03 {
-      strong {
-        @include _bp(768px) {
-          display: none;
-        }
-      }
-    }
-
     .button-open-sideMenu {
       margin-top: 10px;
     }
 
     .icon-wrap {
       display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 135px;
+      position: relative;
+      margin: 0 20px;
 
       &.mob {
-        margin-left: 0;
         float: right;
-        position: relative;
         left: 0;
+        margin: 0;
 
         .modal#modal-share2 {
           margin-right: -39px;
@@ -143,6 +133,42 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  .list-header {
+    .heading-wrap-03 {
+      display: inline-block;
+
+      * {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+      }
+
+      strong {
+        padding-right: 0;
+      }
+
+      span {
+        font-size: 2.5rem;
+        padding-left: 40px;
+        font-weight: 500;
+        position: relative;
+
+        &::before {
+          width: 7px;
+          height: 13px;
+          position: absolute;
+          top: 50%;
+          left: 15px;
+          margin-top: -6px;
+          background-image: url('../images/icon-arr_nxt_th-s.png');
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          content: '';
         }
       }
     }

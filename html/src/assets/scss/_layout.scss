@@ -269,6 +269,7 @@ textarea {
     font-size: 2rem;
   }
 }
+
 .heading-wrap-03 {
   line-height: 1;
   position: relative;
@@ -280,6 +281,7 @@ textarea {
   }
 
   strong {
+    display: inline-block;
     padding-right: 16px;
     font-size: 3.6rem;
 
@@ -1706,6 +1708,7 @@ main {
           width: -webkit-calc((100% - 88px) / 5);
           width: -moz-calc((100% - 88px) / 5);
           width: calc((100% - 88px) / 5);
+          vertical-align: top;
 
           @include _bp(1680px) {
             width: -webkit-calc((100% - 66px) / 4);
@@ -1959,10 +1962,38 @@ main {
           .date {
             color: $gray1;
             font-size: 1.4rem;
-            margin-top: 55px;
+            margin-top: 35px;
 
             @include _bp(768px) {
-              margin-top: 30px;
+              margin-top: 20px;
+            }
+
+            span {
+              display: inline-block;
+              width: 100%;
+              line-height: 1;
+
+              em {
+                display: inline-block;
+                position: relative;
+                vertical-align: top;
+
+                & + em {
+                  padding-left: 11px;
+                  margin-left: 10px;
+
+                  &::before {
+                    width: 1px;
+                    height: 12px;
+                    background-color: currentColor;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -5px;
+                    content: '';
+                  }
+                }
+              }
             }
           }
         }
