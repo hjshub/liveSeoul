@@ -194,7 +194,7 @@
     <script>
       // 스트리밍 재생
       var vd = $('.vd-streaming').get();
-      var vdTimeSet;
+      var vdTimeSet = [];
       var vdSrc = [
         'https://topiscctv.eseoul.go.kr/sd1/ch96.stream/playlist.m3u8',
         'https://topiscctv.eseoul.go.kr/sd1/ch61.stream/playlist.m3u8',
@@ -216,15 +216,17 @@
         t.on('click', function () {
           t.stop().fadeOut(300);
           vd[i].play();
+        });
 
-          vdTimeSet = setTimeout(function () {
+        vd[i].addEventListener('play', function () {
+          vdTimeSet[i] = setTimeout(function () {
             vd[i].pause(); // 재생 시작 30초 후 일시정지
           }, 30000);
         });
 
         vd[i].addEventListener('pause', function () {
           t.stop().fadeIn(300);
-          clearTimeout(vdTimeSet);
+          clearTimeout(vdTimeSet[i]);
         });
       });
     </script>

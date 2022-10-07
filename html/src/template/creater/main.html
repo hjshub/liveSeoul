@@ -406,7 +406,6 @@
       var multiVideoObj = new Object();
       multiVideoObj.setVideoSrc = new Array();
       multiVideoObj.sizeList = new Array();
-      multiVideoObj.videoObj = new Object();
 
       //모바일 확인
       var isMob = window.innerWidth <= 768 ? true : false;
@@ -493,7 +492,6 @@
       multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc5);
       multiVideoObj.sizeList.push(multiVideoObj.sizeList5);
 
-      //품질 변경 버튼 리스트
       var currentVd_ = $('.cr_main_vd').get();
 
       currentVd_.forEach(function (el, idx) {
