@@ -44,25 +44,6 @@
       //모바일 확인
       var isMob = window.innerWidth <= 768 ? true : false;
 
-      if (!isMob) {
-        //웹 브라우저 화질 default 1280x546
-        qualitySize = 1;
-      } else {
-        //모바일 화질 default    484x206
-        qualitySize = 2;
-      }
-
-      window.addEventListener('resize', function () {
-        isMob = window.innerWidth <= 768 ? true : false;
-        if (!isMob) {
-          //웹 브라우저 화질 default 1280x546
-          qualitySize = 1;
-        } else {
-          //모바일 화질 default    484x206
-          qualitySize = 2;
-        }
-      });
-
       // video src 설정
       // m3u8 파일 테스트용
       // 비디오 샘플 페이지
@@ -75,12 +56,12 @@
       sizeList.push(1);
 
       var videoObj2 = new Object();
-      videoObj2.size = '1080';
+      videoObj2.size = '720';
       videoObj2.src =
         'https://videos-app.seoul.go.kr/seoul/_definst_/mp4:2022/07/20220701131341983/20220701131341983_540p.mp4/playlist.m3u8';
       videoObj2.type = 'video/mp4';
       setVideoSrc.push(videoObj2);
-      sizeList.push(1080);
+      sizeList.push(720);
 
       var videoObj3 = new Object();
       videoObj3.size = '272';
@@ -89,6 +70,32 @@
       videoObj3.type = 'video/mp4';
       setVideoSrc.push(videoObj3);
       sizeList.push(272);
+
+      //처음 영상 재생 화질 default값 설정
+      if (sizeList.length == 1) {
+        qualitySize = 0;
+      } else {
+        //자동화질 설정
+        if (sizeList[0] == '1') {
+          if (!isMob || sizeList.length == 2) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 1;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 2;
+          }
+        }
+        //자동화질 미설정
+        else {
+          if (!isMob) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 0;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 1;
+          }
+        }
+      }
 
       $('#seoulPlayer').createVideo({
         // 플레이어 생성 영역 DIV의 아이디
@@ -102,6 +109,7 @@
         progress: true, // false : 프로그레스바 컨트롤 되지 않도록
         preview: [{ enabled: false, src: '' }],
         quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+        qualitySize: qualitySize,
         isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
         iconUrl: '../tgplayer/plugin/js/plyr.svg',
         blankVideo: '../tgplayer/plugin/js/blank.mp4',

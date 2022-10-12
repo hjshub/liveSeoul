@@ -1051,6 +1051,10 @@ main {
       background-color: #f1f1eb;
       padding: 75px 0 85px;
 
+      .no-files {
+        background-color: transparent;
+      }
+
       &::before {
         width: 505px;
         height: 618px;
@@ -1552,6 +1556,33 @@ main {
             z-index: 20;
           }
         }
+      }
+    }
+  }
+
+  .no-files {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+    margin: 20px 0 40px;
+
+    p {
+      line-height: 1.4;
+      font-size: 2rem;
+      padding: 0 20px;
+
+      img {
+        @include _bp(561px) {
+          width: 80px;
+        }
+      }
+
+      & + p {
+        margin-top: 30px;
+      }
+
+      * {
+        vertical-align: top;
       }
     }
   }
@@ -2156,6 +2187,7 @@ main {
     }
   }
 }
+
 .button-swiperController {
   display: inline-block;
   width: 13px;
@@ -2533,6 +2565,7 @@ main {
     }
   }
 }
+
 .tab-contents {
   > div {
     opacity: 0;
