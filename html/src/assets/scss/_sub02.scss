@@ -934,17 +934,18 @@
                 @include _bp(1024px) {
                   position: absolute;
                   left: 30px;
-                  top: 35px;
+                  top: 16px;
                   opacity: 0;
                   @include transition-delay(0.5s);
                 }
 
-                @include _bp(561px) {
-                  left: 15px;
-                  top: 15px;
+                @include _bp(768px) {
+                  left: auto;
+                  right: 30px;
                 }
 
                 @include _bp(561px) {
+                  right: 15px;
                   padding-left: 25px;
                   line-height: 15px;
                 }
@@ -1128,16 +1129,27 @@
           }
         }
 
-        .cr-profile-swiper {
+        .cr-profile {
           position: relative;
           height: 267px;
-          background: #311c48;
+          background-color: #491e78;
+          background-image: url('../images/bg-creator-profile.gif');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto 100%;
           overflow: hidden;
+          padding: 60px 10px 25px 25px;
 
           @include _bp(1450px) {
             float: left;
             width: 35%;
             height: 281px;
+            padding-right: 30px;
+            background-size: 100% auto;
+          }
+
+          @include _bp(1200px) {
+            background-size: 100% 100%;
           }
 
           @include _bp(1024px) {
@@ -1146,119 +1158,70 @@
 
           @include _bp(767px) {
             width: 100%;
+            background-size: 100% auto;
           }
 
           @include _bp(561px) {
             height: 252px;
+            background-size: 100% 100%;
           }
 
           h3 {
-            position: absolute;
-            left: 30px;
-            top: 25px;
             font-size: 2.6rem;
             font-weight: 300;
             line-height: 1.38em;
             z-index: 10;
 
-            @include _bp(1450px) {
-              left: 75px;
-              top: 35px;
-            }
-
-            @include _bp(1200px) {
-              left: 30px;
-            }
-
-            @include _bp(561px) {
-              left: 15px;
-              top: 20px;
-            }
-
             strong {
               vertical-align: baseline;
             }
           }
-          .swiper-slide {
-            a {
-              display: block;
-              position: absolute;
-              left: 0;
-              right: 0;
-              top: 0;
-              bottom: 0;
+
+          .article {
+            div {
+              position: relative;
+              width: 100%;
+              height: 110px;
+              text-align: right;
 
               &:before {
                 content: '';
                 display: block;
                 position: absolute;
-                right: 235px;
-                top: 110px;
+                left: 0;
+                bottom: 20px;
                 width: 112px;
                 height: 63px;
-                background: url(../images/logo-creater.png);
-                opacity: 0;
-                @include transition-delay(1.5s);
-
-                @include _bp(1450px) {
-                  top: 125px;
-                }
+                background: url('../images/logo-creater.png');
               }
 
-              img {
+              .btn-playSwiper {
+                display: inline-block;
                 position: absolute;
-                right: 10px;
-                bottom: 5px;
-              }
-            }
+                bottom: 0;
+                right: 0;
+                padding-right: 67px;
+                background-color: transparent;
+                z-index: 10;
 
-            &.swiper-slide-active {
-              a {
-                &:before {
-                  opacity: 1;
+                &::before {
+                  position: absolute;
+                  width: 67px;
+                  height: 72px;
+                  right: 0;
+                  bottom: 0;
+                  background-image: url('../images/icon-play2.png');
+                  background-position: 0 0;
+                  background-repeat: no-repeat;
+                  content: '';
                 }
-              }
-            }
-          }
-          .swiper-button {
-            position: absolute;
-            left: 30px;
-            bottom: 30px;
-            z-index: 10;
 
-            @include _bp(1450px) {
-              left: 75px;
-            }
-
-            @include _bp(1200px) {
-              left: 30px;
-            }
-
-            @include _bp(561px) {
-              left: 15px;
-              bottom: 25px;
-            }
-
-            div {
-              position: static;
-              left: auto;
-              top: auto;
-              display: inline-block;
-              width: 36px;
-              height: 36px;
-              margin: 0;
-              background: center no-repeat #4c3165;
-              border-radius: 50%;
-
-              &:after {
-                display: none;
-              }
-              &.swiper-button-prev {
-                margin-right: 10px;
-                background-image: url(../images/icon-arr_prev-m-wh.png);
-              }
-              &.swiper-button-next {
-                background-image: url(../images/icon-arr_nxt-m-wh.png);
+                b {
+                  font-weight: 700;
+                  font-size: 1.6rem;
+                  color: $white;
+                  letter-spacing: -0.7px;
+                }
               }
             }
           }

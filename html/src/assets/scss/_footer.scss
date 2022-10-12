@@ -27,12 +27,6 @@ footer {
       padding: 0 15px;
     }
 
-    &:first-of-type {
-      @include _bp(961px) {
-        display: none;
-      }
-    }
-
     dl {
       width: 100%;
       display: table;

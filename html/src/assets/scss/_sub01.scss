@@ -29,13 +29,16 @@
     }
 
     .button-open-sideMenu {
-      margin-top: 10px;
+      margin-top: 6px;
     }
 
     .icon-wrap {
       display: inline-block;
       position: relative;
-      margin: 0 20px;
+
+      & + .icon-wrap {
+        margin-left: 10px;
+      }
 
       &.mob {
         float: right;
@@ -43,7 +46,7 @@
         margin: 0;
 
         .modal#modal-share2 {
-          margin-right: -39px;
+          margin-right: -34px;
 
           &::before {
             right: 9px;
@@ -58,19 +61,28 @@
           position: absolute;
           top: 0;
           left: 0;
-          background-image: url('../images/icon-set-sns.png');
+          background-image: url('../images/icon-sns-sh.png');
           background-repeat: no-repeat;
+          width: 100%;
+          height: 100%;
           content: '';
         }
 
         &.icon-share {
-          width: 39px;
-          height: 39px;
+          width: 34px;
+          height: 33px;
 
           &::before {
-            width: 100%;
-            height: 100%;
-            background-position: -45px -5px;
+            background-position: 0 0;
+          }
+        }
+
+        &.icon-listen {
+          width: 33px;
+          height: 33px;
+
+          &::before {
+            background-image: url('../images/icon-listen.png');
           }
         }
       }
@@ -141,6 +153,7 @@
   .list-header {
     .heading-wrap-03 {
       display: inline-block;
+      margin-right: 20px;
 
       * {
         display: inline-block;
@@ -1074,10 +1087,10 @@
                   a {
                     em {
                       &::before {
-                        width: 20px;
-                        height: 20px;
-                        margin-top: -10px;
-                        background-position: -3px -33px;
+                        width: 22px;
+                        height: 17px;
+                        margin-top: -9px;
+                        background-position: -157px -3px;
                       }
                     }
                   }
@@ -1357,7 +1370,7 @@
               &:nth-of-type(7) {
                 dt {
                   &::before {
-                    background-position: -206px -1px;
+                    background-position: -246px -1px;
                   }
                 }
               }
@@ -1390,51 +1403,58 @@
         }
 
         .contents-header {
-          padding: 27px 150px 26px 45px;
+          padding: 55px 130px 30px 45px;
           position: relative;
 
           @include _bp(1024px) {
-            padding: 20px 0 20px 20px;
+            padding: 55px 0 20px 20px;
           }
 
           @include _bp(768px) {
             padding-left: 0;
+            padding-top: 0;
           }
 
-          &::before {
-            position: absolute;
-            height: 1px;
-            left: 0;
-            right: -75px;
-            bottom: 0;
-            background-color: #e4e3e3;
-            content: '';
+          // &::before {
+          //   position: absolute;
+          //   height: 1px;
+          //   left: 0;
+          //   right: -75px;
+          //   bottom: 0;
+          //   background-color: #e4e3e3;
+          //   content: '';
 
-            @include _bp(768px) {
-              display: none;
-              content: none;
-            }
-          }
+          //   @include _bp(768px) {
+          //     display: none;
+          //     content: none;
+          //   }
+          // }
 
           .swiper-controller {
-            top: 50%;
-            bottom: auto;
-            margin-top: -25px;
+            bottom: 30px;
 
             .button-swiper-nxt,
             .button-swiper-prev {
               background-color: #f2f2f2;
+              width: 45px;
+              height: 45px;
+              -webkit-box-shadow: none;
+              box-shadow: none;
+            }
+
+            .button-swiper-nxt {
+              margin-left: 10px;
             }
           }
         }
 
         .contents-body {
-          padding: 30px 0 0 50px;
+          padding: 0 0 0 50px;
           margin-top: 0;
           margin-bottom: 140px;
 
           @include _bp(1024px) {
-            padding: 30px 0 0 30px;
+            padding: 0 0 0 30px;
           }
 
           @include _bp(768px) {
@@ -1506,14 +1526,14 @@
     .mob-sideMenu {
       width: 80%;
       position: absolute;
-      top: 60px;
+      top: 50px;
       left: -80%;
       color: $gray10;
       background-color: $gray16;
       z-index: 20;
-      max-height: -webkit-calc(100vh - 185px);
-      max-height: -moz-calc(100vh - 185px);
-      max-height: calc(100vh - 185px);
+      max-height: -webkit-calc(100vh - 197px);
+      max-height: -moz-calc(100vh - 197px);
+      max-height: calc(100vh - 197px);
       padding-bottom: 60px;
       overflow: hidden;
       overflow-y: auto;
@@ -1737,10 +1757,10 @@
                 a {
                   em {
                     &::before {
-                      width: 20px;
-                      height: 20px;
-                      margin-top: -10px;
-                      background-position: -3px -33px;
+                      width: 22px;
+                      height: 17px;
+                      margin-top: -9px;
+                      background-position: -157px -3px;
                     }
                   }
                 }

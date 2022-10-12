@@ -53,41 +53,6 @@ $crVisSwiper_playBtn.click(function () {
   }
 });
 
-var crProfileSwiper = new Swiper('.cr-profile-swiper', {
-  // Optional parameters
-  loop: true,
-  speed: 600,
-  centeredSlides: true,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-  autoplay: {
-    delay: 5000,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: false,
-  slidesPerView: 1,
-  debugger: true, // Enable debugger
-});
-
-crProfileSwiper.on('activeIndexChange', function (swiper) {
-  setTimeout(function () {
-    var animate = $('.swiper-slide-active .animate').get(),
-      animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
-
-    animate_.forEach(function (elem) {
-      $(elem).removeClass('animation--start');
-    });
-    animate.forEach(function (elem) {
-      $(elem).addClass('animation--start');
-    });
-  }, 100);
-});
-
 var animate = $('.swiper-slide-active .animate').get();
 
 setTimeout(function () {

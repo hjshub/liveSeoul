@@ -108,6 +108,10 @@ textarea {
     color: $black !important;
   }
 
+  &.white {
+    color: $white !important;
+  }
+
   &.darkGray {
     color: $gray10 !important;
   }
@@ -378,7 +382,7 @@ main,
   width: 100%;
   overflow: hidden;
 
-  *:not(.animate, .transition-none, .sort-inner > *, button > *, .preview, .paging) {
+  *:not(.animate, .transition-none, .transition-none > *, .sort-inner > *, button > *, .preview, .paging) {
     @include transition(all 0.4s ease-in-out);
   }
 }
@@ -1660,6 +1664,7 @@ main {
       position: absolute;
       top: 18px;
       right: 75px;
+      z-index: 10;
       font-size: 0;
 
       @include _bp(1200px) {
@@ -1694,6 +1699,10 @@ main {
             background-repeat: no-repeat;
             background-position: 0 0;
             content: '';
+          }
+
+          &.lt::before {
+            background-image: url('../images/icon-arr_nxt_th-xs-lgr.png');
           }
         }
 
