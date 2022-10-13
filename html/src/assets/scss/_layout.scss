@@ -1958,6 +1958,26 @@ main {
               width: 100%;
               background-color: #fefefe;
               overflow: hidden;
+              position: relative;
+
+              .topic {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                padding: 5px 10px;
+                border-radius: 0 0 10px 0;
+                background-color: $red2;
+                color: $white;
+                font-size: 1.4rem;
+                z-index: 1;
+                -webkit-box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
+                box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.2);
+
+                @include _bp(561px) {
+                  font-size: 1.6rem;
+                }
+              }
 
               img {
                 width: 100%;
