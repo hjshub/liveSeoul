@@ -935,7 +935,7 @@ button {
     display: inline-block;
     font-size: 0;
     position: relative;
-    height: 38px;
+    height: 32px;
 
     input[type='radio'] {
       position: absolute;
@@ -952,9 +952,9 @@ button {
         width: auto;
         height: 100%;
         vertical-align: top;
-        line-height: 36px;
+        line-height: 30px;
         border-radius: 30px;
-        padding: 0 30px;
+        padding: 0 20px;
         color: $gray9;
         border: 1px solid currentColor;
         background-color: $white;
@@ -968,7 +968,7 @@ button {
         em {
           display: inline-block;
           line-height: 1;
-          font-size: 1.7rem;
+          font-size: 1.6rem;
           position: relative;
           vertical-align: middle;
           z-index: 1;
@@ -1116,7 +1116,7 @@ button {
 }
 
 .chk-wrap-type02 {
-  margin: 5px;
+  margin: 2px;
 
   * {
     @include transition(none !important);
@@ -1125,7 +1125,7 @@ button {
     display: inline-block;
     font-size: 0;
     position: relative;
-    height: 38px;
+    height: 28px;
 
     input[type='checkbox'] {
       position: absolute;
@@ -1142,23 +1142,19 @@ button {
         width: auto;
         height: 100%;
         vertical-align: top;
-        line-height: 36px;
+        line-height: 26px;
         border-radius: 30px;
-        padding: 0 30px;
+        padding: 0 15px;
         color: $gray9;
         border: 1px solid currentColor;
         background-color: $white;
         overflow: hidden;
         position: relative;
 
-        @include _bp(561px) {
-          padding: 0 15px;
-        }
-
         em {
           display: inline-block;
           line-height: 1;
-          font-size: 1.7rem;
+          font-size: 1.5rem;
           position: relative;
           vertical-align: middle;
           z-index: 1;
@@ -1409,6 +1405,7 @@ button {
 
   table {
     text-align: center;
+    width: 100%;
 
     thead th {
       font-size: 2rem;

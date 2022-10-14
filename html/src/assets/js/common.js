@@ -111,23 +111,23 @@ function commonFunction() {
           }
         });
 
-        $('.gnb > li > a').on({
+        $('.dropDown .item > a').on({
           'mouseenter focusin': function () {
             var trg = $(this);
 
-            $('.gnb > li > a').removeClass('on');
-            $('.gnb > li > a').next('div').stop().slideUp(300);
-            trg.closest('li').addClass('on');
-            trg.next('div').stop().slideDown(300);
+            $('.dropDown .item').removeClass('on');
+            $('.dropDown .item').find('.depth2').stop().slideUp(300);
+            trg.closest('.item').addClass('on');
+            trg.next('.depth2').stop().slideDown(300);
           },
         });
 
-        $('.gnb > li').on({
+        $('.dropDown .item').on({
           mouseleave: function () {
             var trg = $(this);
 
             trg.removeClass('on');
-            trg.find('> div').stop().slideUp(300);
+            trg.find('.depth2').stop().slideUp(300);
           },
         });
       },
@@ -662,12 +662,19 @@ function commonFunction() {
           if (trg.hasClass('on')) {
             trg.removeClass('on');
             gb.liveOnAir.slideUp(300, function () {
-              gb._liveOnSwiper.destroy();
+              if ($('.liveOn-swiper').length) {
+                gb._liveOnSwiper.destroy();
+              }
               trg.find('em').html(trg.find('em').html().replace('닫기', '보기'));
             });
           } else {
             trg.addClass('on');
-            gb.liveOnAir.slideDown(300, LiveOnSwiper);
+            if ($('.liveOn-swiper').length) {
+              gb.liveOnAir.slideDown(300, LiveOnSwiper);
+            } else {
+              gb.liveOnAir.slideDown(300);
+            }
+
             trg.find('em').html(trg.find('em').html().replace('보기', '닫기'));
           }
         });

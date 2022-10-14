@@ -2440,23 +2440,55 @@
     .detail-view {
       .page-header {
         h2 {
+          display: inline-block;
+          max-width: -webkit-calc(100% - 300px);
+          max-width: -moz-calc(100% - 300px);
+          max-width: calc(100% - 300px);
+
+          @include _bp(961px) {
+            max-width: -webkit-calc(100% - 45px);
+            max-width: -moz-calc(100% - 45px);
+            max-width: calc(100% - 45px);
+          }
+
+          @include _bp(391px) {
+            max-width: none;
+            width: 100%;
+          }
+
           * {
             vertical-align: middle;
           }
 
           .btn-wrap {
             margin-left: 20px;
+
+            @include _bp(768px) {
+              margin-left: 10px;
+            }
+
+            @include _bp(391px) {
+              margin-left: 0;
+              margin-top: 20px;
+              width: -webkit-calc(100% - 45px);
+              width: -moz-calc(100% - 45px);
+              width: calc(100% - 45px);
+            }
           }
 
           strong {
-            max-width: -webkit-calc(100% - 540px);
-            max-width: -moz-calc(100% - 540px);
-            max-width: calc(100% - 540px);
+            max-width: -webkit-calc(100% - 300px);
+            max-width: -moz-calc(100% - 300px);
+            max-width: calc(100% - 300px);
 
-            @include _bp(821px) {
-              max-width: -webkit-calc(100% - 120px);
-              max-width: -moz-calc(100% - 120px);
-              max-width: calc(100% - 120px);
+            @include _bp(768px) {
+              max-width: -webkit-calc(100% - 110px);
+              max-width: -moz-calc(100% - 110px);
+              max-width: calc(100% - 110px);
+            }
+            @include _bp(391px) {
+              max-width: none;
+              width: 100%;
             }
           }
 
@@ -2497,11 +2529,78 @@
                 }
               }
             }
+
+            @include _bp(391px) {
+            }
+          }
+        }
+
+        .icon-wrap {
+          display: inline-block;
+          position: relative;
+
+          @include _bp(391px) {
+            position: absolute;
+            bottom: 0;
+            right: 15px;
+          }
+
+          > button {
+            background-color: transparent;
+
+            &::before {
+              position: absolute;
+              top: 0;
+              left: 0;
+              background-image: url('../images/icon-sns-sh.png');
+              background-repeat: no-repeat;
+              width: 100%;
+              height: 100%;
+              content: '';
+            }
+
+            &.icon-share {
+              width: 34px;
+              height: 33px;
+
+              &::before {
+                background-position: 0 0;
+              }
+            }
+          }
+
+          .modal.share {
+            @include _bp(961px) {
+              margin-right: -55px;
+            }
+
+            @include _bp(768px) {
+              margin-right: -43px;
+            }
+
+            @include _bp(391px) {
+              margin-right: -34px;
+              top: 53px;
+            }
+
+            &::before {
+              @include _bp(961px) {
+                right: 27px;
+              }
+
+              @include _bp(768px) {
+                right: 14px;
+              }
+
+              @include _bp(391px) {
+                right: 8px;
+              }
+            }
           }
         }
 
         .location {
-          @include _bp(821px) {
+          @include _bp(961px) {
             top: -30px;
           }
         }
@@ -2595,7 +2694,11 @@
               .title {
                 margin-top: 20px;
                 line-height: 1.3;
-                max-height: 140px;
+                max-height: 120px;
+
+                @include _bp(1024px) {
+                  max-height: none;
+                }
               }
 
               .etc-info {

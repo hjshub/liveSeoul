@@ -120,7 +120,16 @@
                 </div>
               </div>
             </div>
-            <div class="liveOnAir transition-none">@@include('./include/liveOnAir.html')</div>
+            <div class="liveOnAir transition-none">
+              @@include('./include/liveOnAir.html')
+
+              <!-- 예정중인 편성표가 없을 시
+              <div class="no-files">
+                <p><img src="assets/images/img-notice.png" alt="알림 이미지" /></p>
+                <p>예정중인 편성표가 없습니다.</p>
+              </div>
+              -->
+            </div>
           </div>
         </section>
 

@@ -214,7 +214,7 @@
 }
 
 .box-style-list {
-  margin-top: 20px;
+  margin-top: 30px;
 
   ul {
     display: inline-block;
@@ -333,7 +333,7 @@
       .article {
         > div {
           & + div {
-            margin-top: 20px;
+            margin-top: 15px;
           }
 
           &.img-thumb {
@@ -376,13 +376,24 @@
             }
 
             dd {
-              font-size: 1.8rem;
-              color: $black;
-              line-height: 1.33;
-              margin-top: 10px;
-              font-weight: 600;
-              @include line-clamp2;
-              letter-spacing: 0;
+              font-size: 0;
+              line-height: 1;
+              margin-top: 5px;
+
+              a {
+                display: inline-block;
+                height: 50px;
+                line-height: 1.4;
+                color: $black;
+                font-size: 1.8rem;
+                font-weight: 600;
+                letter-spacing: 0;
+                @include line-clamp2;
+
+                @include _bp(561px) {
+                  height: 44px;
+                }
+              }
             }
           }
         }
@@ -390,12 +401,8 @@
         .date {
           color: $gray1;
           font-size: 1.6rem;
-          margin-top: 15px;
+          margin-top: 5px;
           line-height: 1;
-
-          @include _bp(768px) {
-            margin-top: 10px;
-          }
         }
       }
     }
@@ -1565,7 +1572,7 @@
           h2 {
             color: $gray10;
             line-height: 1;
-            font-size: 7rem;
+            font-size: 6rem;
             font-weight: 700;
 
             @include _bp(1024px) {

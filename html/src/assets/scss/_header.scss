@@ -590,14 +590,19 @@
     .inner {
       > div {
         float: right;
-        padding: 15px 0;
+        line-height: 60px;
 
         @include _bp(1200px) {
           display: none;
         }
 
+        > div {
+          display: inline-block;
+          position: relative;
+        }
+
         .sign-in,
-        .sign-out {
+        .mypage {
           display: inline-block;
           line-height: 1;
           font-size: 1.5rem;
@@ -693,38 +698,35 @@
               color: $black !important;
             }
           }
+        }
+      }
 
-          .depth2 {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            min-width: 100%;
-            background-color: $white;
+      .depth2 {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        min-width: 100%;
+        background-color: $white;
 
-            @include _bp(1200px) {
-              display: none !important;
-            }
+        @include _bp(1200px) {
+          display: none !important;
+        }
 
-            ul {
-              border: 1px solid $gray5;
-              border-top: none;
+        ul {
+          border: 1px solid $gray5;
+          border-top: none;
 
-              li {
-                line-height: 40px;
+          li {
+            line-height: 40px;
+            border-top: 1px solid $gray5;
 
-                & + li {
-                  border-top: 1px solid $gray5;
-                }
-
-                a {
-                  display: inline-block;
-                  width: 100%;
-                  color: $black;
-                  font-size: 1.5rem;
-                  text-align: center;
-                }
-              }
+            a {
+              display: inline-block;
+              width: 100%;
+              color: $black;
+              font-size: 1.5rem;
+              text-align: center;
             }
           }
         }
@@ -772,7 +774,7 @@
       .inner {
         > div {
           .sign-in,
-          .sign-out {
+          .mypage {
             color: $gray4;
 
             &::before {
@@ -798,15 +800,6 @@
           > li {
             > a {
               color: $gray3;
-            }
-            .depth2 {
-              ul {
-                li {
-                  &:first-of-type {
-                    border-top: 1px solid $gray5;
-                  }
-                }
-              }
             }
           }
         }
