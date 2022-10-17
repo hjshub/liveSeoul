@@ -1017,6 +1017,10 @@ main {
                   font-size: 1.6rem;
                   margin: 0 1.3rem;
 
+                  a {
+                    vertical-align: top;
+                  }
+
                   color: #e6a9a9;
                   &::before {
                     content: '#';
