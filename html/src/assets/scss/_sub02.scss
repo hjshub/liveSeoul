@@ -369,29 +369,20 @@
 
           &.img-thumb {
             width: 100%;
-            height: 134px;
             background-color: #fefefe;
             overflow: hidden;
+            position: relative;
 
             img {
-              position: relative;
-              left: 50%;
-              top: 50%;
-              min-width: 100%;
-              transform: translate(-50%, -50%) scale(1);
-              -webkit-transform: translate(-50%, -50%) scale(1);
-              -moz-transform: translate(-50%, -50%) scale(1);
-              -ms-transform: translate(-50%, -50%) scale(1);
+              width: 100%;
+              @include transform(scale(1));
               @include transition(transform ease-in-out 0.3s);
             }
 
             a:hover,
             a:focus {
               img {
-                transform: translate(-50%, -50%) scale(1.2);
-                -webkit-transform: translate(-50%, -50%) scale(1.2);
-                -moz-transform: translate(-50%, -50%) scale(1.2);
-                -ms-transform: translate(-50%, -50%) scale(1.2);
+                @include transform(scale(1.2));
               }
             }
           }
@@ -923,6 +914,22 @@
 
             @include _bp(1024px) {
               padding-left: 0;
+            }
+
+            .ytp-wrap {
+              position: relative;
+              padding-bottom: 56.25%;
+              height: 0;
+              overflow: hidden;
+              iframe,
+              embed,
+              object {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
             }
 
             video {

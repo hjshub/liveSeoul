@@ -374,13 +374,14 @@ textarea {
   }
 }
 
-main,
 .wrap {
   width: 100%;
   overflow: hidden;
 
-  *:not(.animate, .transition-none, .transition-none > *, .depth2, .sort-inner > *, button > *, .preview, .paging) {
-    @include transition(all 0.4s ease-in-out);
+  &:not(.curation) {
+    *:not(.animate, .transition-none, .transition-none > *, .depth2, .sort-inner > *, button > *, .preview, .paging) {
+      @include transition(all 0.4s ease-in-out);
+    }
   }
 }
 
@@ -393,12 +394,18 @@ main:after,
 
 /*main*/
 main {
+  width: 100%;
+  overflow: hidden;
   padding-top: 46px;
   @include transform(translateY(-46px));
 
   @include _bp(1200px) {
     padding-top: 97px;
     @include transform(translateY(0));
+  }
+
+  *:not(.animate, .transition-none, .transition-none > *, .depth2, button > *) {
+    @include transition(all 0.4s ease-in-out);
   }
 
   @at-root section {
@@ -1162,6 +1169,23 @@ main {
             top: 0;
             left: 0;
             @include transform(none);
+          }
+
+          .ytp-wrap {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+
+            iframe,
+            embed,
+            object {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
           }
 
           video {
