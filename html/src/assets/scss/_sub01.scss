@@ -3386,11 +3386,52 @@
   }
 
   &.seoul24 {
-    &.list {
-      @include _bp(768px) {
-        padding-bottom: 0;
+    background-image: url('../images/bg-seoul24.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center bottom;
+    padding-bottom: 155px;
+    position: relative;
+
+    @include _bp(768px) {
+      background-size: auto 30%;
+      background-position: 80% bottom;
+      padding-bottom: 120px;
+    }
+
+    @include _bp(640px) {
+      padding-bottom: 60px;
+    }
+
+    @include _bp(561px) {
+      background-size: auto 25%;
+      background-position: right bottom;
+    }
+
+    &::before {
+      width: 935px;
+      height: 321px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-image: url('../images/bg-seoul-illustration.gif');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      content: '';
+
+      @include _bp(1080px) {
+        width: 620px;
+        height: 213px;
+        background-size: 100% auto;
       }
 
+      @include _bp(640px) {
+        width: 320px;
+        height: 110px;
+      }
+    }
+
+    &.list {
       .list_top {
         min-height: 0;
 
@@ -3613,11 +3654,35 @@
             margin-top: 20px;
           }
 
+          &:not(.vd-streaming) {
+            @include _bp(1080px) {
+              padding-bottom: 56.25%;
+              height: 0;
+              overflow: hidden;
+            }
+
+            iframe,
+            embed,
+            object {
+              width: 100%;
+              height: 450px;
+              border: 0;
+
+              @include _bp(1080px) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+
           &.vd-streaming {
             width: 100%;
             object-fit: fill;
             height: auto;
-            max-height: 450px;
+            // max-height: 450px;
 
             // &::-webkit-media-controls-timeline {
             //   display: none !important;
@@ -3713,6 +3778,7 @@
             padding-left: 0;
             padding-right: 0;
             min-height: auto;
+            background-color: transparent;
           }
 
           &:first-of-type {
