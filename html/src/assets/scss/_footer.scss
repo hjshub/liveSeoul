@@ -65,6 +65,8 @@ footer {
 
         &:first-of-type {
           @include _bp(1200px) {
+            width: -webkit-calc(100% - 328px);
+            width: -moz-calc(100% - 328px);
             width: calc(100% - 328px);
           }
         }

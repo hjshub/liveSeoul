@@ -671,7 +671,7 @@
                 @include _bp(561px) {
                   width: -webkit-calc((100% - 10px) / 2);
                   width: -moz-calc((100% - 10px) / 2);
-                  width: -ms-calc((100% - 10px) / 2);
+                  width: calc((100% - 10px) / 2);
                   font-size: 0;
 
                   > button {
@@ -701,7 +701,7 @@
                   position: relative;
                   width: -webkit-calc((100% - 10px) / 2);
                   width: -moz-calc((100% - 10px) / 2);
-                  width: -ms-calc((100% - 10px) / 2);
+                  width: calc((100% - 10px) / 2);
                   margin-left: 10px;
                   padding-bottom: 60px;
                 }
@@ -722,13 +722,13 @@
                       .text-wrap {
                         width: -webkit-calc(100% - 26px);
                         width: -moz-calc(100% - 26px);
-                        width: -ms-calc(100% - 26px);
+                        width: calc(100% - 26px);
                         margin-left: 10px;
 
                         input[type='text'] {
                           width: -webkit-calc(100% - 70px);
                           width: -moz-calc(100% - 70px);
-                          width: -ms-calc(100% - 70px);
+                          width: calc(100% - 70px);
                           height: 24px;
 
                           & + button {
