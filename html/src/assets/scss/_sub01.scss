@@ -813,6 +813,16 @@
                           height: 39px;
                           background-position: -87px -5px;
                         }
+
+                        &.on {
+                          &::before {
+                            background-position: -130px -5px;
+                          }
+                          em {
+                            text-decoration-line: underline;
+                            text-underline-offset: 5px;
+                          }
+                        }
                       }
                     }
 

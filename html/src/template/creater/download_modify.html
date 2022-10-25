@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../include/head.html')
+
+    <title>서울영상크리에이터 자료실 수정 | 라이브 서울</title>
+
+    @@include('../include/header_sub.html')
+  </head>
+  <body>
+    @@include('../include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb">@@include('../include/gnb_sub.html')</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <div class="wrap creater board write" id="contents">
+        <h1 class="hidden-txt">서울영상크리에이터 자료실 수정</h1>
+        <section class="board_top">
+          <header class="page-header">
+            <div class="inner">
+              <div class="location">
+                <span
+                  ><a href=""
+                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
+                  ></span
+                >
+                <span><a href="">영상크리에이터</a></span>
+                <span><a href="">커뮤니티채널</a></span>
+                <span><a href="">자료실</a></span>
+              </div>
+
+              <h2 class="no_st">자료실 수정</h2>
+            </div>
+          </header>
+        </section>
+
+        <!-- 자료실 수정 -->
+        <section>
+          <div class="inner">
+            <div class="b-write">
+              <form>
+                <div class="tblStyle-write">
+                  <dl class="w-title">
+                    <dt><label for="input-tit">제목</label></dt>
+                    <dd>
+                      <span class="text-wrap">
+                        <input placeholder="제목필수 입력" type="text" id="input-tit" />
+                      </span>
+                      <p class="txt-bite">0 / 30자</p>
+                    </dd>
+                  </dl>
+                  <dl class="w-content">
+                    <dt><label for="txt-con">상세 내용</label></dt>
+                    <dd>
+                      <textarea placeholder="내용을 입력해주세요." id="txt-con"></textarea>
+                      <p class="txt-bite">0 / 300자</p>
+                    </dd>
+                  </dl>
+                  <dl class="w-attachedFile">
+                    <dt>첨부파일</dt>
+                    <dd>
+                      <ul>
+                        <li>
+                          <a href="" download>attached_file_01.pdf</a>
+                          <button type="button" class="button-delete" onclick="dataDelete(this);">
+                            <em class="hidden-txt">삭제</em>
+                          </button>
+                        </li>
+                        <li>
+                          <a href="" download>ABCDEFG.pdf</a>
+                          <button type="button" class="button-delete" onclick="dataDelete(this);">
+                            <em class="hidden-txt">삭제</em>
+                          </button>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl class="w-file">
+                    <dt><label>파일 첨부</label></dt>
+                    <dd>
+                      <div class="file-up-list">
+                        <ul>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_01"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_01"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_02"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_02"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_03"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_03"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_04"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_04"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_05"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_05"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                        </ul>
+                        <p class="info-txt">* pdf, ppt, doc, hwp, txt, zip 파일만 등록 가능하며 최대 5개까지 등록 가능 합니다.</p>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="has-btn">
+                  <div>
+                    <button class="btn-default md rounded darkGray" type="button"><em>취소</em></button>
+                    <button class="btn-default md rounded lightPurple" type="button"><em>저장</em></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer_sub.html')</footer>
+      <!-- // #footer -->
+    </div>
+
+    <script>
+      function dataDelete(t) {
+        var t_ = $(t);
+
+        t_.closest('li').remove();
+      }
+    </script>
+  </body>
+</html>

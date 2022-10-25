@@ -1116,7 +1116,7 @@ button {
 }
 
 .chk-wrap-type02 {
-  margin: 2px;
+  margin: 5px;
 
   * {
     @include transition(none !important);
@@ -1125,7 +1125,7 @@ button {
     display: inline-block;
     font-size: 0;
     position: relative;
-    height: 28px;
+    height: 32px;
 
     input[type='checkbox'] {
       position: absolute;
@@ -1142,7 +1142,7 @@ button {
         width: auto;
         height: 100%;
         vertical-align: top;
-        line-height: 26px;
+        line-height: 30px;
         border-radius: 30px;
         padding: 0 15px;
         color: $gray9;
@@ -1154,7 +1154,7 @@ button {
         em {
           display: inline-block;
           line-height: 1;
-          font-size: 1.5rem;
+          font-size: 1.6rem;
           position: relative;
           vertical-align: middle;
           z-index: 1;

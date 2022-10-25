@@ -446,6 +446,7 @@
                             font-weight: 600;
 
                             &.sign-in,
+                            &.sign-out,
                             &.mypage {
                               padding-left: 34px;
                               position: relative;
@@ -492,6 +493,16 @@
                                 }
                               }
                             }
+                          }
+                        }
+                      }
+                    }
+
+                    &.current {
+                      .box {
+                        .depth2 {
+                          > li:nth-of-type(2n + 1) {
+                            clear: both;
                           }
                         }
                       }
@@ -673,6 +684,7 @@
         }
 
         .sign-in,
+        .sign-out,
         .mypage {
           display: inline-block;
           line-height: 1;
@@ -845,6 +857,7 @@
       .inner {
         > div {
           .sign-in,
+          .sign-out,
           .mypage {
             color: $gray4;
 

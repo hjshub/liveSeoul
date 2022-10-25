@@ -1363,7 +1363,7 @@ main {
                     width: 11px;
                     height: 19px;
                     margin: -9.5px 0 0 -5.5px;
-                    background-position: -150px -14px;
+                    background-position: -183px -14px;
 
                     @include _bp(1200px) {
                       background-image: url('../images/mob/icon-facebook.png');
@@ -1376,7 +1376,7 @@ main {
                     width: 18px;
                     height: 14px;
                     margin: -7px 0 0 -9px;
-                    background-position: -173px -17px;
+                    background-position: -205px -17px;
 
                     @include _bp(1200px) {
                       background-image: url('../images/mob/icon-twitter.png');
@@ -1389,7 +1389,7 @@ main {
                     width: 22px;
                     height: 20px;
                     margin: -10px 0 0 -11px;
-                    background-position: -197px -14px;
+                    background-position: -230px -14px;
 
                     @include _bp(1200px) {
                       background-image: url('../images/mob/icon-kakao.png');
@@ -2534,13 +2534,9 @@ main {
   position: relative;
 
   .filter-wrap {
-    height: 32px;
+    height: auto;
     overflow: hidden;
     text-align: center;
-
-    @include _bp(768px) {
-      height: 96px;
-    }
 
     ul {
       display: inline-block;
