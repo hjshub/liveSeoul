@@ -331,13 +331,31 @@
           max-height: 88vh;
         }
 
-        .set-dw-section {
-          padding: 20px;
+        .radio-wrap {
+          padding: 0 20px;
+
+          label {
+            em {
+              color: #010101 !important;
+            }
+          }
+        }
+
+        .dw-section {
           margin-bottom: 30px;
 
           @include _bp(561px) {
-            padding: 15px;
+            margin: 15px 0;
             border-top: 1px solid $gray9;
+          }
+        }
+
+        .set-dw-section {
+          display: none;
+          padding: 20px;
+
+          @include _bp(561px) {
+            padding: 15px;
           }
 
           dl {

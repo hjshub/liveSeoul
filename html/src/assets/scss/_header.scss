@@ -464,6 +464,13 @@
                                 content: '';
                               }
                             }
+
+                            &.sign-out,
+                            &.mypage {
+                              &::before {
+                                background-position: -62px -29px;
+                              }
+                            }
                           }
 
                           .depth3 {
@@ -709,6 +716,13 @@
           }
         }
 
+        .sign-out,
+        .mypage {
+          &::before {
+            background-position: -93px -29px;
+          }
+        }
+
         .text-wrap {
           width: auto;
           position: relative;
@@ -863,6 +877,13 @@
 
             &::before {
               background-position: -62px 0;
+            }
+          }
+
+          .sign-out,
+          .mypage {
+            &::before {
+              background-position: -62px -29px;
             }
           }
 
