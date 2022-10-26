@@ -250,10 +250,29 @@
 
   /* 음성ㆍ문자 지원 */
   &.textSupport {
-    width: 620px;
+    width: 745px;
 
     &::before {
       left: 75px;
+
+      @include _bp(561px) {
+        left: -webkit-calc((100% - 10px) / 4);
+        left: -moz-calc((100% - 10px) / 4);
+        left: calc((100% - 10px) / 4);
+        @include transform(translateX(-50%));
+      }
+    }
+
+    .modal-body {
+      .modal-contents {
+        &.customedScroll {
+          max-height: 500px;
+
+          @include _bp(561px) {
+            max-height: 350px;
+          }
+        }
+      }
     }
   }
 
@@ -277,7 +296,10 @@
       }
 
       @include _bp(561px) {
-        right: 110px;
+        right: -webkit-calc((100% - 10px) / 4);
+        right: -moz-calc((100% - 10px) / 4);
+        right: calc((100% - 10px) / 4);
+        @include transform(translateX(50%));
       }
     }
 
@@ -687,9 +709,10 @@
     color: #010101;
     font-size: 1.6rem;
 
-    .modal-contents.customedScroll {
-      max-height: 150px;
-      padding-right: 20px;
+    .modal-contents {
+      &.customedScroll {
+        padding-right: 20px;
+      }
     }
 
     p {
