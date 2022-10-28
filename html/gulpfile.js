@@ -171,11 +171,13 @@ const Scss_options = {
 };
 
 const Sass_compile = () => {
-  return src(`${path.assets.scss}**/*.scss`, { sourcemaps: true })
-    .pipe(scss(Scss_options).on('error', scss.logError))
-    .pipe(minifyCss())
-    .pipe(dest(destPath.assets.css), { sourcemaps: true })
-    .pipe(browserSync.reload({ stream: true }));
+  return (
+    src(`${path.assets.scss}**/*.scss`, { sourcemaps: true })
+      .pipe(scss(Scss_options).on('error', scss.logError))
+      //.pipe(minifyCss())
+      .pipe(dest(destPath.assets.css), { sourcemaps: true })
+      .pipe(browserSync.reload({ stream: true }))
+  );
 };
 
 exports.prod = series(Clean, Js_library, Js_common, Sass_compile, Css, Images, Webfont, Template, Tgplayer, innorix);

@@ -1002,42 +1002,43 @@ main {
 
               .text-wrap {
                 input[type='text'] {
-                  height: 38px;
+                  height: 55px;
                   border-color: $gray8;
                 }
               }
 
-              .hash-list {
-                margin-top: 10px;
-                margin-left: -1.3rem;
-                max-height: 24px;
-                overflow: hidden;
+              // .hash-list {
+              //   margin-top: 10px;
+              //   margin-left: -1.3rem;
+              //   max-height: 24px;
+              //   overflow: hidden;
 
-                @include _bp(1200px) {
-                  max-height: none;
-                  overflow: visible;
-                }
+              //   @include _bp(1200px) {
+              //     max-height: none;
+              //     overflow: visible;
+              //   }
 
-                span {
-                  display: inline-block;
-                  vertical-align: top;
-                  font-size: 1.6rem;
-                  margin: 0 1.3rem;
+              //   span {
+              //     display: inline-block;
+              //     vertical-align: top;
+              //     font-size: 1.6rem;
+              //     margin: 0 1.3rem;
 
-                  a {
-                    vertical-align: top;
-                  }
+              //     a {
+              //       vertical-align: top;
+              //     }
 
-                  color: #e6a9a9;
-                  &::before {
-                    content: '#';
-                  }
-                }
-              }
+              //     color: #e6a9a9;
+              //     &::before {
+              //       content: '#';
+              //     }
+              //   }
+              // }
             }
 
             button {
               position: relative;
+              height: 55px;
               color: $white;
               background-color: transparent;
               text-align: center;
@@ -2029,10 +2030,41 @@ main {
                 @include transition(transform ease-in-out 0.3s);
               }
 
+              .vd-preview {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                overflow: hidden;
+
+                video {
+                  object-fit: fill;
+                  width: 100%;
+                }
+              }
+
+              .ytp-wrap {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+
+                iframe,
+                embed,
+                object {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
               a:hover,
               a:focus {
                 img {
-                  @include transform(scale(1.2));
+                  //@include transform(scale(1.2));
                 }
               }
             }
@@ -2135,6 +2167,7 @@ main {
           width: 100%;
           background-color: #fefefe;
           overflow: hidden;
+          position: relative;
 
           img {
             width: 100%;
@@ -2142,10 +2175,41 @@ main {
             @include transition(transform ease-in-out 0.3s);
           }
 
+          .vd-preview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+
+            video {
+              object-fit: fill;
+              width: 100%;
+            }
+          }
+
+          .ytp-wrap {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+
+            iframe,
+            embed,
+            object {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
           a:hover,
           a:focus {
             img {
-              @include transform(scale(1.2));
+              //@include transform(scale(1.2));
             }
           }
         }
@@ -2434,28 +2498,28 @@ main {
           }
         }
 
-        .preview {
-          display: none;
-          width: 340px;
-          padding: 20px 4px 4px 4px;
-          background-color: $yellow2;
-          -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          margin: -20px 0 0 30px;
-          overflow: hidden;
-          @include transform(translateX(-50%) scaleY(0));
+        // .preview {
+        //   display: none;
+        //   width: 340px;
+        //   padding: 20px 4px 4px 4px;
+        //   background-color: $yellow2;
+        //   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        //   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        //   position: absolute;
+        //   top: 100%;
+        //   left: 50%;
+        //   margin: -20px 0 0 30px;
+        //   overflow: hidden;
+        //   @include transform(translateX(-50%) scaleY(0));
 
-          @include _bp(768px) {
-            width: 300px;
-          }
+        //   @include _bp(768px) {
+        //     width: 300px;
+        //   }
 
-          img {
-            width: 100%;
-          }
-        }
+        //   img {
+        //     width: 100%;
+        //   }
+        // }
 
         &.on {
           .info {

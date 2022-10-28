@@ -645,7 +645,8 @@
             background-position: -49px -54px;
           }
 
-          &.share-kakaotalk::before {
+          &.share-kakaotalk::before,
+          &.share-kakaotalk-m::before {
             background-position: -95px -54px;
           }
 

@@ -23,10 +23,10 @@ var crVisSwiper = new Swiper('.cr-vis-swiper', {
 
 crVisSwiper.on('activeIndexChange', function (swiper) {
   setTimeout(function () {
-    var currentVd = document.querySelector('.swiper-slide-active video'),
-      notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
-      animate = $('.swiper-slide-active .animate').get(),
-      animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
+    var currentVd = document.querySelector('.cr-vis-swiper .swiper-slide-active video'),
+      notCurrentvd = $('.cr-vis-swiper .swiper-slide:not(.swiper-slide-active) video').get(),
+      animate = $('.cr-vis-swiper .swiper-slide-active .animate').get(),
+      animate_ = $('.cr-vis-swiper .swiper-slide:not(.swiper-slide-active) .animate').get();
 
     animate_.forEach(function (elem) {
       $(elem).removeClass('animation--start');
@@ -53,7 +53,7 @@ $crVisSwiper_playBtn.click(function () {
   }
 });
 
-var animate = $('.swiper-slide-active .animate').get();
+var animate = $('.cr-vis-swiper .swiper-slide-active .animate').get();
 
 setTimeout(function () {
   animate.forEach(function (elem) {
