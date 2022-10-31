@@ -131,7 +131,7 @@ function commonFunction() {
           });
         });
 
-        $('.dropDown > a').on({
+        $('.dropDown .item > a').on({
           'mouseenter focusin': function () {
             var trg = $(this);
 
@@ -142,7 +142,7 @@ function commonFunction() {
           },
         });
 
-        $('.dropDown').on({
+        $('.dropDown .item').on({
           mouseleave: function () {
             var trg = $(this);
 
