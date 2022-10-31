@@ -230,6 +230,14 @@ textarea {
     display: none !important;
   }
 
+  &-1024 {
+    display: block !important;
+
+    @include _bp(1024px) {
+      display: none !important;
+    }
+  }
+
   &.inline {
     display: inline-block !important;
 
@@ -243,6 +251,14 @@ textarea {
 
   @include _bp(768px) {
     display: block !important;
+  }
+
+  &-1024 {
+    display: none !important;
+
+    @include _bp(1024px) {
+      display: block !important;
+    }
   }
 
   &.inline {
@@ -2729,8 +2745,8 @@ keyword swiper
 
 /*list tab contents*/
 .list-tab-contents {
-  @include _bp(768px) {
-    .heading-wrap-03 {
+  .heading-wrap-03 {
+    @include _bp(1024px) {
       @include hiddenText;
     }
   }

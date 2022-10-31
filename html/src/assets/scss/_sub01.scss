@@ -3899,6 +3899,10 @@
             position: relative;
             z-index: 10;
 
+            &.event-info {
+              // background-color: #eeeeee;
+            }
+
             @include _bp(768px) {
               margin-top: 20px;
             }
