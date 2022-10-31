@@ -873,11 +873,10 @@
 
       /* 사이드메뉴*/
       .sideMenu {
-        width: 360px;
+        width: 285px;
         position: absolute;
         top: 0;
         left: 0;
-        // min-height: 885px;
         color: $gray10;
         max-height: 100%;
         padding-bottom: 60px;
@@ -948,11 +947,11 @@
         }
 
         > div {
-          padding: 22px 0;
+          // padding: 22px 0;
 
-          &:first-of-type {
-            padding-top: 0;
-          }
+          // &:first-of-type {
+          //   padding-top: 0;
+          // }
 
           & + div {
             border-top: 1px solid #e4e3e3;
@@ -1001,7 +1000,7 @@
                 em {
                   padding-left: 32px;
                   position: relative;
-                  font-size: 1.6rem;
+                  font-size: 1.5rem;
                   line-height: 1;
                 }
               }
@@ -1229,9 +1228,9 @@
       }
 
       .contents {
-        width: -webkit-calc(100% - 285px);
-        width: -moz-calc(100% - 285px);
-        width: calc(100% - 285px);
+        width: -webkit-calc(100% - 210px);
+        width: -moz-calc(100% - 210px);
+        width: calc(100% - 210px);
         float: right;
         position: relative;
         border-left: 1px solid #e4e3e3;
@@ -2295,6 +2294,7 @@
           border-radius: 30px;
           overflow: hidden;
           position: relative;
+          box-shadow: 0 0 7px 2px rgba(199, 199, 199, 0.2);
 
           & + li {
             margin-left: 30px;
@@ -2360,6 +2360,7 @@
           @include _bp(391px) {
             width: 100%;
             border-radius: 0;
+            box-shadow: none;
 
             &:nth-of-type(3n + 1) {
               margin-left: 0;

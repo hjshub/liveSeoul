@@ -2109,8 +2109,17 @@ main {
                   letter-spacing: 0;
                   @include line-clamp2;
 
+                  @include _bp(1680px) {
+                    font-size: 1.6rem;
+                    height: 45px;
+                  }
+
+                  @include _bp(1024px) {
+                    height: 42px;
+                  }
+
                   @include _bp(561px) {
-                    height: 48px;
+                    height: 38px;
                   }
                 }
               }
@@ -2168,6 +2177,10 @@ main {
   left: -10px;
   padding-bottom: 45px;
   margin-top: 30px;
+
+  @include _bp(1680px) {
+    margin-top: 15px;
+  }
 
   .swiper-slide {
     width: 298px !important;
@@ -2253,8 +2266,17 @@ main {
               letter-spacing: 0;
               @include line-clamp2;
 
+              @include _bp(1680px) {
+                font-size: 1.6rem;
+                height: 45px;
+              }
+
+              @include _bp(1024px) {
+                height: 42px;
+              }
+
               @include _bp(561px) {
-                height: 48px;
+                height: 38px;
               }
             }
           }
@@ -2691,7 +2713,7 @@ keyword swiper
 
     li {
       display: inline-block;
-      margin: 5px 15px;
+      margin: 0 15px;
 
       a {
         display: inline-block;
@@ -2700,6 +2722,10 @@ keyword swiper
         line-height: 1;
         padding-bottom: 10px;
         position: relative;
+
+        @include _bp(1680px) {
+          font-size: 1.8rem;
+        }
 
         @include _bp(1200px) {
           font-size: 2rem;

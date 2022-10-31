@@ -72,21 +72,20 @@
         position: relative;
         display: block;
         height: 58px;
-        line-height: 58px;
+        line-height: 56px;
         color: $gray2;
         font-size: 2rem;
         @include transition(none !important);
 
-        @include _bp(768px) {
+        @include _bp(1680px) {
           height: 48px;
           line-height: 45px;
-          font-size: 1.8rem;
+          font-size: 1.7rem;
         }
 
         @include _bp(480px) {
           height: 38px;
           line-height: 35px;
-          font-size: 1.7rem;
         }
 
         &:before {
@@ -221,6 +220,10 @@
   border-bottom: 1px solid #e3e4e4;
   text-align: center;
 
+  @include _bp(768px) {
+    margin-top:40px;
+  }
+
   ul {
     display: inline-block;
     width: 100%;
@@ -250,7 +253,7 @@
         font-size: 3rem;
         @include transition(none !important);
 
-        @include _bp(768px) {
+        @include _bp(1680px) {
           font-size: 2rem;
           padding-bottom: 15px;
         }
@@ -485,8 +488,17 @@
                 letter-spacing: 0;
                 @include line-clamp2;
 
+                @include _bp(1680px) {
+                  font-size: 1.6rem;
+                  height: 45px;
+                }
+
+                @include _bp(1024px) {
+                  height: 42px;
+                }
+
                 @include _bp(561px) {
-                  height: 44px;
+                  height: 38px;
                 }
               }
             }

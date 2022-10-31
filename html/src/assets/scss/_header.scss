@@ -465,8 +465,7 @@
                               }
                             }
 
-                            &.sign-out,
-                            &.mypage {
+                            &.sign-out {
                               &::before {
                                 background-position: -62px -29px;
                               }
@@ -649,11 +648,11 @@
               margin-left: 20px;
             }
 
-            &:nth-of-type(4) ~ li {
-              a {
-                color: $gray2;
-              }
-            }
+            // &:nth-of-type(4) ~ li {
+            //   a {
+            //     color: $gray2;
+            //   }
+            // }
 
             a {
               display: inline-block;
@@ -716,8 +715,7 @@
           }
         }
 
-        .sign-out,
-        .mypage {
+        .sign-out {
           &::before {
             background-position: -93px -29px;
           }
@@ -880,8 +878,7 @@
             }
           }
 
-          .sign-out,
-          .mypage {
+          .sign-out {
             &::before {
               background-position: -62px -29px;
             }
