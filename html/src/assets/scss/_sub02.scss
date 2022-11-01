@@ -649,6 +649,7 @@
                 margin-top: 0;
               }
 
+              &.on,
               &:hover,
               &:active,
               &:focus {
@@ -675,51 +676,120 @@
           }
 
           .has-button {
+            // input[type='text'] {
+            //   @include _bp(768px) {
+            //     border-radius: 0 !important;
+            //     width: -webkit-calc(100% - 160px);
+            //     width: -moz-calc(100% - 160px);
+            //     width: calc(100% - 160px);
+            //   }
+
+            //   @include _bp(391px) {
+            //     width: 100%;
+            //   }
+            // }
+
+            // button {
+            //   @include _bp(768px) {
+            //     margin-left: 10px;
+            //     width: 150px !important;
+            //     border-radius: 7px !important;
+            //   }
+
+            //   @include _bp(391px) {
+            //     width: 100% !important;
+            //     margin: 20px 0 0;
+            //   }
+
+            //   &:before {
+            //     @include _bp(768px) {
+            //       display: none;
+            //     }
+            //   }
+
+            //   em {
+            //     @include _bp(768px) {
+            //       overflow: visible !important;
+            //       position: relative !important;
+            //       width: auto !important;
+            //       height: auto !important;
+            //       margin-left: 0 !important;
+            //       padding-left: 30px !important;
+            //       clip: auto !important;
+            //     }
+
+            //     &:before {
+            //       @include _bp(561px) {
+            //         top: 0 !important;
+            //       }
+            //     }
+            //   }
+            // }
+
             input[type='text'] {
-              @include _bp(768px) {
-                border-radius: 0 !important;
-                width: -webkit-calc(100% - 160px);
-                width: -moz-calc(100% - 160px);
-                width: calc(100% - 160px);
+              width: -webkit-calc(100% - 340px);
+              width: -moz-calc(100% - 340px);
+              width: calc(100% - 340px);
+
+              @include _bp(1024px) {
+                width: -webkit-calc(100% - 260px);
+                width: -moz-calc(100% - 260px);
+                width: calc(100% - 260px);
               }
 
-              @include _bp(391px) {
+              @include _bp(768px) {
+                width: -webkit-calc(100% - 120px);
+                width: -moz-calc(100% - 120px);
+                width: calc(100% - 120px);
+              }
+
+              @include _bp(640px) {
                 width: 100%;
+                margin: 5px 0 15px;
               }
             }
 
             button {
+              width: 160px;
+
+              @include _bp(1024px) {
+                width: 120px;
+                min-width: 0;
+              }
+
               @include _bp(768px) {
-                margin-left: 10px;
-                width: 150px !important;
-                border-radius: 7px !important;
+                width: 60px !important;
               }
 
-              @include _bp(391px) {
-                width: 100% !important;
-                margin: 20px 0 0;
-              }
+              @include _bp(640px) {
+                width: -webkit-calc((100% - 10px)/2) !important;
+                width: -moz-calc((100% - 10px)/2) !important;
+                width: calc((100% - 10px) / 2) !important;
+                border-radius: 3px !important;
 
-              &:before {
-                @include _bp(768px) {
-                  display: none;
-                }
-              }
-
-              em {
-                @include _bp(768px) {
-                  overflow: visible !important;
-                  position: relative !important;
-                  width: auto !important;
-                  height: auto !important;
-                  margin-left: 0 !important;
-                  padding-left: 30px !important;
-                  clip: auto !important;
+                &:last-child {
+                  margin: 0 0 0 10px;
                 }
 
                 &:before {
-                  @include _bp(561px) {
-                    top: 0 !important;
+                  display: none;
+                }
+
+                em {
+                  @include _bp(640px) {
+                    overflow: visible !important;
+                    position: relative !important;
+                    width: auto !important;
+                    height: auto !important;
+                    margin-left: 0 !important;
+                    padding-left: 30px !important;
+                    clip: auto !important;
+                  }
+
+                  &:before {
+                    @include _bp(640px) {
+                      top: 0 !important;
+                    }
                   }
                 }
               }
@@ -771,6 +841,7 @@
                   background: #f9f9f9;
                 }
 
+                &.on,
                 &:hover,
                 &:active,
                 &:focus {

@@ -2500,98 +2500,80 @@
 
     .detail-view {
       .page-header {
+        .inner {
+          font-size: 0;
+        }
+
         h2 {
           display: inline-block;
-          max-width: -webkit-calc(100% - 300px);
-          max-width: -moz-calc(100% - 300px);
-          max-width: calc(100% - 300px);
+          max-width: -webkit-calc(100% - 288px);
+          max-width: -moz-calc(100% - 288px);
+          max-width: calc(100% - 288px);
 
-          @include _bp(961px) {
-            max-width: -webkit-calc(100% - 45px);
-            max-width: -moz-calc(100% - 45px);
-            max-width: calc(100% - 45px);
+          @include _bp(768px) {
+            max-width: -webkit-calc(100% - 110px);
+            max-width: -moz-calc(100% - 110px);
+            max-width: calc(100% - 110px);
           }
 
           @include _bp(391px) {
-            max-width: none;
-            width: 100%;
+            max-width: -webkit-calc(100% - 100px);
+            max-width: -moz-calc(100% - 100px);
+            max-width: calc(100% - 100px);
           }
 
           * {
-            vertical-align: middle;
-          }
-
-          .btn-wrap {
-            margin-left: 20px;
-
-            @include _bp(768px) {
-              margin-left: 10px;
-            }
-
-            @include _bp(391px) {
-              margin-left: 0;
-              margin-top: 20px;
-              width: -webkit-calc(100% - 45px);
-              width: -moz-calc(100% - 45px);
-              width: calc(100% - 45px);
-            }
+            vertical-align: top;
           }
 
           strong {
-            max-width: -webkit-calc(100% - 300px);
-            max-width: -moz-calc(100% - 300px);
-            max-width: calc(100% - 300px);
+            width: 100%;
+          }
+        }
 
-            @include _bp(768px) {
-              max-width: -webkit-calc(100% - 110px);
-              max-width: -moz-calc(100% - 110px);
-              max-width: calc(100% - 110px);
-            }
-            @include _bp(391px) {
-              max-width: none;
-              width: 100%;
+        .btn-wrap {
+          margin-left: 20px;
+
+          @include _bp(391px) {
+            margin-left: 10px;
+          }
+        }
+
+        .btn-has-icon {
+          &.like {
+            &.active {
+              background-color: #cb2121 !important;
+
+              &::before {
+                @include _bp(768px) {
+                  background-image: url('../images/mob/icon-like-wh.png');
+                }
+              }
+
+              em {
+                color: $white !important;
+                &::before {
+                  background-image: url('../images/icon-like-wh.png');
+                }
+              }
             }
           }
+          &.flag {
+            &.active {
+              background-color: #081240 !important;
 
-          .btn-has-icon {
-            &.like {
-              &.active {
-                background-color: #cb2121 !important;
-
-                &::before {
-                  @include _bp(768px) {
-                    background-image: url('../images/mob/icon-like-wh.png');
-                  }
-                }
-
-                em {
-                  color: $white !important;
-                  &::before {
-                    background-image: url('../images/icon-like-wh.png');
-                  }
+              &::before {
+                @include _bp(768px) {
+                  background-image: url('../images/mob/icon-flag-wh.png');
                 }
               }
-            }
-            &.flag {
-              &.active {
-                background-color: #081240 !important;
 
+              em {
+                color: $white !important;
                 &::before {
-                  @include _bp(768px) {
-                    background-image: url('../images/mob/icon-flag-wh.png');
-                  }
-                }
-
-                em {
-                  color: $white !important;
-                  &::before {
-                    background-image: url('../images/icon-flag-wh.png');
-                  }
+                  background-image: url('../images/icon-flag-wh.png');
                 }
               }
-            }
-
-            @include _bp(391px) {
             }
           }
         }
@@ -2599,12 +2581,7 @@
         .icon-wrap {
           display: inline-block;
           position: relative;
-
-          @include _bp(391px) {
-            position: absolute;
-            bottom: 0;
-            right: 15px;
-          }
+          margin-left: 10px;
 
           > button {
             background-color: transparent;
@@ -2631,39 +2608,17 @@
           }
 
           .modal.share {
-            @include _bp(961px) {
-              margin-right: -55px;
-            }
-
-            @include _bp(768px) {
-              margin-right: -43px;
-            }
-
-            @include _bp(391px) {
-              margin-right: -34px;
-              top: 53px;
-            }
+            top: 50px;
+            margin-right: -50px;
 
             &::before {
-              @include _bp(961px) {
-                right: 27px;
-              }
-
-              @include _bp(768px) {
-                right: 14px;
-              }
-
-              @include _bp(391px) {
-                right: 8px;
-              }
+              right: 22px;
             }
           }
         }
 
         .location {
-          @include _bp(961px) {
-            top: -30px;
-          }
+          top: -30px;
         }
       }
 
