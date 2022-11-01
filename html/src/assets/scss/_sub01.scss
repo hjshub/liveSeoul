@@ -2506,20 +2506,20 @@
 
         h2 {
           display: inline-block;
-          max-width: -webkit-calc(100% - 288px);
-          max-width: -moz-calc(100% - 288px);
-          max-width: calc(100% - 288px);
+          max-width: -webkit-calc(100% - 332px);
+          max-width: -moz-calc(100% - 332px);
+          max-width: calc(100% - 332px);
 
           @include _bp(768px) {
-            max-width: -webkit-calc(100% - 110px);
-            max-width: -moz-calc(100% - 110px);
-            max-width: calc(100% - 110px);
+            max-width: -webkit-calc(100% - 154px);
+            max-width: -moz-calc(100% - 154px);
+            max-width: calc(100% - 154px);
           }
 
           @include _bp(391px) {
-            max-width: -webkit-calc(100% - 100px);
-            max-width: -moz-calc(100% - 100px);
-            max-width: calc(100% - 100px);
+            max-width: -webkit-calc(100% - 144px);
+            max-width: -moz-calc(100% - 144px);
+            max-width: calc(100% - 144px);
           }
 
           * {
@@ -2611,8 +2611,16 @@
             top: 50px;
             margin-right: -50px;
 
+            @include _bp(768px) {
+              margin-right: -34px;
+            }
+
             &::before {
               right: 22px;
+
+              @include _bp(768px) {
+                right:7px;
+              }
             }
           }
         }
