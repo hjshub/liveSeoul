@@ -218,7 +218,8 @@
       }
 
       select {
-        min-width: 160px;
+        width: 160px;
+        min-width: auto;
 
         @include _bp(640px) {
           width: 100%;
@@ -2113,8 +2114,14 @@
                   }
                 }
 
+                &.dragArea {
+                  > div {
+                    height: 678px;
+                  }
+                }
+
                 > div {
-                  max-height: 678px;
+                  //max-height: 678px;
                   padding-right: 10px;
                 }
 
@@ -2182,9 +2189,13 @@
 
                     .img-thumb {
                       width: 192px;
+                      height: 108px;
                       overflow: hidden;
 
                       img {
+                        position: relative;
+                        top: 50%;
+                        @include transform(translateY(-50%));
                         width: 100%;
                       }
                     }
@@ -2262,6 +2273,10 @@
                 margin-top: 20px;
               }
             }
+          }
+
+          .vd-search {
+            height: 865px;
           }
 
           .vd-regist {
@@ -2619,7 +2634,7 @@
               right: 22px;
 
               @include _bp(768px) {
-                right:7px;
+                right: 7px;
               }
             }
           }
@@ -2772,6 +2787,7 @@
                 font-size: 1.7rem;
                 font-weight: 300;
                 max-height: 100px;
+                padding-right: 20px;
 
                 @include _bp(1660px) {
                   margin-top: 30px;
@@ -4723,6 +4739,28 @@
     padding: 50px 0;
     text-align: center;
     margin: 20px 0 40px;
+
+    &.type02 {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      background-color: #fff;
+
+      > div {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include transform(translateY(-60%));
+
+        p {
+          img {
+            width: 80px;
+          }
+        }
+      }
+    }
 
     p {
       line-height: 1.4;
