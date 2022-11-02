@@ -1324,7 +1324,7 @@ main {
 
               & + div {
                 padding-right: 10px;
-                max-height: 110px;
+                height: 110px;
                 font-weight: 600;
                 color: #333;
                 margin-top: 15px;
@@ -1609,6 +1609,18 @@ main {
             left: -130px;
             z-index: 20;
           }
+        }
+      }
+    }
+  }
+
+  &.empty {
+    .main-section-01 {
+      .fixed-wrap {
+        margin-top: 160px;
+
+        @include _bp(1200px) {
+          margin-top: 0;
         }
       }
     }
