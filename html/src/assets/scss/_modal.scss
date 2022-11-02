@@ -233,7 +233,7 @@
     margin-right: -80px;
 
     &::before {
-      right: 51px;
+      right: 49px;
     }
   }
 
@@ -278,21 +278,43 @@
 
   /* 큐레이션 담기 */
   &.addCuration {
-    width: 490px;
-    margin-right: -140px;
+    width: 450px;
+    margin-right: -155px;
+
+    button[class*='btn-'] em {
+      font-size: 1.5rem !important;
+      top: 0;
+    }
 
     @include _bp(1280px) {
-      margin-right: -320px;
+      margin-right: -295px;
+    }
+
+    @include _bp(1024px) {
+      margin-right: -250px;
+    }
+
+    @include _bp(768px) {
+      width: 450px !important;
     }
 
     @include _bp(561px) {
+      width: -webkit-calc(100vw - 30px) !important;
+      width: -moz-calc(100vw - 30px) !important;
+      width: calc(100vw - 30px) !important;
       margin-right: 0;
       right: 0;
     }
 
     &::before {
+      right: 66px;
+
       @include _bp(1280px) {
-        right: 230px;
+        right: 205px;
+      }
+
+      @include _bp(1024px) {
+        right: 160px;
       }
 
       @include _bp(561px) {
