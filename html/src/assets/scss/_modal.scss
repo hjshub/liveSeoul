@@ -344,7 +344,17 @@
         }
 
         &.customedScroll {
-          max-height: 155px;
+          max-height: 170px;
+
+          .my-curation {
+            padding: 10px 0;
+          }
+        }
+      }
+
+      #curationForm {
+        & + .btn-wrap {
+          margin-top: 20px;
         }
       }
     }
