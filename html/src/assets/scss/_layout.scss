@@ -2037,6 +2037,7 @@ main {
 
               @include _bp(391px) {
                 height: auto;
+                max-height: 200px;
               }
 
               .topic {
