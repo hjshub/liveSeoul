@@ -2077,10 +2077,15 @@ main {
                 bottom: 0;
                 right: 0;
                 overflow: hidden;
+                background-color: $white;
 
                 video {
                   object-fit: fill;
                   width: 100%;
+                  position: absolute;
+                  top: 50%;
+                  left: 0;
+                  @include transform(translateY(-50%));
                 }
               }
 
@@ -2239,10 +2244,15 @@ main {
             bottom: 0;
             right: 0;
             overflow: hidden;
+            background-color: $white;
 
             video {
               object-fit: fill;
               width: 100%;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              @include transform(translateY(-50%));
             }
           }
 
