@@ -1125,6 +1125,7 @@ main {
         max-width: 1920px;
         height: 675px;
         background-color: #f09300;
+        margin: 0 auto;
         position: relative;
         overflow: hidden;
 
@@ -2091,6 +2092,8 @@ main {
 
               .ytp-wrap {
                 position: relative;
+                top: 50%;
+                @include transform(translateY(-50%));
                 padding-bottom: 56.25%;
                 height: 0;
                 overflow: hidden;
@@ -2258,6 +2261,8 @@ main {
 
           .ytp-wrap {
             position: relative;
+            top: 50%;
+            @include transform(translateY(-50%));
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
@@ -2771,8 +2776,8 @@ keyword swiper
 
         &::before {
           position: absolute;
-          left: 50%;
-          right: 50%;
+          left: 52%;
+          right: 52%;
           bottom: 0;
           height: 5px;
           border-radius: 3px;
@@ -2789,7 +2794,7 @@ keyword swiper
 
           &::before {
             left: -3px;
-            right: -5px;
+            right: -3px;
           }
         }
       }
