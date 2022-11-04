@@ -395,7 +395,7 @@ textarea {
   overflow: hidden;
 
   &:not(.curation) {
-    *:not(.animate, .transition-none, .transition-none > *, .depth2, .sort-inner > *, button > *, .preview, .paging) {
+    *:not(.animate, .transition-none, .transition-none > *, .depth2, .sort-inner > *, button > *, .paging) {
       @include transition(all 0.4s ease-in-out);
     }
   }
@@ -420,7 +420,7 @@ main {
     @include transform(translateY(0));
   }
 
-  *:not(.animate, .transition-none, .transition-none > *, .depth2, button > *) {
+  *:not(.animate, .transition-none, .transition-none > *, .depth2, button > *, .preview) {
     @include transition(all 0.4s ease-in-out);
   }
 
@@ -661,7 +661,7 @@ main {
             padding-bottom: 90px;
           }
 
-          @include _bp(480px) {
+          @include _bp(561px) {
             padding-bottom: 180px;
           }
 
@@ -677,7 +677,7 @@ main {
               height: 90px;
             }
 
-            @include _bp(480px) {
+            @include _bp(561px) {
               height: 60px;
             }
 
@@ -696,7 +696,7 @@ main {
                 left: 0;
               }
 
-              @include _bp(480px) {
+              @include _bp(561px) {
                 width: 100%;
                 left: 0;
                 bottom: 120px;
@@ -741,7 +741,7 @@ main {
                     padding-left: 55px;
                   }
 
-                  @include _bp(480px) {
+                  @include _bp(561px) {
                     padding-left: 65px;
                   }
 
@@ -785,7 +785,7 @@ main {
                 left: calc(100% / 3);
               }
 
-              @include _bp(480px) {
+              @include _bp(561px) {
                 width: 100%;
                 left: 0;
                 bottom: 60px;
@@ -829,7 +829,7 @@ main {
                     padding-left: 55px;
                   }
 
-                  @include _bp(480px) {
+                  @include _bp(561px) {
                     padding-left: 65px;
                   }
 
@@ -852,7 +852,7 @@ main {
                       background-size: 100%;
                     }
 
-                    @include _bp(480px) {
+                    @include _bp(561px) {
                       left: 2px;
                     }
                   }
@@ -875,7 +875,7 @@ main {
                 right: 0;
               }
 
-              @include _bp(480px) {
+              @include _bp(561px) {
                 width: 100%;
                 left: 0;
                 bottom: 0;
@@ -919,7 +919,7 @@ main {
                     padding-left: 55px;
                   }
 
-                  @include _bp(480px) {
+                  @include _bp(561px) {
                     padding-left: 65px;
                   }
 
@@ -942,7 +942,7 @@ main {
                       background-size: 100%;
                     }
 
-                    @include _bp(480px) {
+                    @include _bp(561px) {
                       left: -5px;
                     }
                   }
@@ -976,7 +976,7 @@ main {
                 overflow-wrap: break-word;
                 white-space: normal;
 
-                @include _bp(480px) {
+                @include _bp(561px) {
                   font-size: 1.8rem;
                 }
 
@@ -994,7 +994,7 @@ main {
                 b {
                   font-size: 3.8rem;
 
-                  @include _bp(480px) {
+                  @include _bp(561px) {
                     font-size: 3.5rem;
                   }
                 }
@@ -1063,7 +1063,7 @@ main {
                 font-size: 2rem;
                 line-height: 1.1;
 
-                @include _bp(480px) {
+                @include _bp(561px) {
                   font-size: 1.6rem;
                 }
               }
@@ -1362,8 +1362,8 @@ main {
                   margin-left: 12px;
                 }
                 a {
-                  width: 36px;
-                  height: 36px;
+                  width: 34px;
+                  height: 34px;
                   border-radius: 50%;
                   background-color: rgba(241, 241, 241, 0.5);
                   position: relative;
@@ -1413,6 +1413,18 @@ main {
                       background-image: url('../images/mob/icon-kakao.png');
                       background-position: 0 0;
                       background-size: 100%;
+                    }
+                  }
+
+                  &.share-URL {
+                    background-color: transparent;
+                    &::before {
+                      width: 100%;
+                      height: 100%;
+                      top: 0;
+                      left: 0;
+                      background-image: url('../images/icon-set-sns.png');
+                      background-position: -187px -54px;
                     }
                   }
                 }
@@ -2580,28 +2592,27 @@ main {
           }
         }
 
-        // .preview {
-        //   display: none;
-        //   width: 340px;
-        //   padding: 20px 4px 4px 4px;
-        //   background-color: $yellow2;
-        //   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-        //   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-        //   position: absolute;
-        //   top: 100%;
-        //   left: 50%;
-        //   margin: -20px 0 0 30px;
-        //   overflow: hidden;
-        //   @include transform(translateX(-50%) scaleY(0));
+        .preview {
+          display: none;
+          width: 340px;
+          padding: 20px 4px 4px 4px;
+          background-color: $yellow2;
+          -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin: -20px 0 0 30px;
+          overflow: hidden;
+          @include transform(translateX(-50%) scaleY(0));
+          @include _bp(768px) {
+            width: 300px;
+          }
 
-        //   @include _bp(768px) {
-        //     width: 300px;
-        //   }
-
-        //   img {
-        //     width: 100%;
-        //   }
-        // }
+          img {
+            width: 100%;
+          }
+        }
 
         &.on {
           .info {
@@ -2753,26 +2764,22 @@ keyword swiper
   ul {
     font-size: 0;
     position: relative;
-    left: -15px;
+    left: -10px;
 
     li {
       display: inline-block;
-      margin: 0 15px;
+      margin: 0 10px;
 
       a {
         display: inline-block;
-        font-size: 2.4rem;
+        font-size: 2rem;
         color: $gray1;
         line-height: 1;
         padding-bottom: 10px;
         position: relative;
 
         @include _bp(1680px) {
-          font-size: 1.8rem;
-        }
-
-        @include _bp(1200px) {
-          font-size: 2rem;
+          font-size: 1.6rem;
         }
 
         &::before {
