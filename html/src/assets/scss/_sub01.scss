@@ -1958,6 +1958,17 @@
             }
           }
         }
+
+        .board_top {
+          .page-header {
+            .location {
+              @include _bp(768px) {
+                top: -30px;
+              }
+            }
+          }
+        }
+
         // 큐레이션 등록
         // .set-cur-list {
         //   margin-top: 40px;
@@ -4897,6 +4908,7 @@
 
     &.type02 {
       height: 100%;
+      min-height: 250px;
       margin: 0;
       padding: 0;
       position: relative;
