@@ -1472,6 +1472,8 @@ main {
 
       .liveOnAir {
         padding: 0;
+        position: relative;
+        z-index: 10;
 
         > dl {
           display: inline-block;
@@ -2594,19 +2596,19 @@ main {
 
         .preview {
           display: none;
-          width: 340px;
+          width: 250px;
           padding: 20px 4px 4px 4px;
           background-color: $yellow2;
           -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
           position: absolute;
           top: 100%;
-          left: 50%;
-          margin: -20px 0 0 30px;
+          left: 0;
+          margin: -20px 0 0 50px;
           overflow: hidden;
-          @include transform(translateX(-50%) scaleY(0));
+          @include transform(scaleY(0));
           @include _bp(768px) {
-            width: 300px;
+            width: 200px;
           }
 
           img {

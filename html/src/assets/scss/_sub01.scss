@@ -2692,15 +2692,16 @@
           max-width: calc(100% - 332px);
 
           @include _bp(768px) {
-            max-width: -webkit-calc(100% - 154px);
-            max-width: -moz-calc(100% - 154px);
-            max-width: calc(100% - 154px);
+            max-width: none;
+            width: -webkit-calc(100% - 154px);
+            width: -moz-calc(100% - 154px);
+            width: calc(100% - 154px);
           }
 
           @include _bp(391px) {
-            max-width: -webkit-calc(100% - 144px);
-            max-width: -moz-calc(100% - 144px);
-            max-width: calc(100% - 144px);
+            width: -webkit-calc(100% - 144px);
+            width: -moz-calc(100% - 144px);
+            width: calc(100% - 144px);
           }
 
           * {
