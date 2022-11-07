@@ -173,6 +173,7 @@ footer {
 
       @include _bp(961px) {
         padding: 0;
+        width: 100%;
       }
 
       ul {
@@ -266,6 +267,32 @@ footer {
           font-size: 1.6rem;
         }
       }
+
+      .foot_bnr {
+        width: 300px;
+        margin-top: -10px;
+
+        @include _bp(961px) {
+          width: 100%;
+          margin-top: 30px;
+        }
+
+        img {
+          width: 100%;
+
+          @include _bp(961px) {
+            width: auto;
+            max-width: 100%;
+          }
+        }
+      }
+
+      & + div {
+        margin-left: 60px;
+        @include _bp(961px) {
+          margin-left: 0;
+        }
+      }
     }
 
     & + .inner {
@@ -297,7 +324,7 @@ footer {
       display: inline-block;
       background-color: transparent;
       position: absolute;
-      bottom: 50px;
+      bottom: 60px;
       right: -67px;
 
       &::before {
