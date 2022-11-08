@@ -1071,6 +1071,7 @@
         float: left;
         width: 80.21%;
         padding-top: 60px;
+        overflow: hidden;
 
         .inner {
           @include _bp(1024px) {

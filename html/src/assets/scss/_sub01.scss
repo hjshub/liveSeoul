@@ -2831,6 +2831,12 @@
         }
 
         .curation-swiper {
+          overflow: hidden;
+
+          @include _bp(1024px) {
+            overflow: visible;
+          }
+
           article {
             width: 100%;
             position: relative;
