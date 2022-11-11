@@ -1,0 +1,151 @@
+<!-- 영상 유형 선택 -->
+<h6>영상 유형 선택</h6>
+<div class="radio-wrap">
+  <span>
+    <input type="radio" checked name="video_type" id="original" />
+    <label for="original"><em>원본 영상</em></label>
+  </span>
+  <span>
+    <input type="radio" name="video_type" id="clean" />
+    <label for="clean"><em>클린 영상</em></label>
+  </span>
+</div>
+
+<!-- 영상 다운로드 신청 -->
+<h6>영상 다운로드 신청</h6>
+<div class="radio-wrap">
+  <span>
+    <input type="radio" checked name="download" id="dw_all" />
+    <label for="dw_all"><em>전체영상 다운</em></label>
+  </span>
+  <span>
+    <input type="radio" name="download" id="dw_piece" />
+    <label for="dw_piece"><em>부분영상 다운</em></label>
+  </span>
+</div>
+
+<div class="dw-section">
+  <!-- 부분영상 구간설정 -->
+  <div class="set-dw-section">
+    <!-- tgplayer 영상영역 -->
+    <div id="clipVd"></div>
+    <dl>
+      <dt><strong>구간 설정</strong></dt>
+      <dd>
+        <div class="both">
+          <span class="text-wrap">
+            <input type="text" title="부분 영상 시작 구간" id="clipStart" />
+          </span>
+          <span class="text-wrap">
+            <input type="text" title="부분 영상 종료 구간" id="clipEnd" />
+          </span>
+        </div>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<!-- 영상 활용 신청 양식 -->
+<h6>영상 활용 신청 양식</h6>
+<div class="terms-of-use-01">
+  <ul>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">
+            개인정보<br class="pc-only" />
+            활용 동의
+          </span>
+        </dt>
+        <dd>
+          <div>
+            보안 관리, 유의사항 전달 등을 위해 개인정보(성명, 이메일, 핸드폰번호) 를 수집하며, 다른 목적으로 활용하지 않습니다.
+            이에 동의합니다.
+          </div>
+          <div class="chk-wrap align-r">
+            <span>
+              <input type="checkbox" checked id="chk1" />
+              <label for="chk1"><em>동의합니다.</em></label>
+            </span>
+          </div>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">활용 목적</span>
+        </dt>
+        <dd>
+          <div class="text-wrap"><input type="text" class="wide" /></div>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">활용 기간</span>
+        </dt>
+        <dd>
+          <div class="both">
+            <span class="text-wrap">
+              <input class="calendar" title="기간 선택 - 기간을 선택하세요" placeholder="기간을 선택하세요" type="text" />
+            </span>
+            <span class="text-wrap">
+              <input class="calendar" title="기간 선택 - 기간을 선택하세요" placeholder="기간을 선택하세요" type="text" />
+            </span>
+          </div>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">활용 매체</span>
+        </dt>
+        <dd>
+          <div class="text-wrap"><input type="text" class="wide" /></div>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">
+            다운로드<br class="pc-only" />
+            사유
+          </span>
+        </dt>
+        <dd>
+          <div class="text-wrap"><input type="text" class="wide" /></div>
+        </dd>
+      </dl>
+    </li>
+  </ul>
+</div>
+
+<!-- 영상 다운로드 보안서약 -->
+<h6 class="has-icon">영상 다운로드 시 보안서약 동의가 필요합니다.</h6>
+<div class="terms-of-use-02">
+  <ul>
+    <li>
+      다운로드 받은 ‘라이브서울의 영상’은 반드시 다운로드 사유에 기재한 사용목적으로만 사용하고, 그 외 다른 용도에는 사용하지
+      않는다.
+    </li>
+    <li>제공받은 영상을 임의로 수정·편집 또는 복제·복사하여 사용하거나 제3자에게 배포하지 않는다.</li>
+    <li>제공받은 영상은 자유롭게 사용하되, 사회적 통념을 준수하고 품위를 유지하는 범위 내에서 사용해야한다.</li>
+    <li>제공받은 영상 사용 시 영상 출처를 반드시 표기해야 한다.</li>
+  </ul>
+</div>
+<div class="chk-wrap align-r">
+  <span>
+    <input type="checkbox" checked id="chk2" />
+    <label for="chk2"><em>동의합니다.</em></label>
+  </span>
+</div>
+
+<div class="btn-wrap align-c">
+  <button class="btn-default rounded orange" data-modal-name="download-finish" type="submit" onclick="applyDownload();">
+    <em>다운로드 신청</em>
+  </button>
+</div>

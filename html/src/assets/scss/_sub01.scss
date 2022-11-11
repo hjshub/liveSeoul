@@ -336,6 +336,8 @@
 
   &.program {
     .detail-view {
+      margin-top: 0;
+
       .page-header {
         h2 {
           strong {
@@ -357,6 +359,13 @@
           }
         }
       }
+
+      .page-body {
+        @include _bp(1024px) {
+          margin-top: 0;
+        }
+      }
+
       article {
         padding-right: 500px;
         width: 100%;
@@ -528,6 +537,59 @@
           overflow: hidden;
           position: relative;
 
+          > div {
+            @include transition-duration(0s);
+          }
+
+          &.fixed {
+            > div {
+              position: fixed;
+              bottom: 0;
+              right: 75px;
+              z-index: 999;
+              width: 420px;
+              padding: 10px;
+              padding-top: 40px;
+              background-color: $white;
+              box-shadow: 1px 3px 7px 2px rgb(0, 0, 0, 0.3);
+              overflow: hidden;
+
+              @include _bp(1200px) {
+                right: 30px;
+                bottom: 30px;
+              }
+
+              @include _bp(561px) {
+                right: 15px;
+              }
+
+              @include _bp(480px) {
+                width: -webkit-calc(100% - 30px);
+                width: -moz-calc(100% - 30px);
+                width: calc(100% - 30px);
+              }
+
+              .button-vd-close {
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                top: 12px;
+                right: 10px;
+                background-color: transparent;
+
+                &::before {
+                  width: 100%;
+                  height: 100%;
+                  background-image: url('../images/icon-close.png');
+                  background-repeat: no-repeat;
+                  background-size: 100% auto;
+                  background-position: 0 0;
+                  content: '';
+                }
+              }
+            }
+          }
+
           @include _bp(1024px) {
             width: 100vw;
             left: -30px;
@@ -597,6 +659,8 @@
           margin-top: 30px;
 
           .contents {
+            position: relative;
+
             .contents-header {
               margin-bottom: 25px;
 
@@ -624,7 +688,7 @@
               .title {
                 color: $gray10;
                 font-size: 2.6rem;
-                margin-top: 10px;
+                margin-top: 20px;
               }
 
               .etc {
@@ -657,7 +721,6 @@
 
             .contents-mid {
               width: 100%;
-              position: relative;
               font-size: 0;
 
               .text-support,
@@ -667,7 +730,14 @@
               }
 
               .text-support {
-                position: relative;
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                @include _bp(1024px) {
+                  position: static;
+                  float: left;
+                }
 
                 @include _bp(561px) {
                   width: -webkit-calc((100% - 10px) / 2);
@@ -682,9 +752,8 @@
               }
 
               .utility {
-                position: absolute;
-                top: 0;
-                right: 0;
+                float: right;
+                position: relative;
                 font-size: 0;
 
                 &.etc {
@@ -2476,6 +2545,7 @@
           overflow: hidden;
           position: relative;
           box-shadow: 0 0 7px 2px rgba(199, 199, 199, 0.2);
+          vertical-align: top;
 
           & + li {
             margin-left: 30px;
@@ -2565,6 +2635,7 @@
           .img-thumb {
             width: 100%;
             overflow: hidden;
+            max-height: 228px;
 
             img {
               width: 100%;

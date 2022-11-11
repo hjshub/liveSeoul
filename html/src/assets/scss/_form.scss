@@ -349,7 +349,7 @@ button {
             border: 1px solid $orange;
 
             &:hover,
-            &:focus,
+            //&:focus,
             &.on {
               background-color: $orange;
 
@@ -384,7 +384,7 @@ button {
             }
 
             &:hover,
-            &:focus,
+            //&:focus,
             &.on {
               background: #be84d3;
             }
@@ -1452,7 +1452,7 @@ button {
   min-width: 232px;
 }
 #ui-datepicker-div {
-  z-index: 999 !important;
+  z-index: 1010 !important;
 }
 .ui-widget.ui-widget-content {
   border-color: #660d98;
