@@ -8,6 +8,7 @@ footer {
   padding-top: 35px;
   border-top: 1px solid #cecece;
   background-color: #fefeff;
+  position: relative;
 
   @include _bp(961px) {
     padding: 0 0 40px 0;

@@ -44,9 +44,9 @@
       <a href="main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
     </div>
     <div>
-      <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
+      <!-- <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
         <em class="hidden-txt">내 손안에 서울 바로가기</em>
-      </a>
+      </a> -->
       <ul>
         <li>
           <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome" target="_blank" title="새 창 열림">뉴스</a>
@@ -724,11 +724,21 @@
       </li>
     </ul>
 
-    <div class="dropDown">
-      <!-- 로그인 전 -->
-      <a href="javascript:void(0);" class="sign-in">로그인</a>
+    <div class="text-wrap search">
+      <form>
+        <fieldset>
+          <legend>검색</legend>
+          <input class="txt-ellipsis" type="text" title="검색어 입력" />
+          <button type="submit"><em class="hidden-txt">검색</em></button>
+        </fieldset>
+      </form>
+    </div>
 
-      <!-- 로그인 후
+    <div class="dropDown">
+      <!-- 로그인 전
+      <a href="javascript:void(0);" class="sign-in">로그인</a>
+      -->
+      <!-- 로그인 후 -->
       <a href="javascript:void(0)" class="sign-out">로그아웃</a>
       <div class="item">
         <a href="javascript:void(0);" class="mypage">마이페이지</a>
@@ -741,16 +751,6 @@
             <li><a href="mypage/wish_list.html">나의 관심분야</a></li>
           </ul>
         </div>
-      </div>
-      -->
-      <div class="text-wrap search">
-        <form>
-          <fieldset>
-            <legend>검색</legend>
-            <input class="txt-ellipsis" type="text" title="검색어 입력" />
-            <button type="submit"><em class="hidden-txt">검색</em></button>
-          </fieldset>
-        </form>
       </div>
     </div>
   </div>

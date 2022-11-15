@@ -5,7 +5,7 @@
  */
 
 #gnb {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -14,9 +14,9 @@
   opacity: 0;
   @include transform(translateY(-100%));
 
-  @include _bp(1200px) {
-    @include transform(translateY(0));
-  }
+  // @include _bp(1200px) {
+  //   @include transform(translateY(0));
+  // }
 
   [class^='h-wrap'] {
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
@@ -710,7 +710,6 @@
           font-weight: 600;
           color: $white;
           padding-left: 34px;
-          margin-right: 29px;
           position: relative;
 
           &::before {
@@ -728,22 +727,38 @@
         }
 
         .sign-out {
+          margin-right: 29px;
+
           &::before {
             background-position: -93px -29px;
           }
         }
 
-        .text-wrap {
-          width: auto;
-          position: relative;
+        &.text-wrap {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          float: none;
+          width: 700px;
+          @include transform(translateX(-50%));
+
+          @include _bp(1560px) {
+            width: 40%;
+            max-width: 500px;
+          }
+
+          @include _bp(1440px) {
+            max-width: 350px;
+          }
 
           input[type='text'] {
-            width: 290px;
+            width: 100%;
             padding-right: 38px;
             color: $white;
             background-color: transparent;
             height: 30px;
             border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
           }
 
           button {
@@ -884,8 +899,10 @@
     }
   }
 
-  &.fixed,
   &.active {
+    opacity: 1;
+    @include transform(translateY(0));
+
     [class^='h-wrap'] {
       border-bottom-color: $gray5;
     }
@@ -939,7 +956,7 @@
             }
           }
 
-          .text-wrap {
+          &.text-wrap {
             input[type='text'] {
               color: $gray3;
               border-color: $gray5;
@@ -972,10 +989,5 @@
         }
       }
     }
-  }
-
-  &.active {
-    opacity: 1;
-    @include transform(translateY(0));
   }
 }

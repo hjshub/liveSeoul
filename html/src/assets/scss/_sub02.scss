@@ -304,6 +304,7 @@
       width: calc((100% - 100px) / 6);
       padding: 20px 20px 30px;
       box-shadow: 5px 5px 12px rgba(67, 67, 67, 0.2);
+      position: relative;
 
       @include _bp(1680px) {
         width: -webkit-calc((100% - 80px) / 5);
@@ -418,49 +419,62 @@
             overflow: hidden;
             position: relative;
 
+            .toolTip {
+              display: inline-block;
+              background-color: $black;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              left: 0;
+              padding: 3px 5px;
+              font-size: 1.4rem;
+              //border-radius: 10px 0 0 0;
+              color: $white;
+            }
+
             img {
               width: 100%;
               @include transform(scale(1));
               @include transition(transform ease-in-out 0.3s);
             }
 
-            .vd-preview {
-              position: absolute;
-              top: 0;
-              left: 0;
-              bottom: 0;
-              right: 0;
-              overflow: hidden;
-              background-color: $white;
+            // .vd-preview {
+            //   position: absolute;
+            //   top: 0;
+            //   left: 0;
+            //   bottom: 0;
+            //   right: 0;
+            //   overflow: hidden;
+            //   background-color: $white;
 
-              video {
-                object-fit: fill;
-                width: 100%;
-                position: absolute;
-                top: 50%;
-                left: 0;
-                @include transform(translateY(-50%));
-              }
-            }
+            //   video {
+            //     object-fit: fill;
+            //     width: 100%;
+            //     position: absolute;
+            //     top: 50%;
+            //     left: 0;
+            //     @include transform(translateY(-50%));
+            //   }
+            // }
 
-            .ytp-wrap {
-              position: relative;
-              top: 50%;
-              @include transform(translateY(-50%));
-              padding-bottom: 56.25%;
-              height: 0;
-              overflow: hidden;
+            // .ytp-wrap {
+            //   position: relative;
+            //   top: 50%;
+            //   @include transform(translateY(-50%));
+            //   padding-bottom: 56.25%;
+            //   height: 0;
+            //   overflow: hidden;
 
-              iframe,
-              embed,
-              object {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              }
-            }
+            //   iframe,
+            //   embed,
+            //   object {
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     width: 100%;
+            //     height: 100%;
+            //   }
+            // }
 
             a:hover,
             a:focus {
@@ -517,6 +531,165 @@
           font-size: 1.6rem;
           margin-top: 5px;
           line-height: 1;
+        }
+      }
+
+      .vd-preview {
+        position: absolute;
+        top: 50%;
+        left: -40px;
+        right: -40px;
+        bottom: auto;
+        @include transform(translateY(-50%));
+        -webkit-box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
+        box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
+        z-index: 10;
+
+        @include _bp(1280px) {
+          left: -20px;
+          right: -20px;
+        }
+
+        @include _bp(561px) {
+          left: -15px;
+          right: -15px;
+        }
+
+        @include _bp(391px) {
+          left: 20px;
+          right: 20px;
+          top: 20px;
+          @include transform(translateY(0));
+        }
+
+        .preview-wrap {
+          padding: 30px 20px;
+          background-color: $white;
+          overflow: hidden;
+
+          @include _bp(1280px) {
+            padding: 20px 15px;
+          }
+
+          @include _bp(961px) {
+            padding: 10px;
+          }
+
+          @include _bp(391px) {
+            padding: 0;
+          }
+
+          > div {
+            overflow: hidden;
+          }
+
+          video {
+            object-fit: fill;
+            width: 100%;
+          }
+
+          .info {
+            margin-top: 15px;
+
+            @include _bp(391px) {
+              display: none;
+            }
+
+            dl {
+              dt {
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: $light-purple;
+                line-height: 1;
+              }
+
+              dd {
+                font-size: 0;
+                line-height: 1;
+                margin-top: 5px;
+
+                a {
+                  display: inline-block;
+                  height: 50px;
+                  line-height: 1.4;
+                  color: $black;
+                  font-size: 1.8rem;
+                  font-weight: 600;
+                  letter-spacing: 0;
+                  @include line-clamp2;
+
+                  @include _bp(1680px) {
+                    font-size: 1.6rem;
+                    height: 45px;
+                  }
+
+                  @include _bp(1024px) {
+                    height: 42px;
+                  }
+
+                  @include _bp(561px) {
+                    height: 38px;
+                  }
+                }
+              }
+            }
+          }
+
+          .date {
+            @include _bp(391px) {
+              display: none;
+            }
+
+            color: $gray1;
+            font-size: 1.4rem;
+            margin-top: 5px;
+            line-height: 1;
+
+            span {
+              display: inline-block;
+              width: 100%;
+              line-height: 1;
+
+              em {
+                display: inline-block;
+                position: relative;
+                vertical-align: top;
+
+                & + em {
+                  padding-left: 11px;
+                  margin-left: 10px;
+
+                  &::before {
+                    width: 1px;
+                    height: 12px;
+                    background-color: currentColor;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -5px;
+                    content: '';
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .ytp-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+
+        iframe,
+        embed,
+        object {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
         }
       }
     }
