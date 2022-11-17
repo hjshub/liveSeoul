@@ -1449,13 +1449,13 @@ button {
 
 /*calendar custom*/
 .ui-datepicker {
-  min-width: 232px;
+  min-width: 230px;
 }
 #ui-datepicker-div {
   z-index: 1010 !important;
 }
 .ui-widget.ui-widget-content {
-  border-color: #660d98;
+  border-color: $navy2;
 }
 .ui-corner-all,
 .ui-corner-bottom,
@@ -1485,7 +1485,7 @@ html .ui-button.ui-state-disabled:active {
   border-radius: 50%;
 }
 .ui-datepicker table tbody {
-  border-top: 1px solid #660d98;
+  border-top: 1px solid $navy2;
 }
 .ui-datepicker td {
   padding: 4px 2px;
@@ -1508,14 +1508,14 @@ html .ui-button.ui-state-disabled:active {
 }
 .ui-widget-header {
   background-image: none;
-  background-color: #660d98;
-  border-color: #660d98;
+  background-color: $navy2;
+  border-color: $navy2;
   color: $white;
 }
 .ui-widget-content {
   background-image: none;
   background-color: $white;
-  color: #660d98;
+  color: $navy2;
 }
 .ui-state-default,
 .ui-widget-content .ui-state-default,
@@ -1523,17 +1523,17 @@ html .ui-button.ui-state-disabled:active {
 .ui-button,
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
-  border-color: #660d98;
+  border-color: $navy2;
   background-image: none;
   background-color: $white;
-  color: #660d98;
+  color: $navy2;
 }
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-  border-color: #911bbd;
+  border-color: #111734;
   background-image: none;
-  background-color: #911bbd;
+  background-color: #111734;
   color: $white;
 }
 .ui-state-active,
@@ -1543,7 +1543,7 @@ a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
   background-image: none;
-  background-color: #660d98;
+  background-color: $navy2;
   color: $white;
 }
 .ui-widget-header .ui-icon,
@@ -1564,8 +1564,8 @@ a.ui-button:active,
 .ui-button:hover,
 .ui-button:focus {
   background-image: none;
-  background-color: #660d98;
-  border-color: #660d98;
+  background-color: $navy2;
+  border-color: $navy2;
   color: $white;
 }
 .ui-datepicker .ui-datepicker-prev span,

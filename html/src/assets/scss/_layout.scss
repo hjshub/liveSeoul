@@ -1862,14 +1862,6 @@ main {
     padding: 10px 0;
   }
 
-  .contents-header {
-    .swiper-controller {
-      @include _bp(1024px) {
-        display: none;
-      }
-    }
-  }
-
   @include _bp(1200px) {
     padding-top: 97px;
   }
@@ -2395,7 +2387,7 @@ main {
           }
 
           .preview-wrap {
-            display: none;
+            //display: none;
             padding: 30px 20px;
             background-color: $white;
             overflow: hidden;
@@ -2712,7 +2704,7 @@ main {
       }
 
       .preview-wrap {
-        display: none;
+        // display: none;
         padding: 30px 20px;
         background-color: $white;
         overflow: hidden;
@@ -3252,7 +3244,8 @@ list filter swiper
 keyword swiper
 */
 .list-filter-swiper,
-.keyword-swiper {
+.keyword-swiper,
+.keyword-swiper2 {
   position: relative;
   overflow: hidden;
 

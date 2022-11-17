@@ -337,7 +337,17 @@ footer {
         content: '';
       }
 
+      @include _bp(1400px) {
+        right: 0;
+        top: 20px;
+        bottom: auto;
+      }
+
       @include _bp(1280px) {
+        right: 30px;
+      }
+
+      @include _bp(961px) {
         display: none;
       }
     }

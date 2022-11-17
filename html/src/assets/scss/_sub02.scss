@@ -561,7 +561,7 @@
         }
 
         .preview-wrap {
-          display: none;
+          // display: none;
           padding: 30px 20px;
           background-color: $white;
           overflow: hidden;
@@ -718,7 +718,7 @@
     li {
       @include _bp(880px) {
         & + li {
-          margin-top: 40px;
+          margin-top: 35px;
         }
       }
 
@@ -765,7 +765,7 @@
           @include _bp(880px) {
             display: block;
             width: auto;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-indent: 0;
             font-weight: 700;
             color: $gray10;
@@ -1035,6 +1035,23 @@
                 &:focus {
                   color: $white;
                   background: $red2;
+                }
+              }
+
+              &.yellow {
+                button {
+                  @include _bp(880px) {
+                    color: $gray2;
+                    background: #f9f9f9;
+                  }
+
+                  &.on,
+                  &:hover,
+                  &:active,
+                  &:focus {
+                    color: $white;
+                    background: $yellow3;
+                  }
                 }
               }
             }

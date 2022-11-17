@@ -189,6 +189,11 @@
         }
       }
     }
+    .sort {
+      @include _bp(768px) {
+        margin-top: 0;
+      }
+    }
   }
 
   .search-area {
@@ -1181,10 +1186,10 @@
                     a {
                       em {
                         &::before {
-                          width: 23px;
-                          height: 18px;
-                          margin-top: -9px;
-                          background-position: -135px -4px;
+                          width: 20px;
+                          height: 20px;
+                          margin-top: -10px;
+                          background-position: -211px -3px;
                         }
                       }
                     }
@@ -1194,10 +1199,10 @@
                     a {
                       em {
                         &::before {
-                          width: 22px;
+                          width: 23px;
                           height: 18px;
                           margin-top: -9px;
-                          background-position: -56px -3px;
+                          background-position: -135px -4px;
                         }
                       }
                     }
@@ -1534,21 +1539,51 @@
         .contents-header {
           margin-top: 55px;
           margin-left: 50px;
-          padding: 20px;
-          //position: relative;
-          background-color: #f9f9f9;
 
-          @include _bp(768px) {
-            padding-left: 0;
-            padding-top: 0;
+          @include _bp(1680px) {
+            margin-left: 30px;
           }
 
-          > div {
-            padding-right: 90px;
+          @include _bp(768px) {
+            margin-left: 0;
+            margin-top: 0;
+          }
+
+          .list-filter-wrap {
+            padding: 20px 120px 20px 20px;
             position: relative;
+            background-color: #f9f9f9;
+
+            @include _bp(1024px) {
+              padding-right: 20px;
+            }
+
+            @include _bp(768px) {
+              width: -webkit-calc(100% + 60px);
+              width: -moz-calc(100% + 60px);
+              width: calc(100% + 60px);
+              padding-right: 25px;
+              padding-left: 25px;
+              position: relative;
+              left: -30px;
+            }
+
+            @include _bp(561px) {
+              width: -webkit-calc(100% + 30px);
+              width: -moz-calc(100% + 30px);
+              width: calc(100% + 30px);
+              padding-right: 10px;
+              padding-left: 10px;
+              left: -15px;
+            }
 
             .swiper-controller {
-              bottom: 0;
+              bottom: 20px;
+              right: 20px;
+
+              @include _bp(1024px) {
+                display: none;
+              }
 
               .button-swiper-nxt,
               .button-swiper-prev {
@@ -1572,6 +1607,104 @@
               }
             }
           }
+
+          .date-search-area {
+            margin-top: 30px;
+
+            ul {
+              @include _bp(880px) {
+                border: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+              }
+              li {
+                dl {
+                  dt {
+                    width: 120px;
+                  }
+                  dd {
+                    padding: 10px 15px;
+
+                    @include _bp(880px) {
+                      padding: 0;
+                    }
+
+                    .datePick-bt {
+                      width: auto;
+                    }
+                    .both {
+                      float: right;
+                      width: -webkit-calc(100% - 350px);
+                      width: -moz-calc(100% - 350px);
+                      width: calc(100% - 350px);
+
+                      @include _bp(1280px) {
+                        width: 100%;
+                        margin-top: 15px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .keyword-search-area {
+            margin-top: 20px;
+
+            dl {
+              display: table;
+              table-layout: fixed;
+              width: 100%;
+
+              @include _bp(880px) {
+                display: inline-block;
+                font-size: 0;
+              }
+
+              dt,
+              dd {
+                display: table-cell;
+
+                @include _bp(880px) {
+                  width: 100%;
+                  display: inline-block;
+                }
+              }
+
+              dt {
+                width: 90px;
+                color: $red2;
+                font-size: 1.4rem;
+
+                @include _bp(880px) {
+                  width: 100%;
+                  font-size: 2rem;
+                }
+              }
+
+              dd {
+                margin-left: -15px;
+
+                @include _bp(880px) {
+                  margin-top: 20px;
+                  margin-left: 0;
+                }
+
+                .swiper-slide {
+                  span {
+                    font-size: 1.7rem;
+                    color: $black;
+                    margin: 0 15px;
+
+                    &::before {
+                      content: '#';
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
 
         .contents-body {
@@ -1579,7 +1712,7 @@
           margin-top: 30px;
           margin-bottom: 140px;
 
-          @include _bp(1024px) {
+          @include _bp(1680px) {
             padding: 0 0 0 30px;
           }
 
@@ -1663,9 +1796,9 @@
       color: $gray10;
       background-color: $gray16;
       z-index: 20;
-      max-height: -webkit-calc(100vh - 197px);
-      max-height: -moz-calc(100vh - 197px);
-      max-height: calc(100vh - 197px);
+      max-height: -webkit-calc(100vh - 187px);
+      max-height: -moz-calc(100vh - 187px);
+      max-height: calc(100vh - 187px);
       padding-bottom: 60px;
       overflow: hidden;
       overflow-y: auto;
@@ -1876,10 +2009,10 @@
                 a {
                   em {
                     &::before {
-                      width: 23px;
-                      height: 18px;
-                      margin-top: -9px;
-                      background-position: -135px -4px;
+                      width: 20px;
+                      height: 20px;
+                      margin-top: -10px;
+                      background-position: -211px -3px;
                     }
                   }
                 }
@@ -1889,10 +2022,10 @@
                 a {
                   em {
                     &::before {
-                      width: 22px;
+                      width: 23px;
                       height: 18px;
                       margin-top: -9px;
-                      background-position: -56px -3px;
+                      background-position: -135px -4px;
                     }
                   }
                 }
