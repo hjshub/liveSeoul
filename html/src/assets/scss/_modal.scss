@@ -43,7 +43,7 @@
   -webkit-box-shadow: 3px 6px 10px 2px rgb(56, 56, 56, 0.15);
   box-shadow: 3px 6px 10px 2px rgb(56, 56, 56, 0.15);
   // overflow: hidden;
-  z-index: 99;
+  z-index: 101;
 
   @include _bp(768px) {
     width: -webkit-calc(100vw - 60px) !important;
@@ -399,7 +399,7 @@
   &.applyDownload {
     padding: 25px 30px;
     max-width: 720px;
-    max-height: 82vh;
+    max-height: 85vh;
     text-align: left;
     background-color: #fff8e9;
 
@@ -446,9 +446,9 @@
 
       .modal-contents {
         padding: 0;
-        max-height: -webkit-calc(90vh - 100px);
-        max-height: -moz-calc(90vh - 100px);
-        max-height: calc(90vh - 100px);
+        max-height: -webkit-calc(85vh - 100px);
+        max-height: -moz-calc(85vh - 100px);
+        max-height: calc(85vh - 100px);
 
         h6 {
           font-size: 1.7rem;
@@ -1037,6 +1037,156 @@
         background-repeat: no-repeat;
         background-position: 0 0;
         content: '';
+      }
+    }
+  }
+}
+
+// 큐레이션 상세 영상미리보기 레이어팝업
+.cur-pv {
+  display: none;
+  position: fixed;
+  width: 95%;
+  max-width: 700px;
+  max-height: 82vh;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  @include transform(translate(-50%, -50%));
+  border-radius: 10px;
+  background-color: $white;
+  -webkit-box-shadow: 3px 6px 10px 2px rgb(56, 56, 56, 0.15);
+  box-shadow: 3px 6px 10px 2px rgb(56, 56, 56, 0.15);
+
+  @include _bp(768px) {
+    width: -webkit-calc(100vw - 60px) !important;
+    width: -moz-calc(100vw - 60px) !important;
+    width: calc(100vw - 60px) !important;
+  }
+
+  @include _bp(561px) {
+    width: -webkit-calc(100vw - 30px) !important;
+    width: -moz-calc(100vw - 30px) !important;
+    width: calc(100vw - 30px) !important;
+  }
+
+  @include _bp(361px) {
+    padding: 18px 15px;
+  }
+
+  .button-close {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 18px;
+    height: 18px;
+    margin-top: -9px;
+    background-color: transparent;
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/icon-close-gr.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      content: '';
+    }
+  }
+
+  .cur-pv-header {
+    position: relative;
+    color: #010101;
+    margin-bottom: 0;
+
+    h5 {
+      line-height: 60px;
+      font-size: 2rem;
+      border-bottom: 1px solid $gray9;
+
+      em {
+        display: inline-block;
+        color: $gray2 !important;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 10px;
+      }
+    }
+  }
+  .cur-pv-body {
+    padding: 20px 25px 40px;
+    text-align: left;
+
+    @include _bp(561px) {
+      padding: 15px 15px 25px;
+    }
+
+    .cur-pv-cts {
+      max-height: -webkit-calc(82vh - 100px);
+      max-height: -moz-calc(82vh - 100px);
+      max-height: calc(82vh - 100px);
+      padding-right: 5px;
+      padding-left: 5px;
+
+      .ytp-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+
+        iframe,
+        embed,
+        object {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .cur-vd-info {
+        margin-top: 20px;
+      }
+
+      .cur-vd-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+
+      .date {
+        margin-top: 20px;
+
+        span {
+          display: inline-block;
+          font-size: 1.6rem;
+          color: $gray1;
+          font-weight: 400;
+          position: relative;
+          line-height: 1;
+
+          & + span {
+            padding-left: 20px;
+
+            &::before {
+              position: absolute;
+              width: 1px;
+              height: 12px;
+              top: 50%;
+              left: 9px;
+              margin-top: -5px;
+              background-color: currentColor;
+              content: '';
+            }
+          }
+        }
+      }
+
+      .btn-wrap {
+        margin-top: 40px;
       }
     }
   }

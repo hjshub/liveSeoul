@@ -135,9 +135,10 @@ html {
       &.program {
         .list-view {
           .sideMenu {
-            padding-top: 61px;
+            top: 61px;
+
             @include _bp(1200px) {
-              padding-top: 56px;
+              top: 56px;
             }
           }
         }
@@ -555,7 +556,11 @@ main {
 
   @include _bp(1200px) {
     padding-top: 56px;
-    @include transform(translateY(0));
+    @include transform(translateY(-97px));
+  }
+
+  @include _bp(480px) {
+    @include transform(translateY(-87px));
   }
 
   *:not(.animate, .transition-none, .transition-none > *, .depth2, button > *, .preview) {
@@ -609,6 +614,12 @@ main {
           min-height: auto;
           @include transform(translateX(-50%));
         }
+
+        @include _bp(480px) {
+          max-height: -webkit-calc(100vh - 87px);
+          max-height: -moz-calc(100vh - 87px);
+          max-height: calc(100vh - 87px);
+        }
       }
 
       .main-swiper {
@@ -638,6 +649,12 @@ main {
               height: 305px;
               min-height: auto;
               @include transform(translateX(-50%));
+            }
+
+            @include _bp(480px) {
+              max-height: -webkit-calc(100vh - 87px);
+              max-height: -moz-calc(100vh - 87px);
+              max-height: calc(100vh - 87px);
             }
           }
 
@@ -1265,6 +1282,10 @@ main {
       padding-top: 97px;
     }
 
+    @include _bp(480px) {
+      padding-top: 87px;
+    }
+
     .main-section-01 {
       > article {
         width: 100%;
@@ -1853,6 +1874,10 @@ main {
     padding-top: 97px;
   }
 
+  @include _bp(480px) {
+    padding-top: 87px;
+  }
+
   @include _bp(768px) {
     padding-bottom: 60px;
   }
@@ -2350,8 +2375,6 @@ main {
           right: -40px;
           bottom: auto;
           @include transform(translateY(-50%));
-          -webkit-box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
-          box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
           z-index: 10;
 
           @include _bp(1280px) {
@@ -2372,9 +2395,18 @@ main {
           }
 
           .preview-wrap {
+            display: none;
             padding: 30px 20px;
             background-color: $white;
             overflow: hidden;
+            -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: zoomIn;
+            animation-name: zoomIn;
+            -webkit-box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
+            box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
 
             @include _bp(1280px) {
               padding: 20px 15px;
@@ -2386,6 +2418,7 @@ main {
 
             @include _bp(391px) {
               padding: 0;
+              background-color: transparent;
             }
 
             > div {
@@ -2659,8 +2692,6 @@ main {
       right: -40px;
       bottom: auto;
       @include transform(translateY(-50%));
-      -webkit-box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
-      box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
       z-index: 10;
 
       @include _bp(1280px) {
@@ -2681,9 +2712,18 @@ main {
       }
 
       .preview-wrap {
+        display: none;
         padding: 30px 20px;
         background-color: $white;
         overflow: hidden;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: zoomIn;
+        animation-name: zoomIn;
+        -webkit-box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
+        box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
 
         @include _bp(1280px) {
           padding: 20px 15px;
@@ -2695,6 +2735,7 @@ main {
 
         @include _bp(391px) {
           padding: 0;
+          background-color: transparent;
         }
 
         > div {
@@ -3509,6 +3550,24 @@ keyword swiper
   }
 }
 
+@-webkit-keyframes zoomIn {
+  from {
+    @include transform(scale(0.85));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    @include transform(scale(0.85));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
+
 @-webkit-keyframes fade_In_Up {
   0% {
     opacity: 0;
@@ -3605,6 +3664,10 @@ keyword swiper
 .animate__fade_In_Down {
   -webkit-animation-name: fade_In_Down;
   animation-name: fade_In_Down;
+}
+.animate__zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
 }
 
 /*ie9 이하*/

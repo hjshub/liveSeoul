@@ -416,6 +416,21 @@
             </div>
           </div>
         </section>
+
+        <!-- 큐레이션 영상 미리보기 -->
+        <div class="cur-pv-wrap">
+            <div class="cur-pv">
+              <header class="cur-pv-header">
+                <h5>영상 미리보기</h5>
+                <button type="button" class="button-close" onclick="commonFunction().curPreviewOff();">
+                  <em class="hidden-txt">레이어 팝업 닫기</em>
+                </button>
+              </header>
+              <div class="cur-pv-body">
+                <div class="cur-pv-cts customedScroll pink"></div>
+              </div>
+            </div>
+        </div>
       </div>
       <!-- // #contents -->
 
@@ -423,9 +438,6 @@
       <footer id="footer">@@include('../include/footer_sub.html')</footer>
       <!-- // #footer -->
     </div>
-
-    <script src="../tgplayer/conponentRoot.js"></script>
-    <script src="../tgplayer/player_init.js"></script>
 
     <script>
       //Object

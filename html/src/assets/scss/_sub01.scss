@@ -944,18 +944,15 @@
       .sideMenu {
         width: 285px;
         position: fixed;
-        top: 0;
-        padding-top: 153px;
+        top: 153px;
         bottom: 0;
         left: 0;
         color: $gray10;
         overflow: hidden;
-        border-right: 1px solid #e4e3e3;
-        @include transition-duration(0.1s);
+        @include transition-duration(0.2s);
 
         @include _bp(1200px) {
-          top: 0;
-          padding-top: 97px;
+          top: 97px;
           width: 220px;
         }
 
@@ -1026,16 +1023,10 @@
           overflow: hidden;
           overflow-y: auto;
 
-          &.limitHeight {
-            max-height: -webkit-calc(100% - 270px);
-            max-height: -moz-calc(100% - 270px);
-            max-height: calc(100% - 270px);
-
-            @include _bp(961px) {
-              max-height: -webkit-calc(100% - 330px);
-              max-height: -moz-calc(100% - 330px);
-              max-height: calc(100% - 330px);
-            }
+          @include _bp(1024px) {
+            max-height: -webkit-calc(100% - 87px);
+            max-height: -moz-calc(100% - 87px);
+            max-height: calc(100% - 87px);
           }
 
           > div {
@@ -1320,6 +1311,7 @@
         width: calc(100% - 210px);
         float: right;
         position: relative;
+        border-left: 1px solid #e4e3e3;
 
         @include _bp(1200px) {
           width: -webkit-calc(100% - 190px);
@@ -1540,54 +1532,51 @@
         }
 
         .contents-header {
-          padding: 55px 130px 30px 45px;
-          position: relative;
-
-          @include _bp(1024px) {
-            padding: 55px 0 20px 20px;
-          }
+          margin-top: 55px;
+          margin-left: 50px;
+          padding: 20px;
+          //position: relative;
+          background-color: #f9f9f9;
 
           @include _bp(768px) {
             padding-left: 0;
             padding-top: 0;
           }
 
-          // &::before {
-          //   position: absolute;
-          //   height: 1px;
-          //   left: 0;
-          //   right: -75px;
-          //   bottom: 0;
-          //   background-color: #e4e3e3;
-          //   content: '';
+          > div {
+            padding-right: 90px;
+            position: relative;
 
-          //   @include _bp(768px) {
-          //     display: none;
-          //     content: none;
-          //   }
-          // }
+            .swiper-controller {
+              bottom: 0;
 
-          .swiper-controller {
-            bottom: 30px;
+              .button-swiper-nxt,
+              .button-swiper-prev {
+                background-color: $white;
+                border: 1px solid $gray9;
+                width: 40px;
+                height: 40px;
+                -webkit-box-shadow: none;
+                box-shadow: none;
 
-            .button-swiper-nxt,
-            .button-swiper-prev {
-              background-color: #f2f2f2;
-              width: 45px;
-              height: 45px;
-              -webkit-box-shadow: none;
-              box-shadow: none;
-            }
+                &::before {
+                  width: 10px;
+                  height: 18px;
+                  background-size: 100% auto;
+                  margin: -9px 0 0 -5px;
+                }
+              }
 
-            .button-swiper-nxt {
-              margin-left: 10px;
+              .button-swiper-nxt {
+                margin-left: 10px;
+              }
             }
           }
         }
 
         .contents-body {
           padding: 0 0 0 50px;
-          margin-top: 0;
+          margin-top: 30px;
           margin-bottom: 140px;
 
           @include _bp(1024px) {
@@ -1597,6 +1586,12 @@
           @include _bp(768px) {
             padding: 0;
             margin-bottom: 60px;
+          }
+
+          .date-search-area {
+            & + section {
+              margin-top: 40px;
+            }
           }
         }
       }
@@ -3361,7 +3356,7 @@
             }
 
             .td-num {
-              width: 6%;
+              width: 5%;
 
               @include _bp(1024px) {
                 width: 50px;
@@ -3376,10 +3371,13 @@
               width: 10%;
               overflow: hidden;
               position: relative;
-              height: 104px;
 
               @include _bp(1200px) {
                 width: 120px;
+              }
+
+              @include _bp(1024px) {
+                width: 90px;
               }
 
               @include _bp(768px) {
@@ -3397,6 +3395,16 @@
                 width: 150px;
                 height: 84px;
 
+                @include _bp(1200px) {
+                  width: 120px;
+                  height: 67px;
+                }
+
+                @include _bp(1024px) {
+                  width: 90px;
+                  height: 51px;
+                }
+
                 @include _bp(768px) {
                   position: static;
                   width: 100%;
@@ -3410,11 +3418,11 @@
               width: 10%;
 
               @include _bp(1200px) {
-                width: 120px;
+                width: 100px;
               }
 
               @include _bp(1024px) {
-                width: 60px;
+                width: 80px;
               }
 
               @include _bp(768px) {
@@ -3427,10 +3435,6 @@
               width: 10%;
 
               @include _bp(1200px) {
-                width: 120px;
-              }
-
-              @include _bp(1024px) {
                 width: 80px;
               }
 
@@ -3488,11 +3492,7 @@
               }
 
               @include _bp(1200px) {
-                width: 150px;
-              }
-
-              @include _bp(1024px) {
-                width: 100px;
+                width: 80px;
               }
 
               @include _bp(768px) {
@@ -3516,6 +3516,12 @@
                 text-align: center;
               }
 
+              button[class*='btn-'].xs2 {
+                @include _bp(1200px) {
+                  min-width: 80px;
+                }
+              }
+
               span {
                 color: $gray2;
 
@@ -3529,11 +3535,11 @@
               width: 10%;
 
               @include _bp(1200px) {
-                width: 120px;
+                width: 100px;
               }
 
-              @include _bp(1024px) {
-                width: 100px;
+              @include _bp(1084px) {
+                width: 80px;
               }
 
               @include _bp(768px) {
@@ -3590,7 +3596,7 @@
             }
 
             .td-period {
-              width: 13%;
+              width: 10%;
 
               &.empty {
                 &::before {
@@ -3613,7 +3619,7 @@
               }
 
               @include _bp(1200px) {
-                width: 125px;
+                width: 110px;
               }
 
               @include _bp(1024px) {
@@ -3644,6 +3650,24 @@
                 &::before {
                   display: none;
                   content: none;
+                }
+              }
+            }
+
+            .list-td {
+              .td-thumb {
+                height: 104px;
+
+                @include _bp(1200px) {
+                  height: 87px;
+                }
+
+                @include _bp(1024px) {
+                  height: 71px;
+                }
+
+                @include _bp(768px) {
+                  height: auto;
                 }
               }
             }

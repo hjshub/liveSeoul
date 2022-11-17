@@ -541,8 +541,6 @@
         right: -40px;
         bottom: auto;
         @include transform(translateY(-50%));
-        -webkit-box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
-        box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
         z-index: 10;
 
         @include _bp(1280px) {
@@ -563,9 +561,18 @@
         }
 
         .preview-wrap {
+          display: none;
           padding: 30px 20px;
           background-color: $white;
           overflow: hidden;
+          -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+          -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+          -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+          -webkit-box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
+          box-shadow: 0 4px 7px 0 rgb(0, 0, 0, 0.3);
 
           @include _bp(1280px) {
             padding: 20px 15px;
@@ -577,6 +584,7 @@
 
           @include _bp(391px) {
             padding: 0;
+            background-color: transparent;
           }
 
           > div {
@@ -2396,7 +2404,7 @@
           display: table-cell;
           height: 60px;
           color: $gray10;
-          font-size: 2rem;
+          font-size: 1.8rem;
           border-bottom: 1px solid $gray2;
         }
       }
