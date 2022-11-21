@@ -573,6 +573,10 @@ main {
 
     &[class*='bg-'] {
       padding: 60px 0;
+
+      @include _bp(768px) {
+        padding: 40px 0;
+      }
     }
 
     &.bg- {
@@ -3092,15 +3096,17 @@ main {
           display: none;
           width: 250px;
           padding: 20px 4px 4px 4px;
+          max-height: 190px;
           background-color: $yellow2;
           -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
           position: absolute;
-          top: 100%;
+          top: -40px;
           left: 0;
-          margin: -20px 0 0 50px;
+          margin: 0 0 0 50px;
           overflow: hidden;
           @include transform(scaleY(0));
+
           @include _bp(768px) {
             width: 200px;
           }
