@@ -529,7 +529,7 @@ function commonFunction() {
 
         gb.filterSwiper = new Swiper('.list-filter-swiper', gb.filterSwiperOption);
 
-        if ($('.list-filter-swiper').hasClass('topic')) {
+        if ($('.list-filter-swiper').closest('div').hasClass('topic')) {
           // 분야별 영상
           $('.list-filter-swiper')
             .find('input[type=checkbox]')
