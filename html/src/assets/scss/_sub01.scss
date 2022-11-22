@@ -675,7 +675,14 @@
               }
 
               .hash-list {
+                width: -webkit-calc(100% - 190px);
+                width: -moz-calc(100% - 190px);
+                width: calc(100% - 190px);
                 margin-left: -4px;
+
+                @include _bp(1024px) {
+                  width: 100%;
+                }
 
                 em {
                   display: inline-block;
@@ -1108,7 +1115,7 @@
                       }
                     }
                   }
-                  &:first-of-type {
+                  &.icon-pg-01 {
                     a {
                       em {
                         &::before {
@@ -1121,7 +1128,7 @@
                     }
                   }
 
-                  &:nth-of-type(2) {
+                  &.icon-pg-02 {
                     a {
                       em {
                         &::before {
@@ -1134,7 +1141,7 @@
                     }
                   }
 
-                  &:nth-of-type(3) {
+                  &.icon-pg-03 {
                     a {
                       em {
                         &::before {
@@ -1147,7 +1154,7 @@
                     }
                   }
 
-                  &:nth-of-type(4) {
+                  &.icon-pg-04 {
                     a {
                       em {
                         &::before {
@@ -1160,7 +1167,7 @@
                     }
                   }
 
-                  &:nth-of-type(5) {
+                  &.icon-pg-05 {
                     a {
                       em {
                         &::before {
@@ -1173,7 +1180,7 @@
                     }
                   }
 
-                  &:nth-of-type(6) {
+                  &.icon-pg-06 {
                     a {
                       em {
                         &::before {
@@ -1186,7 +1193,7 @@
                     }
                   }
 
-                  &:nth-of-type(7) {
+                  &.icon-pg-07 {
                     a {
                       em {
                         &::before {
@@ -1199,7 +1206,7 @@
                     }
                   }
 
-                  &:nth-of-type(8) {
+                  &.icon-pg-08 {
                     a {
                       em {
                         &::before {
@@ -1212,7 +1219,7 @@
                     }
                   }
 
-                  &:nth-of-type(9) {
+                  &.icon-pg-09 {
                     a {
                       em {
                         &::before {
@@ -1449,7 +1456,7 @@
                 }
               }
 
-              &:first-of-type {
+              &.icon-pgAll-01 {
                 dt {
                   &::before {
                     background-position: -126px -1px;
@@ -1457,7 +1464,7 @@
                 }
               }
 
-              &:nth-of-type(2) {
+              &.icon-pgAll-02 {
                 dt {
                   &::before {
                     background-position: -84px -1px;
@@ -1465,7 +1472,7 @@
                 }
               }
 
-              &:nth-of-type(3) {
+              &.icon-pgAll-03 {
                 dt {
                   &::before {
                     background-position: -2px -1px;
@@ -1473,7 +1480,7 @@
                 }
               }
 
-              &:nth-of-type(4) {
+              &.icon-pgAll-04 {
                 dt {
                   &::before {
                     background-position: -288px -1px;
@@ -1481,7 +1488,7 @@
                 }
               }
 
-              &:nth-of-type(5) {
+              &.icon-pgAll-05 {
                 dt {
                   &::before {
                     background-position: -248px -1px;
@@ -1489,7 +1496,7 @@
                 }
               }
 
-              &:nth-of-type(6) {
+              &.icon-pgAll-06 {
                 dt {
                   &::before {
                     background-position: -168px -1px;
@@ -1497,15 +1504,7 @@
                 }
               }
 
-              &:nth-of-type(7) {
-                dt {
-                  &::before {
-                    background-position: -43px -1px;
-                  }
-                }
-              }
-
-              &:nth-of-type(8) {
+              &.icon-pgAll-07 {
                 dt {
                   &::before {
                     background-position: -208px -1px;
@@ -1931,7 +1930,7 @@
                   }
                 }
               }
-              &:first-of-type {
+              &.icon-pg-01 {
                 a {
                   em {
                     &::before {
@@ -1944,7 +1943,7 @@
                 }
               }
 
-              &:nth-of-type(2) {
+              &.icon-pg-02 {
                 a {
                   em {
                     &::before {
@@ -1957,7 +1956,7 @@
                 }
               }
 
-              &:nth-of-type(3) {
+              &.icon-pg-03 {
                 a {
                   em {
                     &::before {
@@ -1970,7 +1969,7 @@
                 }
               }
 
-              &:nth-of-type(4) {
+              &.icon-pg-04 {
                 a {
                   em {
                     &::before {
@@ -1983,7 +1982,7 @@
                 }
               }
 
-              &:nth-of-type(5) {
+              &.icon-pg-05 {
                 a {
                   em {
                     &::before {
@@ -1996,7 +1995,7 @@
                 }
               }
 
-              &:nth-of-type(6) {
+              &.icon-pg-06 {
                 a {
                   em {
                     &::before {
@@ -2009,7 +2008,7 @@
                 }
               }
 
-              &:nth-of-type(7) {
+              &.icon-pg-07 {
                 a {
                   em {
                     &::before {
@@ -2022,7 +2021,7 @@
                 }
               }
 
-              &:nth-of-type(8) {
+              &.icon-pg-08 {
                 a {
                   em {
                     &::before {
@@ -2035,7 +2034,7 @@
                 }
               }
 
-              &:nth-of-type(9) {
+              &.icon-pg-09 {
                 a {
                   em {
                     &::before {

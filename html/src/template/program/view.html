@@ -41,32 +41,50 @@
                 <aside class="mob-sideMenu">
                   <div class="subCate">
                     <ul>
-                      <li>
-                        <a href="#"><em>최신영상</em></a>
+                      <li class="icon-pg-01">
+                        <a href="#" class="active">
+                          <em>최신영상</em>
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><em>서울온에어</em></a>
+                      <li class="icon-pg-02">
+                        <a href="#">
+                          <em>생중계다시보기</em>
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><em>홍보영상</em></a>
+                      <li class="icon-pg-03">
+                        <a href="#">
+                          <em>서울홍보영상</em>
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><em>프로그램</em></a>
+                      <li class="icon-pg-07">
+                        <a href="#">
+                          <em>분야별 영상</em>
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><em>영상크리에이터</em></a>
+                      <li class="icon-pg-04">
+                        <a href="#">
+                          <em>프로그램</em>
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><em>소통방송</em></a>
+                      <li class="icon-pg-06">
+                        <a href="#">
+                          <em>소통방통</em>
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><em>분야별 영상</em></a>
+                      <li class="icon-pg-05">
+                        <a href="#">
+                          <em>영상크리에이터</em>
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><em>자치구방송국</em></a>
+                      <li class="icon-pg-08">
+                        <a href="#">
+                          <em>자치구방송국</em>
+                        </a>
                       </li>
-                      <li>
-                        <a href="#"><em>마을미디어</em></a>
+                      <li class="icon-pg-09">
+                        <a href="#">
+                          <em>마을미디어</em>
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -79,7 +97,7 @@
                         <a href="#"><em>내가 시청한 영상</em></a>
                       </li>
                       <li>
-                        <a href="#"><em>큐레이션</em></a>
+                        <a href="#"><em>추천목록 영상</em></a>
                       </li>
                       <li>
                         <a href="#"><em>영상다운로드 내역</em></a>
@@ -159,15 +177,15 @@
                           class="btn-has-icon rounded add navy button-active-modal"
                           data-modal-name="addCuration"
                         >
-                          <em>큐레이션 담기</em>
+                          <em>추천목록 담기</em>
                         </button>
                         <div class="modal-wrap">
-                          <!-- 큐레이션 담기 -->
+                          <!-- 추천목록 담기 -->
                           <div class="modal right ivory addCuration is_animated animate__fade_In_Up" id="modal-addCuration">
                             <header class="modal-header">
                               <h5>
-                                큐레이션 담기<br />
-                                <em>* 영상을 미리 담은 후에 큐레이션을 만들어 보세요.</em>
+                                추천목록 담기<br />
+                                <em>* 영상을 미리 담은 후에 추천목록을 만들어 보세요.</em>
                               </h5>
                               <button type="button" class="button-close modal-off">
                                 <em class="hidden-txt">레이어 팝업 닫기</em>
@@ -180,7 +198,7 @@
                                     <div class="chk-wrap list-type">
                                       <span>
                                         <input type="checkbox" checked id="cur-list01" />
-                                        <label for="cur-list01"><em>코로나19 관련 큐레이션</em></label>
+                                        <label for="cur-list01"><em>코로나19 관련 추천목록</em></label>
                                       </span>
                                     </div>
                                   </li>
@@ -260,10 +278,10 @@
                               </div>
                               <div class="btn-wrap half align-c">
                                 <button class="btn-default rounded orange" type="submit">
-                                  <em>큐레이션 영상 저장</em>
+                                  <em>추천목록 영상 저장</em>
                                 </button>
                                 <button class="btn-has-icon rounded add navy" type="button" onclick="addCuration(this);">
-                                  <em>새로운 큐레이션 만들기</em>
+                                  <em>새로운 추천목록 만들기</em>
                                 </button>
                               </div>
                             </div>
@@ -841,16 +859,16 @@
       }
 
       function addCuration(t) {
-        // 새로운 큐레이션 만들기
+        // 새로운 추천목록 만들기
         var newList =
           '<li class="add">' +
           '<div class="chk-wrap list-type">' +
           '<span>' +
           '<input type="checkbox" id="newList01" />' +
-          '<label for="newList01"><em class="hidden-txt">새로운 큐레이션 제목</em></label>' +
+          '<label for="newList01"><em class="hidden-txt">새로운 추천목록 제목</em></label>' +
           '</span>' +
           '<span class="text-wrap line">' +
-          '<input type=text title="큐레이션 제목 입력" placeholder="큐레이션 제목 입력">' +
+          '<input type=text title="추천목록 제목 입력" placeholder="추천목록 제목 입력">' +
           '<button type=submit class="btn-default xs3 rounded red2"><em>저장</em></button>' +
           '</span>' +
           '</div>' +
