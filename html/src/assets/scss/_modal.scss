@@ -250,13 +250,17 @@
 
   /* 음성ㆍ문자 지원 */
   &.textSupport {
-    right: -10px;
-    top: -10px;
-    width: 470px;
+    right: 0;
+    top: -15px;
+    width: 440px;
     margin-right: 0;
     border-radius: 20px;
     box-shadow: 2px 3px 7px 2px rgb(0, 0, 0, 0.3);
     z-index: 10;
+
+    @include _bp(1680px) {
+      width: 390px;
+    }
 
     @include _bp(1024px) {
       position: relative;

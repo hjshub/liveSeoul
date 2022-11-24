@@ -1,0 +1,93 @@
+/**
+ * ==============================+
+ * layer popup
+ * ==============================+
+ */
+
+#lpop {
+  display: none;
+  background-color: $white;
+  width: 450px;
+  height: auto;
+  max-height: 60vh;
+  padding: 0;
+  position: fixed;
+  top: 30%;
+  left: 75px;
+  z-index: 999;
+  border: 1px solid $navy;
+
+  @include _bp(1200px) {
+    left: 30px;
+  }
+
+  @include _bp(768px) {
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+
+  .pop-header {
+    padding: 20px 30px;
+    background-color: $navy;
+
+    h2 {
+      color: $orange3;
+      font-size: 2rem;
+      line-height: 1;
+    }
+  }
+  .pop-body {
+    padding: 20px 30px;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: -webkit-calc(60vh - 115px);
+    max-height: -moz-calc(60vh - 115px);
+    max-height: calc(60vh - 115px);
+  }
+  .pop-cts {
+    line-height: 1.7;
+    font-size: 1.6rem;
+
+    * {
+      vertical-align: top;
+    }
+  }
+  .pop-close {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: $navy;
+    color: $white;
+    text-align: right;
+
+    button {
+      margin-left: 30px;
+      background-color: transparent;
+
+      @include _bp(768px) {
+        margin-left: 20px;
+      }
+
+      em {
+        padding-left: 40px;
+        font-size: 1.6rem;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 31px;
+          height: 31px;
+          margin-top: -15px;
+          background-image: url('../images/icon-allmap_close-wh.png');
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-size: 100% auto;
+          content: '';
+        }
+      }
+    }
+  }
+}

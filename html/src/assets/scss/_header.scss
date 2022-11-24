@@ -10,7 +10,7 @@
   left: 0;
   width: 100%;
   min-width: 320px;
-  z-index: 999;
+  z-index: 998;
   opacity: 0;
   @include transform(translateY(-100%));
 
@@ -699,12 +699,18 @@
       }
 
       > div {
-        -webkit-box-flex: 2;
-        -ms-flex-positive: 2;
-        flex-grow: 2;
+        -webkit-box-flex: 4;
+        -ms-flex-positive: 4;
+        flex-grow: 4;
         float: none;
         line-height: 60px;
         text-align: right;
+
+        @include _bp(1480px) {
+          -webkit-box-flex: 2;
+          -ms-flex-positive: 2;
+          flex-grow: 2;
+        }
 
         @include _bp(1200px) {
           display: none;
@@ -773,7 +779,8 @@
             color: $white;
             background-color: transparent;
             height: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            //border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 2px solid $white;
             border-radius: 30px;
           }
 
@@ -803,15 +810,21 @@
       }
 
       > ul {
-        -webkit-box-flex: 5;
-        -ms-flex-positive: 5;
-        flex-grow: 5;
+        -webkit-box-flex: 4;
+        -ms-flex-positive: 4;
+        flex-grow: 4;
         font-size: 0;
         position: relative;
         left: -20px;
 
         @include _bp(1680px) {
           left: -15px;
+        }
+
+        @include _bp(1480px) {
+          -webkit-box-flex: 5;
+          -ms-flex-positive: 5;
+          flex-grow: 5;
         }
 
         @include _bp(480px) {
@@ -996,7 +1009,8 @@
           &.text-wrap {
             input[type='text'] {
               color: $gray3;
-              border-color: $gray5;
+              // border-color: $gray5;
+              border-color: $black;
             }
 
             button {

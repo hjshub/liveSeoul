@@ -31,6 +31,7 @@ html {
       -moz-transform: translateY(-92px !important);
       -ms-transform: translateY(-92px) !important;
       @include transition(none);
+      z-index: 1000;
 
       @include _bp(1200px) {
         transform: translateY(0) !important;
@@ -99,7 +100,8 @@ html {
             &.text-wrap {
               input[type='text'] {
                 color: $gray3;
-                border-color: $gray5;
+                // border-color: $gray5;
+                border-color: $gray4;
               }
 
               button {
@@ -169,40 +171,6 @@ select,
 textarea {
   font: inherit;
 }
-
-#skipNavigation dd {
-  font-size: 0;
-  width: 100%;
-  position: relative;
-
-  a {
-    display: inline-block;
-    width: 100%;
-    line-height: 50px;
-    position: absolute;
-    left: 0;
-    top: -50px;
-    text-align: center;
-    background-color: $black;
-    @include transition(all 0.2s ease-in-out);
-
-    &:focus {
-      top: 0;
-      z-index: 9999;
-    }
-
-    em {
-      display: inline-block;
-      line-height: 1;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0;
-      @include transform(rotate(-0.03deg));
-    }
-  }
-}
-
 .txt-roboto {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
@@ -344,7 +312,6 @@ textarea {
     vertical-align: top;
   }
 }
-
 .ft-sm {
   font-size: 1.7rem;
   font-weight: 400;
@@ -427,7 +394,6 @@ textarea {
     font-size: 2rem;
   }
 }
-
 .heading-wrap-03 {
   line-height: 1;
   position: relative;
@@ -511,7 +477,6 @@ textarea {
     padding: 0 15px;
   }
 }
-
 .inner-wrap {
   padding: 0 75px;
   max-width: 1350px;
@@ -527,7 +492,41 @@ textarea {
     padding: 0 15px;
   }
 }
+#skipNavigation dd {
+  font-size: 0;
+  width: 100%;
+  position: relative;
 
+  a {
+    display: inline-block;
+    width: 100%;
+    line-height: 50px;
+    position: absolute;
+    left: 0;
+    top: -50px;
+    text-align: center;
+    background-color: $black;
+    @include transition(all 0.2s ease-in-out);
+
+    &:focus {
+      top: 0;
+      z-index: 9999;
+    }
+
+    em {
+      display: inline-block;
+      line-height: 1;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0;
+      @include transform(rotate(-0.03deg));
+    }
+  }
+}
+#layout {
+  position: relative;
+}
 .wrap {
   width: 100%;
   overflow: hidden;
@@ -3359,6 +3358,12 @@ keyword swiper
   &.lightPurple {
     &::-webkit-scrollbar-thumb {
       background: #ba87d8;
+    }
+  }
+
+  &.navy {
+    &::-webkit-scrollbar-thumb {
+      background: $navy;
     }
   }
 }
