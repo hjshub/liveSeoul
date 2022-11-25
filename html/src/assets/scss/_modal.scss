@@ -32,8 +32,7 @@
 }
 .modal {
   display: none;
-  width: auto;
-  min-width: 300px;
+  width: 300px;
   position: absolute;
   padding: 25px 30px;
   top: 60px;
@@ -233,7 +232,7 @@
     margin-right: -80px;
 
     &::before {
-      right: 49px;
+      right: 50px;
     }
   }
 
@@ -885,7 +884,9 @@
 
   /* SNS 공유 */
   &.share {
-    width: 282px;
+    &.type02 {
+      width: 330px;
+    }
 
     @include _bp(1280px) {
       margin-right: -92px;
@@ -932,6 +933,10 @@
 
           &.share-URL::before {
             background-position: -187px -54px;
+          }
+
+          &.share-vdURL::before {
+            background-position: -231px -55px;
           }
         }
 

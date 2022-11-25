@@ -12,6 +12,8 @@ const del = require('del');
 const fileinclude = require('gulp-file-include');
 const minifyCss = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
+// const prettier = require('gulp-prettier');
+const prettyHtml = require('gulp-pretty-html');
 
 const path = {
   // 작업경로
@@ -48,6 +50,13 @@ const Template = () => {
       fileinclude({
         prefix: '@@',
         basepath: '@file',
+      })
+    )
+    .pipe(
+      prettyHtml({
+        indent_size: 2,
+        indent_char: ' ',
+        unformatted: [], // 'code', 'pre', 'em', 'strong', 'span', 'i', 'b', 'br'
       })
     )
     .pipe(dest(destPath._))

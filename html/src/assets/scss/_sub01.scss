@@ -4930,6 +4930,10 @@
         padding-bottom: 0;
       }
 
+      section {
+        margin-top: 0;
+      }
+
       .list_top {
         min-height: 0;
 
@@ -4994,9 +4998,66 @@
             }
           }
         }
+      }
 
-        & + section {
-          margin-top: 0;
+      // 주간 생중계 예정방송
+      .weeklyLive-header {
+        h3 {
+          font-size: 2rem;
+        }
+      }
+
+      .weeklyLive-swiper {
+        margin-top: 20px;
+        padding-bottom: 10px;
+        overflow: hidden;
+
+        .cts {
+          margin: 0 10px;
+          background-color: $white;
+          border-top: 2px solid #40445d;
+          border-radius: 0 0 20px 20px;
+          -webkit-box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.08);
+          box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.08);
+
+          a {
+            display: block;
+            padding: 20px;
+          }
+
+          span {
+            display: block;
+            font-size: 1.6rem;
+            line-height: 1;
+
+            &.date {
+              position: relative;
+              padding-left: 30px;
+              font-size: 1.8rem;
+
+              &::before {
+                width: 19px;
+                height: 18px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                @include transform(translateY(-50%));
+                background-image: url('../images/icon-calendar.png');
+                content: '';
+              }
+            }
+
+            &.info {
+              margin-top: 20px;
+              font-size: 1.6rem;
+              line-height: 1.4;
+            }
+
+            &.time {
+              margin-top: 15px;
+              color: $gray2;
+            }
+          }
         }
       }
 
@@ -5004,6 +5065,7 @@
       .sched-header {
         border-top: 2px solid $red2;
         padding: 30px 0 25px;
+        margin-top: 40px;
         position: relative;
 
         @include _bp(1024px) {
