@@ -5048,9 +5048,15 @@
             }
 
             &.info {
+              @include line-clamp2;
+              height: 45px;
               margin-top: 20px;
               font-size: 1.6rem;
               line-height: 1.4;
+
+              @include _bp(1024px) {
+                height: 40px;
+              }
             }
 
             &.time {
