@@ -714,6 +714,10 @@ main {
               left: 15px;
               bottom: 100px;
             }
+
+            strong {
+              text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.45);
+            }
           }
 
           .btn-playSwiper {
