@@ -195,12 +195,12 @@ textarea {
   @include transform(rotate(-0.03deg));
 }
 .txt-color {
-  &.black {
-    color: $black !important;
-  }
-
   &.white {
     color: $white !important;
+  }
+
+  &.black {
+    color: $black !important;
   }
 
   &.darkGray {
@@ -1899,6 +1899,10 @@ main {
       font-size: 3.6rem;
       line-height: 1;
 
+      &.inline {
+        display: inline-block;
+      }
+
       @include _bp(1024px) {
         font-size: 3.2rem;
       }
@@ -1940,13 +1944,17 @@ main {
     .location {
       display: inline-block;
       position: absolute;
-      top: 18px;
+      top: 12px;
       right: 75px;
       z-index: 10;
       font-size: 0;
 
       @include _bp(1200px) {
         right: 30px;
+      }
+
+      @include _bp(1024px) {
+        top: 18px;
       }
 
       @include _bp(768px) {

@@ -22,6 +22,7 @@
 }
 
 .tabStyle-nav {
+  width: 100%;
   margin-top: 20px;
 
   ul {
@@ -1971,7 +1972,7 @@
 
         .location {
           @include _bp(768px) {
-            top: 30px;
+            top: 18px;
           }
 
           span {
@@ -3257,7 +3258,8 @@
       }
 
       .page-header {
-        .inner {
+        .inner,
+        .inner-wrap {
           padding-top: 50px;
         }
       }

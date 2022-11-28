@@ -135,6 +135,99 @@ button {
     }
 
     /*button color*/
+    &:not(.txt-color) {
+      &.yellow {
+        background-color: $yellow2 !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.orange {
+        background-color: $orange !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.orange2 {
+        background-color: $orange2 !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.blue {
+        background-color: $blue1 !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.navy {
+        background-color: $navy !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.mint {
+        background-color: $mint !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.red {
+        background-color: $red4 !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.red2 {
+        background-color: $red2 !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.burgundy {
+        background-color: $burgundy !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.lightPurple {
+        background-color: $light-purple !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.purple {
+        background-color: $purple !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.gray {
+        background-color: $gray1 !important;
+        em {
+          color: $white !important;
+        }
+      }
+
+      &.darkGray {
+        background-color: $gray13 !important;
+        em {
+          color: $white !important;
+        }
+      }
+    }
+
     &.white {
       background-color: $white !important;
       border: 1px solid currentColor;
@@ -144,103 +237,12 @@ button {
       }
     }
 
-    &.yellow {
-      background-color: $yellow2 !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.orange {
-      background-color: $orange !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.orange2 {
-      background-color: $orange2 !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.blue {
-      background-color: $blue1 !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.navy {
-      background-color: $navy !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.mint {
-      background-color: $mint !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.red {
-      background-color: $red4 !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.red2 {
-      background-color: $red2 !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.burgundy {
-      background-color: $burgundy !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.lightPurple {
-      background-color: $light-purple !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.purple {
-      background-color: $purple !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.gray {
-      background-color: $gray1 !important;
-      em {
-        color: $white !important;
-      }
-    }
-
-    &.darkGray {
-      background-color: $gray13 !important;
-      em {
-        color: $white !important;
-      }
-    }
-
     &.btn- {
       /*button has icon*/
       &has-icon {
         width: 170px;
 
-        &:not(.voice, .add) {
+        &:not(.voice, .add, .notice) {
           @include _bp(768px) {
             width: 65px;
             min-width: auto;
@@ -251,7 +253,7 @@ button {
           padding-left: 30px;
           font-size: 1.7rem !important;
 
-          &:not(.voice > em, .add > em) {
+          &:not(.voice > em, .add > em, .notice > em) {
             @include _bp(768px) {
               @include hiddenText;
             }
@@ -474,6 +476,23 @@ button {
               height: 14px;
               top: 2px;
               background-image: url('../images/icon-flag.png');
+            }
+          }
+        }
+
+        &.notice {
+          width: auto;
+          padding: 10px 20px;
+
+          @include _bp(561px) {
+            padding: 10px;
+          }
+
+          em {
+            &::before {
+              width: 17px;
+              height: 17px;
+              background-image: url('../images/icon-notice.png');
             }
           }
         }
