@@ -1870,6 +1870,33 @@ main {
         vertical-align: top;
       }
     }
+
+    &.live {
+      min-height: -webkit-calc(100vh - 285px);
+      min-height: -moz-calc(100vh - 285px);
+      min-height: calc(100vh - 285px);
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      @include _bp(1200px) {
+        min-height: -webkit-calc(100vh - 229px);
+        min-height: -moz-calc(100vh - 229px);
+        min-height: calc(100vh - 229px);
+      }
+
+      @include _bp_landscape(821px) {
+        min-height: 350px;
+      }
+
+      p {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        @include transform(translateY(-50%));
+      }
+    }
   }
 }
 

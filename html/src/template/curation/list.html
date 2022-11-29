@@ -33,9 +33,28 @@
 
               <h2 class="no_st inline">추천목록</h2>
               <div class="btn-wrap inline">
-                <button class="btn-has-icon rounded notice navy" type="submit">
+                <button
+                  class="btn-has-icon rounded notice navy button-active-modal fixed"
+                  data-modal-name="curation-guide"
+                  type="button"
+                >
                   <em>추천목록 생성방법 알아보기</em>
                 </button>
+                <div class="modal-wrap">
+                  <div class="modal fixed guide" id="modal-curation-guide">
+                    <header class="modal-header">
+                      <h5>추천목록 생성 가이드</h5>
+                      <button type="button" class="button-close modal-off">
+                        <em class="hidden-txt">레이어 팝업 닫기</em>
+                      </button>
+                    </header>
+                    <div class="modal-body">
+                      <div class="modal-contents">
+                        <div id="guideVd"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <nav class="tabStyle-nav col-2 red">
@@ -127,5 +146,86 @@
       <footer id="footer">@@include('../include/footer_sub.html')</footer>
       <!-- // #footer -->
     </div>
+
+    <script>
+      //티젠 플레이어 설정
+      //화질 Object 리스트
+      var setVideoSrc = new Array();
+      var sizeList = new Array();
+
+      //모바일 확인
+      var isMob = window.innerWidth <= 768 ? true : false;
+
+      // video src 설정
+      // MP4 파일 테스트용
+      // 공통 영상 상세
+
+      // var videoObj1 = new Object();
+      // videoObj1.size = '1';
+      // videoObj1.src = '../assets/images/video/sample-video02.mp4';
+      // videoObj1.type = 'video/mp4';
+      // setVideoSrc.push(videoObj1);
+      // sizeList.push(1);
+
+      var videoObj2 = new Object();
+      videoObj2.size = '720';
+      videoObj2.src = '../assets/images/video/sample-video02.mp4';
+      videoObj2.type = 'video/mp4';
+      setVideoSrc.push(videoObj2);
+      sizeList.push(720);
+
+      var videoObj3 = new Object();
+      videoObj3.size = '272';
+      videoObj3.src = '../assets/images/video/sample-video02.mp4';
+      videoObj3.type = 'video/mp4';
+      setVideoSrc.push(videoObj3);
+      sizeList.push(272);
+
+      //처음 영상 재생 화질 default값 설정
+      if (sizeList.length == 1) {
+        qualitySize = 0;
+      } else {
+        //자동화질 설정
+        if (sizeList[0] == '1') {
+          if (!isMob || sizeList.length == 2) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 1;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 2;
+          }
+        }
+        //자동화질 미설정
+        else {
+          if (!isMob) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 0;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 1;
+          }
+        }
+      }
+
+      // 영상 호출
+      if ($('#guideVd').length) {
+        $('#guideVd').createVideo({
+          // 플레이어 생성 영역 DIV의 아이디
+          id: 'video_guide', // 생성될 비디오 태그 아이디 *필수값
+          src: setVideoSrc,
+          speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+          autoPlay: true, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+          startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+          seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+          progress: true, // false : 프로그레스바 컨트롤 되지 않도록
+          preview: [{ enabled: false, src: '' }],
+          quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+          qualitySize: qualitySize,
+          isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+          iconUrl: '../tgplayer/plugin/js/plyr.svg',
+          blankVideo: '../tgplayer/plugin/js/blank.mp4',
+        });
+      }
+    </script>
   </body>
 </html>

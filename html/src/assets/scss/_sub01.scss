@@ -915,6 +915,10 @@
                       @include _bp(1485px) {
                         margin-left: 15px;
                       }
+
+                      @include _bp(391px) {
+                        margin-left: 10px;
+                      }
                     }
                   }
                 }

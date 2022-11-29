@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko" class="onAir">
+  <head>
+    @@include('./include/head.html')
+
+    <title>생중계 | 라이브 서울</title>
+
+    @@include('./include/header.html')
+  </head>
+  <body>
+    @@include('./include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb">@@include('./include/gnb.html')</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <main class="live" id="contents">
+        <h1 class="hidden-txt">생중계</h1>
+        <!-- 생중계 영역 -->
+        <section class="main-section-01">
+          <article>
+            <div class="live-area">
+              <!-- tgplayer 영상영역 -->
+              <div id="mainLive"></div>
+
+              <!-- youtube 영상영역
+              <div class="ytp-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/XsXV6XBV_qQ"
+                  title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              -->
+            </div>
+            <div class="live-contentsInfo">
+              <h2>
+                <span>생중계 ON Air</span><br />
+                <strong class="txt-line-clamp2">
+                  책 읽는 서울광장<br />
+                  개막 북토크 라이브
+                </strong>
+              </h2>
+              <div class="info-wrap">
+                <div><b>2022.03.14</b></div>
+                <div class="customedScroll pink">
+                  <p>
+                    「세계 책의 날」, 시민과 함께 ‘책 읽는 서울광장’의 오픈을 알리는 프로그램 「세계 책의 날」, 시민과 함께 ‘책
+                    읽는 서울광장’의 오픈을 알리는 프로그램 「세계 책의 날」, 시민과 함께 ‘책 읽는 서울광장’의 오픈을 알리는
+                    프로그램 「세계 책의 날」, 시민과 함께 ‘책 읽는 서울광장’의 오픈을 알리는 프로그램 「세계 책의 날」, 시민과
+                    함께 ‘책 읽는 서울광장’의 오픈을 알리는 프로그램 「세계 책의 날」, 시민과 함께 ‘책 읽는 서울광장’의 오픈을
+                    알리는 프로그램 「세계 책의 날」, 시민과 함께 ‘책 읽는 서울광장’의 오픈을 알리는 프로그램 「세계 책의 날」,
+                    시민과 함께 ‘책 읽는 서울광장’의 오픈을 알리는 프로그램 「세계 책의 날」, 시민과 함께 ‘책 읽는 서울광장’의
+                    오픈을 알리는 프로그램 「세계 책의 날」, 시민과 함께 ‘책 읽는 서울광장’의 오픈을 알리는 프로그램
+                  </p>
+                </div>
+              </div>
+              <div class="sns-wrap">
+                <ul>
+                  <li>
+                    <a href="" class="facebook"><em class="hidden-txt">페이스북 공유</em></a>
+                  </li>
+                  <li>
+                    <a href="" class="twitter"><em class="hidden-txt">트위터 공유</em></a>
+                  </li>
+                  <li>
+                    <a href="" class="kakaotalk"><em class="hidden-txt">카카오톡 공유</em></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" class="share-URL" onclick="commonFunction().copyUrl();"
+                      ><em class="hidden-txt">URL 공유하기</em></a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="btn-wrap">
+                <button type="button" class="btn-has-icon2 rounded navy praza24" onclick="location.href='seoul24/main.html'">
+                  <em>광장 24시</em>
+                </button>
+                <button
+                  type="button"
+                  class="btn-has-icon2 rounded orange2 schedule"
+                  onclick="location.href='schedule/schedule_month.html'"
+                >
+                  <em> 생중계 ON Air 달력 보기 </em>
+                </button>
+                <button type="button" class="btn-has-icon2 rounded red liveOn button-showLayer on">
+                  <em> 생중계 ON Air 편성표 닫기 </em>
+                </button>
+              </div>
+            </div>
+          </article>
+          <div class="liveOnAir transition-none">
+            <dl>
+              <dt><span>라이브 서울</span><br /><strong>편성표</strong></dt>
+              <dd>@@include('./include/liveOnAir.html')</dd>
+            </dl>
+          </div>
+        </section>
+
+        <!-- 현재 예정된 생중계가 없을 시 
+        <div class="no-files live">
+          <p>
+            <img src="assets/images/img-notice.png" alt="알림 이미지" /><br /><br />
+            현재 예정된 생중계가 없습니다.
+          </p>
+        </div>
+        -->
+      </main>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('./include/footer.html')</footer>
+      <!-- // #footer -->
+    </div>
+    <script>
+      //화질 Object 리스트
+      var setVideoSrc = new Array();
+      var sizeList = new Array();
+
+      //모바일 확인
+      var isMob = window.innerWidth <= 768 ? true : false;
+
+      // video src 설정
+      // MP4 파일 테스트용
+      // 메인 라이브 영상
+      var videoObj1 = new Object();
+      videoObj1.size = '1';
+      videoObj1.src = '../assets/images/video/sample-video02.mp4';
+      videoObj1.type = 'video/mp4';
+      setVideoSrc.push(videoObj1);
+      sizeList.push(1);
+
+      var videoObj2 = new Object();
+      videoObj2.size = '720';
+      videoObj2.src = '../assets/images/video/sample-video02.mp4';
+      videoObj2.type = 'video/mp4';
+      setVideoSrc.push(videoObj2);
+      sizeList.push(720);
+
+      var videoObj3 = new Object();
+      videoObj3.size = '272';
+      videoObj3.src = '../assets/images/video/sample-video02.mp4';
+      videoObj3.type = 'video/mp4';
+      setVideoSrc.push(videoObj3);
+      sizeList.push(272);
+
+      //처음 영상 재생 화질 default값 설정
+      if (sizeList.length == 1) {
+        qualitySize = 0;
+      } else {
+        //자동화질 설정
+        if (sizeList[0] == '1') {
+          if (!isMob || sizeList.length == 2) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 1;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 2;
+          }
+        }
+        //자동화질 미설정
+        else {
+          if (!isMob) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 0;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 1;
+          }
+        }
+      }
+
+      if ($('#mainLive').length) {
+        $('#mainLive').createVideo({
+          // 플레이어 생성 영역 DIV의 아이디
+          id: 'video', // 생성될 비디오 태그 아이디 *필수값
+          src: setVideoSrc,
+          speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+          autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+          startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+          seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+          progress: true, // false : 프로그레스바 컨트롤 되지 않도록
+          preview: [{ enabled: false, src: '' }],
+          quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+          qualitySize: qualitySize,
+          isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+          iconUrl: 'tgplayer/plugin/js/plyr.svg',
+          blankVideo: 'tgplayer/plugin/js/blank.mp4',
+        });
+      }
+    </script>
+  </body>
+</html>

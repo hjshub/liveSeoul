@@ -220,7 +220,7 @@ button {
   cursor: pointer;
 }
 
-button:active:enabled {
+button:not(.plyr__control):active:enabled {
   @include transform(scale(0.97));
 }
 

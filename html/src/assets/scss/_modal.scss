@@ -186,6 +186,22 @@
       }
     }
 
+    // 추천목록 생성가이드
+    &.guide {
+      max-width: 961px;
+      width: 65%;
+
+      @include _bp_landscape(821px) {
+        width: 70% !important;
+      }
+
+      .modal-body {
+        .modal-contents {
+          padding: 0;
+        }
+      }
+    }
+
     // 마이페이지 관심분야 설정
     &.wish {
       .modal-body {
