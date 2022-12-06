@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="Author" content="" />
-    <meta name="Keywords" content="" />
-    <meta name="Description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    @@include('../include/head.html')
     <title>라이브서울 퍼블리싱 가이드</title>
 
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script defer src="../assets/js/common.js"></script>
 
-    <link rel="stylesheet" href="../html/dist/assets/css/jquery-ui.min.css" />
-    <link rel="stylesheet" href="../html/dist/assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/guide.css" />
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/guide.css" />
   </head>
   <body>
     <div id="wrapper">
@@ -401,7 +397,7 @@
                           id="file_01"
                           value=""
                           title="파일 첨부"
-                          onchange="fileUpload(this);"
+                          onchange="commonFunction().fileUpload(this);"
                         />
                       </span>
                     </div>
@@ -463,33 +459,6 @@
         </div>
       </div>
     </div>
-
-    <script>
-      $(function () {
-        $('.calendar').datepicker({
-          showOn: 'both',
-          buttonImageOnly: true,
-          buttonImage: 'assets/images/icon-calendar.png',
-          dateFormat: 'yy-mm-dd',
-        });
-      });
-
-      function fileUpload(el, type) {
-        var pathpoint = el.value.lastIndexOf('.'),
-          filepoint = el.value.substring(pathpoint + 1, el.length),
-          filetype = filepoint.toLowerCase(); // 업로드 파일 확장자
-
-        if (window.FileReader) {
-          // modern browser
-          var fileReader = new FileReader(),
-            fileName = $(el)[0].files[0].name, // 첨부 파일 명
-            filesize = $(el)[0].files[0].size; // 첨부 파일 용량
-
-          fileReader.readAsDataURL($(el)[0].files[0]);
-        }
-
-        $(el).closest('.file-attach').find('.text-wrap input[type=text]').val(fileName);
-      }
-    </script>
+    <footer></footer>
   </body>
 </html>

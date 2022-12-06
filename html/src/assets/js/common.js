@@ -46,6 +46,7 @@ window.addEventListener('load', function () {
 
   if (gb.vdSwiper.length) commonFunction().VdSwiper();
   if (gb.tabSwiper.length) commonFunction().TabSwiper();
+  if ($('.cr-vis-swiper').length) commonFunction().CrVisSwiper();
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
   if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
   if ($('.keyword-swiper2').length) commonFunction().KeywordSwiper2();
@@ -514,6 +515,66 @@ function commonFunction() {
           gb._tabSwiper[i] = new Swiper(elem, gb.tabSwiperOption);
           //}
         });
+      },
+      CrVisSwiper = function () {
+        gb.CrVisSwiper = new Swiper('.cr-vis-swiper', {
+          // Optional parameters
+          loop: true,
+          speed: 600,
+          centeredSlides: true,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true,
+          },
+          autoplay: {
+            delay: 5000,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          slidesPerView: 1,
+          debugger: true, // Enable debugger
+        });
+
+        gb.CrVisSwiper.on('activeIndexChange', function (swiper) {
+          setTimeout(function () {
+            var notCurrentvd = $('.cr-vis-swiper .swiper-slide:not(.swiper-slide-active) video').get(),
+              animate = $('.cr-vis-swiper .swiper-slide-active .animate').get(),
+              animate_ = $('.cr-vis-swiper .swiper-slide:not(.swiper-slide-active) .animate').get();
+
+            animate_.forEach(function (elem) {
+              $(elem).removeClass('animation--start');
+            });
+            animate.forEach(function (elem) {
+              $(elem).addClass('animation--start');
+            });
+            notCurrentvd.forEach(function (elem) {
+              elem.pause();
+              $(elem).prop('currentTime', 0);
+            });
+          }, 100);
+        });
+
+        var $crVisSwiper_playBtn = $('.cr-vis-swiper .swiper-playBtn');
+
+        $crVisSwiper_playBtn.click(function () {
+          if ($(this).hasClass('play')) {
+            crVisSwiper.autoplay.stop();
+            $(this).text('재생').removeClass('play').addClass('stop');
+          } else {
+            crVisSwiper.autoplay.start();
+            $(this).text('멈춤').removeClass('stop').addClass('play');
+          }
+        });
+
+        var animate = $('.cr-vis-swiper .swiper-slide-active .animate').get();
+
+        setTimeout(function () {
+          animate.forEach(function (elem) {
+            $(elem).addClass('animation--start');
+          });
+        }, 100);
       },
       PreviewOn = function () {
         // 영상 미리보기
@@ -1078,6 +1139,7 @@ function commonFunction() {
       VdSwiper: VdSwiper,
       LiveOnSwiper: LiveOnSwiper,
       TabSwiper: TabSwiper,
+      CrVisSwiper: CrVisSwiper,
       PreviewOn: PreviewOn,
       FilterSwiper: FilterSwiper,
       KeywordSwiper: KeywordSwiper,

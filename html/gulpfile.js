@@ -12,7 +12,6 @@ const del = require('del');
 const fileinclude = require('gulp-file-include');
 const minifyCss = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
-// const prettier = require('gulp-prettier');
 const prettyHtml = require('gulp-pretty-html');
 
 const path = {
@@ -83,6 +82,7 @@ const Js_common = () => {
   // 작업용 JS 묶음
   return src(`${path.assets.js}*.js`)
     .pipe(concat('common.js'))
+    .pipe(uglify())
     .pipe(dest(destPath.assets.js))
     .pipe(browserSync.reload({ stream: true }));
 };
@@ -180,13 +180,11 @@ const Scss_options = {
 };
 
 const Sass_compile = () => {
-  return (
-    src(`${path.assets.scss}**/*.scss`, { sourcemaps: true })
-      .pipe(scss(Scss_options).on('error', scss.logError))
-      //.pipe(minifyCss())
-      .pipe(dest(destPath.assets.css), { sourcemaps: true })
-      .pipe(browserSync.reload({ stream: true }))
-  );
+  return src(`${path.assets.scss}**/*.scss`, { sourcemaps: true })
+    .pipe(scss(Scss_options).on('error', scss.logError))
+    .pipe(minifyCss())
+    .pipe(dest(destPath.assets.css), { sourcemaps: true })
+    .pipe(browserSync.reload({ stream: true }));
 };
 
 exports.prod = series(Clean, Js_library, Js_common, Sass_compile, Css, Images, Webfont, Template, Tgplayer, innorix);
